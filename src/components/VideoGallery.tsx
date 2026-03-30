@@ -3,14 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X } from "lucide-react";
+import bp from "@/lib/bp";
 
 const videos = [
-  { src: "/assets/videos/showroom-gopro-1.mp4", label: "Showroom Tour", thumb: "/assets/images/showroom-01.webp" },
-  { src: "/assets/videos/showroom-gopro-2.mp4", label: "Flooring Displays", thumb: "/assets/images/showroom-03.webp" },
-  { src: "/assets/videos/showroom-gopro-3.mp4", label: "Carpet Selection", thumb: "/assets/images/showroom-04.webp" },
-  { src: "/assets/videos/showroom-gopro-4.mp4", label: "Hardwood & Laminate", thumb: "/assets/images/showroom-07.webp" },
-  { src: "/assets/videos/showroom-walk-1.mp4", label: "Full Walkthrough", thumb: "/assets/images/showroom-09.webp" },
-  { src: "/assets/videos/showroom-walk-2.mp4", label: "Tile & Vinyl", thumb: "/assets/images/showroom-11.webp" },
+  { src: `${bp}/assets/videos/showroom-gopro-1.mp4`, label: "Showroom Tour", thumb: `${bp}/assets/images/showroom-01.webp` },
+  { src: `${bp}/assets/videos/showroom-gopro-2.mp4`, label: "Flooring Displays", thumb: `${bp}/assets/images/showroom-03.webp` },
+  { src: `${bp}/assets/videos/showroom-gopro-3.mp4`, label: "Carpet Selection", thumb: `${bp}/assets/images/showroom-04.webp` },
+  { src: `${bp}/assets/videos/showroom-gopro-4.mp4`, label: "Hardwood & Laminate", thumb: `${bp}/assets/images/showroom-07.webp` },
+  { src: `${bp}/assets/videos/showroom-walk-1.mp4`, label: "Full Walkthrough", thumb: `${bp}/assets/images/showroom-09.webp` },
+  { src: `${bp}/assets/videos/showroom-walk-2.mp4`, label: "Tile & Vinyl", thumb: `${bp}/assets/images/showroom-11.webp` },
 ];
 
 export default function VideoGallery() {

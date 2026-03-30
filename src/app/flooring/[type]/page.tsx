@@ -4,6 +4,7 @@ import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { flooringTypes, getFlooringBySlug } from "@/lib/flooring-data";
 import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
+import bp from "@/lib/bp";
 
 interface Props {
   params: Promise<{ type: string }>;
@@ -99,9 +100,9 @@ export default async function FlooringTypePage({ params }: Props) {
                 playsInline
                 preload="metadata"
                 className="w-full aspect-video bg-black"
-                poster="/assets/images/showroom-04.jpg"
+                poster={`${bp}/assets/images/showroom-04.webp`}
               >
-                <source src="/assets/videos/vinylpost.mp4" type="video/mp4" />
+                <source src={`${bp}/assets/videos/vinylpost.mp4`} type="video/mp4" />
               </video>
             </div>
           </div>

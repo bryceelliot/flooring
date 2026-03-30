@@ -1,0 +1,34 @@
+Options -MultiViews -Indexes
+
+# Override any parent .htaccess rewrite rules (e.g. WordPress)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /website_ae22452a/
+
+  # Serve real files and directories directly (CSS, JS, images, videos)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # All other requests → index.html (client-side routing fallback)
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Correct MIME types
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+  AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType font/woff2 .woff2
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
+import bp from "@/lib/bp";
 
 const words = ["Flooring", "For", "Life."];
 
@@ -19,7 +20,7 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover opacity-35"
         aria-hidden="true"
       >
-        <source src="/assets/videos/hero-bg.mp4" type="video/mp4" />
+        <source src={`${bp}/assets/videos/hero-bg.mp4`} type="video/mp4" />
       </video>
 
       {/* Overlays */}
