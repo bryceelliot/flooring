@@ -1,0 +1,177 @@
+import type { Metadata } from "next";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+import ContactForm from "@/components/ContactForm";
+import { Phone, MapPin, Clock } from "lucide-react";
+
+function FacebookIcon() {
+  return <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
+}
+function InstagramIcon() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" /></svg>;
+}
+function XIcon() {
+  return <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>;
+}
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Contact Kelowna Flooring Superstore. Visit our showroom at Unit 16, 830 McCurdy Place, Kelowna BC or call (250) 860-7847. Free estimates available.",
+};
+
+const hours = [
+  { day: "Monday – Tuesday", time: "9:00 AM – 5:00 PM", closed: false },
+  { day: "Wednesday", time: "9:00 AM – 2:00 PM", closed: false },
+  { day: "Thursday – Friday", time: "9:00 AM – 5:00 PM", closed: false },
+  { day: "Saturday", time: "10:00 AM – 2:00 PM", closed: false },
+  { day: "Sunday", time: "Closed", closed: true },
+];
+
+export default function ContactPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative pt-40 pb-24 bg-dark overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 60% at 60% 50%, rgba(35,82,124,0.5) 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <AnimateOnScroll>
+            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+              Get in Touch
+            </span>
+            <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight">
+              We&apos;d Love to<br />
+              <span className="text-accent">Hear From You</span>
+            </h1>
+            <p className="text-white/60 text-lg mt-5 max-w-xl leading-relaxed">
+              Whether you have a question about flooring, want to book a free estimate,
+              or just want to visit our showroom — we&apos;re here to help.
+            </p>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Contact grid */}
+      <section className="py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12">
+          {/* Info */}
+          <AnimateOnScroll direction="right">
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl p-7 card-hover">
+                <div className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                    <MapPin size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-charcoal mb-1">Showroom</h3>
+                    <p className="text-gray-500 text-sm">
+                      Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8
+                    </p>
+                    <a
+                      href="https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary text-sm font-semibold mt-2 block hover:underline"
+                    >
+                      Get Directions →
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-7 card-hover">
+                <div className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center shrink-0">
+                    <Phone size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-charcoal mb-1">Phone</h3>
+                    <a href="tel:2508607847" className="text-gray-500 text-sm hover:text-accent transition-colors">
+                      (250) 860-7847
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-7 card-hover">
+                <div className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                    <Clock size={20} className="text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-charcoal mb-3">Store Hours</h3>
+                    <div className="space-y-2">
+                      {hours.map((h) => (
+                        <div key={h.day} className="flex justify-between items-center gap-8">
+                          <span className="text-gray-500 text-sm">{h.day}</span>
+                          <span
+                            className={`text-sm font-medium ${
+                              h.closed ? "text-accent" : "text-charcoal"
+                            }`}
+                          >
+                            {h.time}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-7">
+                <h3 className="font-bold text-charcoal mb-4">Follow Us</h3>
+                <div className="flex gap-3">
+                  {[
+                    { href: "https://www.facebook.com/KelownaFlooringSuperStore", label: "Facebook", Icon: FacebookIcon },
+                    { href: "https://www.instagram.com/kelownaflooringss", label: "Instagram", Icon: InstagramIcon },
+                    { href: "https://x.com/KelownaFloorSS", label: "Twitter/X", Icon: XIcon },
+                  ].map(({ href, label, Icon }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="w-10 h-10 rounded-xl bg-light hover:bg-primary hover:text-white flex items-center justify-center text-charcoal transition-all"
+                    >
+                      <Icon />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Form */}
+          <AnimateOnScroll direction="left" delay={0.15}>
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-black text-charcoal mb-2">Send Us a Message</h2>
+              <p className="text-gray-400 text-sm mb-7">
+                We typically respond within 1 business day.
+              </p>
+              <ContactForm />
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="h-96 bg-charcoal">
+        <iframe
+          title="Kelowna Flooring Superstore Map"
+          width="100%"
+          height="100%"
+          style={{ border: 0, filter: "grayscale(20%) contrast(1.1)" }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Unit+16+830+McCurdy+Place+Kelowna+BC&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        />
+      </section>
+    </>
+  );
+}

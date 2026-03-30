@@ -1,0 +1,303 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { flooringTypes, getFlooringBySlug } from "@/lib/flooring-data";
+import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
+
+interface Props {
+  params: Promise<{ type: string }>;
+}
+
+export async function generateStaticParams() {
+  return flooringTypes.map((f) => ({ type: f.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { type } = await params;
+  const flooring = getFlooringBySlug(type);
+  if (!flooring) return {};
+  return {
+    title: `${flooring.name} Flooring Kelowna`,
+    description: flooring.metaDescription,
+    openGraph: {
+      title: `${flooring.name} Flooring | Kelowna Flooring Superstore`,
+      description: flooring.metaDescription,
+    },
+  };
+}
+
+export default async function FlooringTypePage({ params }: Props) {
+  const { type } = await params;
+  const flooring = getFlooringBySlug(type);
+  if (!flooring) notFound();
+
+  return (
+    <>
+      {/* Hero */}
+      <section
+        className={`relative pt-40 pb-24 bg-gradient-to-br ${flooring.gradient} overflow-hidden`}
+      >
+        <div className="absolute inset-0 bg-dark/50" />
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-white/40 text-sm mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={13} />
+            <Link href="/flooring" className="hover:text-white transition-colors">Flooring</Link>
+            <ChevronRight size={13} />
+            <span className="text-white/70">{flooring.name}</span>
+          </nav>
+
+          <AnimateOnScroll>
+            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+              In-Stock Available
+            </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+              {flooring.name}
+              <br />
+              <span className="text-accent/80">Flooring</span>
+            </h1>
+            <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
+              {flooring.tagline}
+            </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Link href="/estimates" className="btn-primary text-sm">
+                Get Free Estimate <ArrowRight size={16} />
+              </Link>
+              <a href="tel:2508607847" className="flex items-center gap-2 glass text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all hover:bg-white/10">
+                <Phone size={16} /> (250) 860-7847
+              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Vinyl Plank video — only shown on vinyl-plank page */}
+      {flooring.slug === "vinyl-plank" && (
+        <section className="py-20 bg-charcoal">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <AnimateOnScroll className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 bg-teal-500/15 border border-teal-500/30 text-teal-400 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+                See It In Action
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">
+                Waterproof Luxury. Real Results.
+              </h2>
+            </AnimateOnScroll>
+            <div className="rounded-2xl overflow-hidden max-w-3xl mx-auto shadow-2xl shadow-black/50">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full aspect-video bg-black"
+                poster="/assets/images/showroom-04.jpg"
+              >
+                <source src="/assets/videos/vinylpost.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Overview */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <AnimateOnScroll direction="right">
+              <span className="section-label mb-4">Overview</span>
+              <h2 className="text-4xl font-black text-charcoal mt-4 leading-tight">
+                Why Choose {flooring.name}?
+              </h2>
+              <p className="text-gray-600 leading-relaxed mt-5 text-lg">
+                {flooring.longDescription}
+              </p>
+              <p className="text-gray-500 leading-relaxed mt-4">
+                {flooring.installInfo}
+              </p>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll direction="left" delay={0.15}>
+              <div className="bg-light rounded-2xl p-8">
+                <h3 className="font-black text-charcoal text-xl mb-6">
+                  Key Features
+                </h3>
+                <ul className="space-y-3">
+                  {flooring.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3">
+                      <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
+                      <span className="text-gray-600 text-sm leading-relaxed">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <Link href="/estimates" className="btn-primary text-sm w-full justify-center">
+                    Get a Free Quote <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* Types */}
+      <section className="py-20 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-14">
+            <span className="section-label mb-4">{flooring.name} Options</span>
+            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+              Styles &amp; Types We Carry
+            </h2>
+          </AnimateOnScroll>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {flooring.types.map((t, i) => (
+              <AnimateOnScroll key={t.name} delay={i * 0.08}>
+                <div className="bg-white rounded-2xl p-7 card-hover h-full border-l-4 border-primary">
+                  <h3 className="font-bold text-charcoal text-lg mb-3">{t.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{t.description}</p>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Care */}
+      <section className="py-20 bg-charcoal">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <AnimateOnScroll direction="right">
+              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+                Maintenance Tips
+              </span>
+              <h2 className="text-4xl font-black text-white leading-tight">
+                Caring for Your<br />
+                <span className="text-accent">{flooring.name}</span>
+              </h2>
+              <p className="text-white/55 mt-5 leading-relaxed">
+                With the right care, your {flooring.name.toLowerCase()} flooring will
+                look beautiful for years. Here&apos;s what our experts recommend:
+              </p>
+              <ul className="mt-6 space-y-3">
+                {flooring.careItems.map((c) => (
+                  <li key={c} className="flex items-start gap-3">
+                    <CheckCircle2 size={16} className="text-accent shrink-0 mt-1" />
+                    <span className="text-white/65 text-sm leading-relaxed">{c}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll direction="left" delay={0.15}>
+              <div className="glass rounded-2xl p-8 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-6">
+                  <Phone size={28} className="text-primary" />
+                </div>
+                <h3 className="text-white font-black text-2xl mb-3">
+                  Have Questions?
+                </h3>
+                <p className="text-white/55 text-sm leading-relaxed mb-6">
+                  Our flooring specialists are happy to answer any questions about
+                  {" "}{flooring.name.toLowerCase()} flooring — care, installation,
+                  pricing, and more.
+                </p>
+                <a
+                  href="tel:2508607847"
+                  className="block w-full text-center bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all mb-3"
+                >
+                  Call (250) 860-7847
+                </a>
+                <Link
+                  href="/contact"
+                  className="block w-full text-center bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all"
+                >
+                  Send a Message
+                </Link>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ section */}
+      {flooring.faqs && flooring.faqs.length > 0 && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: flooring.faqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.q,
+                  acceptedAnswer: { "@type": "Answer", text: faq.a },
+                })),
+              }),
+            }}
+          />
+          <section className="py-20 bg-white">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <AnimateOnScroll className="text-center mb-12">
+                <span className="section-label mb-4">FAQ</span>
+                <h2 className="text-4xl font-black text-charcoal mt-4">
+                  Common Questions About {flooring.name}
+                </h2>
+              </AnimateOnScroll>
+              <div className="space-y-4">
+                {flooring.faqs.map((faq, i) => (
+                  <AnimateOnScroll key={faq.q} delay={i * 0.07}>
+                    <details className="group bg-light rounded-2xl border border-gray-200 overflow-hidden">
+                      <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-bold text-charcoal hover:text-primary transition-colors">
+                        <span>{faq.q}</span>
+                        <span className="text-gray-400 group-open:rotate-45 transition-transform duration-200 shrink-0 text-2xl leading-none">+</span>
+                      </summary>
+                      <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                        {faq.a}
+                      </div>
+                    </details>
+                  </AnimateOnScroll>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* Other flooring types */}
+      <section className="py-16 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-10">
+            <h2 className="text-3xl font-black text-charcoal">
+              Explore Other Flooring Types
+            </h2>
+          </AnimateOnScroll>
+          <div className="flex flex-wrap justify-center gap-3">
+            {flooringTypes
+              .filter((f) => f.slug !== flooring.slug)
+              .map((f, i) => (
+                <AnimateOnScroll key={f.slug} delay={i * 0.05}>
+                  <Link
+                    href={`/flooring/${f.slug}`}
+                    className="px-5 py-2.5 bg-white border border-gray-200 hover:border-primary hover:bg-primary/5 rounded-xl text-charcoal font-semibold text-sm transition-all card-hover"
+                  >
+                    {f.name}
+                  </Link>
+                </AnimateOnScroll>
+              ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
