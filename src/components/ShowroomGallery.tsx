@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import bp from "@/lib/bp";
@@ -46,12 +45,13 @@ export default function ShowroomGallery() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: (i % 4) * 0.07 }}
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={photo.src}
               alt={photo.alt}
-              fill
-              className="object-cover group-hover:scale-110 transition-transform duration-500"
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/25 transition-colors duration-300 flex items-center justify-center">
               <span className="text-white font-bold text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
@@ -101,16 +101,14 @@ export default function ShowroomGallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.92 }}
               transition={{ duration: 0.2 }}
-              className="relative w-full max-w-4xl aspect-[4/3]"
+              className="relative w-full max-w-4xl aspect-[4/3] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={photos[lightboxIndex].src}
                 alt={photos[lightboxIndex].alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
+                className="max-w-full max-h-full object-contain"
               />
             </motion.div>
 
