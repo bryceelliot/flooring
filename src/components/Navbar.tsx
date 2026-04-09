@@ -24,7 +24,9 @@ const navLinks = [
   { name: "Flooring", href: "/flooring", hasDropdown: true },
   { name: "Room Visualizer", href: "/room-visualizer" },
   { name: "Sales", href: "/sales" },
+  { name: "Financing", href: "/financing" },
   { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contact" },
 ];
 

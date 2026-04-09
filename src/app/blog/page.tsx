@@ -3,83 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { posts, categoryColors } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
   title: "Flooring Blog — Tips, Guides & Trends",
   description:
     "Flooring tips, inspiration, and guides from the experts at Kelowna Flooring Superstore. Covering hardwood, carpet, vinyl plank, tile and more.",
   alternates: { canonical: "https://www.kelownaflooringsuperstore.com/blog" },
-};
-
-const posts = [
-  {
-    title: "Vinyl Plank vs Laminate: Which is Right for Your Home?",
-    excerpt: "Two of the most popular flooring choices in Kelowna — but which one is right for your space? We break down the key differences in durability, waterproofing, and cost.",
-    category: "Buying Guide",
-    readTime: "5 min read",
-    date: "Mar 2026",
-    img: "/assets/images/hero-kurang.webp",
-    focal: "center 45%",
-    slug: "vinyl-plank-vs-laminate",
-  },
-  {
-    title: "How to Care for Your Hardwood Floors in the Okanagan",
-    excerpt: "The Okanagan's dry climate creates unique challenges for hardwood flooring. Learn how to maintain proper humidity levels and keep your floors beautiful year-round.",
-    category: "Maintenance",
-    readTime: "4 min read",
-    date: "Feb 2026",
-    img: "/assets/images/hero-walnut.webp",
-    focal: "center 55%",
-    slug: "hardwood-care-okanagan",
-  },
-  {
-    title: "The Best Flooring for Kelowna Basements",
-    excerpt: "Basements require special consideration — moisture, temperature fluctuations, and comfort all factor in. Here's what our experts recommend for Kelowna homes.",
-    category: "Room Guide",
-    readTime: "6 min read",
-    date: "Jan 2026",
-    img: "/assets/images/showroom-08.webp",
-    focal: "center 50%",
-    slug: "best-basement-flooring-kelowna",
-  },
-  {
-    title: "Carpet Buying Guide: Pile Height, Fibre & More",
-    excerpt: "Not all carpet is created equal. From pile height to fibre type to density ratings — here's everything you need to know before choosing carpet for your home.",
-    category: "Buying Guide",
-    readTime: "7 min read",
-    date: "Dec 2025",
-    img: "/assets/images/showroom-10.webp",
-    focal: "center 40%",
-    slug: "carpet-buying-guide",
-  },
-  {
-    title: "Natural Stone Tile: Marble, Travertine, or Granite?",
-    excerpt: "Natural stone adds unmatched elegance to any space, but each type has unique characteristics. We explain the differences and help you choose the right stone.",
-    category: "Tile & Stone",
-    readTime: "5 min read",
-    date: "Nov 2025",
-    img: "/assets/images/showroom-07.webp",
-    focal: "center 50%",
-    slug: "natural-stone-tile-guide",
-  },
-  {
-    title: "Top Flooring Trends for Kelowna Homes in 2026",
-    excerpt: "From wide-plank hardwood to patterned tile and ultra-realistic LVP — discover the flooring trends our designers are seeing in Kelowna homes this year.",
-    category: "Trends",
-    readTime: "4 min read",
-    date: "Oct 2025",
-    img: "/assets/images/hero-oak.webp",
-    focal: "center 40%",
-    slug: "flooring-trends-2026",
-  },
-];
-
-const categoryColors: Record<string, string> = {
-  "Buying Guide": "bg-primary",
-  "Maintenance": "bg-[#243566]",
-  "Room Guide": "bg-charcoal",
-  "Tile & Stone": "bg-[#2d4a7a]",
-  "Trends": "bg-accent",
 };
 
 export default function BlogPage() {

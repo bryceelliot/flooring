@@ -42,8 +42,11 @@ const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "All Flooring", href: "/flooring" },
   { name: "Free Estimate", href: "/estimates" },
+  { name: "Financing", href: "/financing" },
   { name: "Sales & Promotions", href: "/sales" },
+  { name: "Room Visualizer", href: "/room-visualizer" },
   { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contact" },
 ];
 

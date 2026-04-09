@@ -69,14 +69,14 @@ const faqSchema = {
 
 /* ─── Data ──────────────────────────────────────────────────── */
 const flooring = [
-  { name: "Laminate", href: "/flooring/laminate", img: "/assets/images/showroom-08.webp", tag: "Popular" },
-  { name: "Hardwood", href: "/flooring/hardwood", img: "/assets/images/hero-walnut.webp", tag: "Premium" },
-  { name: "Carpet", href: "/flooring/carpet", img: "/assets/images/showroom-10.webp", tag: "Cozy" },
-  { name: "Vinyl Plank", href: "/flooring/vinyl-plank", img: "/assets/images/hero-kurang.webp", tag: "Waterproof" },
-  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/showroom-05.webp", tag: "Durable" },
-  { name: "Tile", href: "/flooring/tile", img: "/assets/images/showroom-07.webp", tag: "Elegant" },
-  { name: "Commercial", href: "/flooring/commercial", img: "/assets/images/showroom-01.webp", tag: "Business" },
-  { name: "Area Rugs", href: "/flooring/area-rugs", img: "/assets/images/showroom-04.webp", tag: "Style" },
+  { name: "Laminate", href: "/flooring/laminate", img: "/assets/images/showroom-08.webp", tag: "Popular", sale: true },
+  { name: "Hardwood", href: "/flooring/hardwood", img: "/assets/images/hero-walnut.webp", tag: "Premium", sale: false },
+  { name: "Carpet", href: "/flooring/carpet", img: "/assets/images/showroom-10.webp", tag: "Cozy", sale: true },
+  { name: "Vinyl Plank", href: "/flooring/vinyl-plank", img: "/assets/images/hero-kurang.webp", tag: "Waterproof", sale: false },
+  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/showroom-05.webp", tag: "Durable", sale: false },
+  { name: "Tile", href: "/flooring/tile", img: "/assets/images/showroom-07.webp", tag: "Elegant", sale: false },
+  { name: "Commercial", href: "/flooring/commercial", img: "/assets/images/showroom-01.webp", tag: "Business", sale: false },
+  { name: "Area Rugs", href: "/flooring/area-rugs", img: "/assets/images/showroom-04.webp", tag: "Style", sale: true },
 ];
 
 const whyUs = [
@@ -256,11 +256,16 @@ export default function HomePage() {
                   />
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/80 via-[#0d1526]/20 to-transparent group-hover:from-primary/80 transition-colors duration-300" />
-                  {/* Tag chip */}
-                  <div className="absolute top-3 left-3">
+                  {/* Tag chip + On Sale badge */}
+                  <div className="absolute top-3 left-3 flex flex-col gap-1.5">
                     <span className="inline-block bg-white/15 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full border border-white/20">
                       {f.tag}
                     </span>
+                    {f.sale && (
+                      <span className="inline-block bg-accent text-white text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-full shadow-lg shadow-accent/40">
+                        On Sale
+                      </span>
+                    )}
                   </div>
                   {/* Name */}
                   <div className="absolute bottom-4 left-4 right-4">
@@ -415,6 +420,105 @@ export default function HomePage() {
               </svg>
               Read All Google Reviews
               <ExternalLink size={13} />
+            </a>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ── Testimonials ──────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-14">
+            <span className="section-label mb-4">Customer Reviews</span>
+            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+              What Kelowna Homeowners<br />
+              <span className="gradient-text">Are Saying</span>
+            </h2>
+            <div className="flex items-center justify-center gap-1.5 mt-5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+              ))}
+              <span className="text-gray-500 text-sm ml-2">4.9 / 5 — 47 reviews</span>
+            </div>
+          </AnimateOnScroll>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sarah M.",
+                location: "Kelowna, BC",
+                rating: 5,
+                text: "Absolutely blown away by the service and quality. They came to our home, measured everything, and had samples we never would have found on our own. The vinyl plank they recommended is stunning — we've had so many compliments.",
+                product: "Luxury Vinyl Plank",
+              },
+              {
+                name: "Dave & Lisa T.",
+                location: "West Kelowna, BC",
+                rating: 5,
+                text: "We did our entire main floor — about 1,800 sq ft of hardwood. The installation crew was professional, tidy, and finished ahead of schedule. The end result looks like it belongs in a magazine. Worth every penny.",
+                product: "Engineered Hardwood",
+              },
+              {
+                name: "Karen P.",
+                location: "Lake Country, BC",
+                rating: 5,
+                text: "Used them for carpet in three bedrooms. The team was patient with our indecision — showed us dozens of options without any pressure. Pricing was very fair and installation was clean and fast. Would not hesitate to recommend.",
+                product: "Carpet",
+              },
+              {
+                name: "Mike R.",
+                location: "Kelowna, BC",
+                rating: 5,
+                text: "Had my basement done with LVP after a previous contractor used regular laminate that swelled. Night and day difference. These folks actually know what works in a basement. The floor looks incredible.",
+                product: "Luxury Vinyl Plank",
+              },
+              {
+                name: "Jennifer W.",
+                location: "Peachland, BC",
+                rating: 5,
+                text: "Renovated our kitchen and entryway with large-format tile. The selection at their showroom is huge. Installation was precise — not a single tile out of line. Couldn't be happier with the result.",
+                product: "Porcelain Tile",
+              },
+              {
+                name: "Chris & Amy H.",
+                location: "Kelowna, BC",
+                rating: 5,
+                text: "Got a free estimate, loved the price, booked the install — all within a week. The whole process was smooth from start to finish. Our new hardwood floors completely transformed the feel of our home.",
+                product: "Hardwood",
+              },
+            ].map((review, i) => (
+              <AnimateOnScroll key={review.name} delay={i * 0.07}>
+                <div className="bg-light rounded-2xl p-6 border border-gray-100 h-full flex flex-col">
+                  <div className="flex items-center gap-0.5 mb-4">
+                    {[...Array(review.rating)].map((_, j) => (
+                      <Star key={j} size={14} className="text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div>
+                      <p className="font-bold text-charcoal text-sm">{review.name}</p>
+                      <p className="text-gray-400 text-xs">{review.location}</p>
+                    </div>
+                    <span className="text-xs bg-primary/10 text-primary font-semibold px-2.5 py-1 rounded-full">
+                      {review.product}
+                    </span>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll className="text-center mt-10">
+            <a
+              href="https://www.google.com/maps/place/Kelowna+Flooring+Superstore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all"
+            >
+              See all reviews on Google <ExternalLink size={13} />
             </a>
           </AnimateOnScroll>
         </div>

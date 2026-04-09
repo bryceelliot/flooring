@@ -170,11 +170,27 @@ export default function ContactPage() {
       </section>
 
       {/* ── Map ───────────────────────────────────────────────── */}
-      <section className="h-96">
+      <section className="relative">
+        <div className="bg-primary px-4 sm:px-6 py-4 flex items-center justify-between max-w-none">
+          <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <div className="flex items-center gap-3 text-white">
+              <MapPin size={16} className="text-accent" />
+              <span className="font-semibold text-sm">Unit 16, 830 McCurdy Place, Kelowna, BC V1X 7S5</span>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Unit+16+830+McCurdy+Place+Kelowna+BC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent font-bold text-xs hover:text-white transition-colors"
+            >
+              Open in Google Maps →
+            </a>
+          </div>
+        </div>
         <iframe
           title="Kelowna Flooring Superstore Map"
           width="100%"
-          height="100%"
+          height="480"
           style={{ border: 0, display: "block" }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
