@@ -7,9 +7,12 @@ import { Upload, Eye, Smartphone, Monitor, ArrowRight, Phone } from "lucide-reac
 import { useEffect } from "react";
 
 const examples = [
-  { src: "/assets/images/hero-walnut.webp", focal: "center 55%", label: "Walnut Natural — Engineered Hardwood" },
-  { src: "/assets/images/hero-kurang.webp", focal: "center 45%", label: "Wildwood Kurang — Luxury Vinyl Plank" },
-  { src: "/assets/images/hero-oak.webp",    focal: "center 40%", label: "Wildwood Oak — Engineered Hardwood" },
+  { src: "/assets/images/hero-walnut.webp",  focal: "center 55%", label: "Walnut Natural",        type: "Engineered Hardwood" },
+  { src: "/assets/images/hero-kurang.webp",  focal: "center 45%", label: "Wildwood Kurang",       type: "Luxury Vinyl Plank" },
+  { src: "/assets/images/hero-oak.webp",     focal: "center 40%", label: "Wildwood Oak",          type: "Engineered Hardwood" },
+  { src: "/assets/images/showroom-08.webp",  focal: "center 50%", label: "Heritage Stone Grey",   type: "Laminate" },
+  { src: "/assets/images/showroom-07.webp",  focal: "center 50%", label: "Calacatta Marble Look", type: "Porcelain Tile" },
+  { src: "/assets/images/showroom-10.webp",  focal: "center 40%", label: "Plush Dove",            type: "Carpet" },
 ];
 
 const steps = [
@@ -143,19 +146,24 @@ export default function RoomVisualizerPage() {
             </p>
           </AnimateOnScroll>
 
-          <div className="grid lg:grid-cols-3 gap-5 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {examples.map((ex, i) => (
-              <AnimateOnScroll key={ex.label} delay={i * 0.1}>
-                <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg group card-hover">
+              <AnimateOnScroll key={ex.label} delay={i * 0.08}>
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg group card-hover">
                   <Image
                     src={ex.src}
-                    alt={ex.label}
+                    alt={`${ex.label} ${ex.type}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     style={{ objectPosition: ex.focal }}
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/75 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/80 via-[#0d1526]/20 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-primary/80 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full">
+                      {ex.type}
+                    </span>
+                  </div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="text-white font-bold text-sm">{ex.label}</p>
                     <button

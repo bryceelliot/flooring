@@ -111,8 +111,35 @@ export default async function BlogPostPage({
 
   const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    image: `https://www.kelownaflooringsuperstore.com${post.img}`,
+    datePublished: post.date,
+    author: {
+      "@type": "Organization",
+      name: "Kelowna Flooring Superstore",
+      url: "https://www.kelownaflooringsuperstore.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Kelowna Flooring Superstore",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.kelownaflooringsuperstore.com/logo.webp",
+      },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image

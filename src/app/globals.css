@@ -58,10 +58,7 @@ body {
 .animate-pulse-ring { animation: pulse-ring 2.5s ease-in-out infinite; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #2a3f7a 0%, #E8423C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E8423C;
 }
 
 .shimmer-text {

@@ -166,6 +166,65 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Team ──────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-14">
+            <span className="section-label mb-4">Meet the Team</span>
+            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+              The People Behind<br />
+              <span className="gradient-text">Your New Floor</span>
+            </h2>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
+              Our team brings decades of combined flooring experience — and a genuine passion for helping Kelowna homeowners find the perfect floor.
+            </p>
+          </AnimateOnScroll>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                name: "Shaun",
+                role: "Showroom Specialist",
+                bio: "Shaun has been helping Kelowna homeowners navigate flooring choices for years. Known for his patience, product knowledge, and ability to match the perfect floor to any lifestyle and budget.",
+                initial: "S",
+                color: "bg-primary",
+              },
+              {
+                name: "Selina",
+                role: "Design Consultant",
+                bio: "Selina brings a designer's eye to every consultation. She specialises in helping customers visualise how different flooring choices will look in their space — and loves the transformation reveal.",
+                initial: "Se",
+                color: "bg-accent",
+              },
+              {
+                name: "Our Install Crew",
+                role: "Professional Installers",
+                bio: "Our installation teams are experienced, meticulous, and treat every home like their own. From subfloor prep to final trim, they take pride in flawless results every time.",
+                initial: "IC",
+                color: "bg-[#243566]",
+              },
+            ].map((member, i) => (
+              <AnimateOnScroll key={member.name} delay={i * 0.1}>
+                <div className="bg-light rounded-2xl p-7 border border-gray-100 flex flex-col items-center text-center h-full">
+                  <div className={`w-16 h-16 rounded-2xl ${member.color} text-white font-black text-xl flex items-center justify-center mb-5 shadow-lg`}>
+                    {member.initial}
+                  </div>
+                  <h3 className="font-black text-charcoal text-lg">{member.name}</h3>
+                  <p className="text-accent text-xs font-bold tracking-wider uppercase mt-1 mb-4">{member.role}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{member.bio}</p>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll className="text-center mt-10">
+            <p className="text-gray-400 text-sm">
+              Come meet the team in person at our showroom on McCurdy Place — we&apos;d love to help you find your perfect floor.
+            </p>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* ── Featured floors ───────────────────────────────────── */}
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

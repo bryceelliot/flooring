@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Script from "next/script";
+import ScrollCTA from "@/components/ScrollCTA";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -105,6 +106,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ScrollCTA />
         {/* Sticky mobile call/estimate bar */}
         <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#0d1526] border-t border-white/10 flex">
           <a
