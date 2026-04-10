@@ -4,6 +4,7 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import HeroSection from "@/components/HeroSection";
 import ShowroomStrip from "@/components/ShowroomStrip";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import BrandPartners from "@/components/BrandPartners";
 import VideoGallery from "@/components/VideoGallery";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -284,6 +285,65 @@ export default function HomePage() {
             <Link href="/flooring" className="btn-primary text-sm">
               View All Flooring Types <ArrowRight size={16} />
             </Link>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ── Before / After ────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-14">
+            <span className="section-label mb-4">The Transformation</span>
+            <h2 className="text-4xl sm:text-5xl font-black text-charcoal mt-4">
+              See the Difference<br />
+              <span className="gradient-text">A New Floor Makes</span>
+            </h2>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
+              Drag the slider to compare before and after. This is the kind of transformation our team delivers every week.
+            </p>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll>
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="h-80 sm:h-96">
+                <BeforeAfterSlider
+                  before="/assets/images/showroom-08.webp"
+                  after="/assets/images/hero-walnut.webp"
+                  beforeAlt="Old laminate flooring"
+                  afterAlt="New engineered hardwood installed"
+                />
+              </div>
+              <div className="space-y-5">
+                <h3 className="text-2xl sm:text-3xl font-black text-charcoal leading-tight">
+                  From Dated to Stunning —<br />
+                  <span className="text-primary">In Just Days</span>
+                </h3>
+                <p className="text-gray-500 leading-relaxed">
+                  Most of our installations are completed in 1–3 days. Our experienced crews handle everything — from removing the old floor to laying the last plank perfectly.
+                </p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Old floor removal & disposal included",
+                    "Subfloor prep & leveling",
+                    "Clean installation with minimal disruption",
+                    "Complete in 1–3 days for most homes",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-gray-600 text-sm">
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Link href="/estimates" className="btn-primary text-sm">
+                    Book Free Estimate <ArrowRight size={15} />
+                  </Link>
+                  <Link href="/flooring" className="inline-flex items-center gap-2 border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
+                    Browse Flooring
+                  </Link>
+                </div>
+              </div>
+            </div>
           </AnimateOnScroll>
         </div>
       </section>

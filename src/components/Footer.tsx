@@ -1,6 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Send } from "lucide-react";
 
 function FacebookIcon() {
   return (
@@ -58,9 +61,66 @@ const hours = [
   { day: "Sunday", time: "Closed" },
 ];
 
+function NewsletterStrip() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    try {
+      const res = await fetch("https://formspree.io/kfssteam@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ email, _subject: "Newsletter Signup — KFSS Website" }),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <div className="bg-primary border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div>
+            <p className="text-white font-bold text-base">Get Sale Alerts & Flooring Tips</p>
+            <p className="text-white/50 text-sm mt-0.5">No spam. Just deals and advice from our Kelowna team.</p>
+          </div>
+          {status === "sent" ? (
+            <p className="text-accent font-bold text-sm">You&apos;re subscribed — thanks!</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex gap-2 w-full sm:w-auto">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email address"
+                required
+                className="flex-1 sm:w-64 bg-white/10 border border-white/20 text-white placeholder-white/35 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition-colors"
+              />
+              <button
+                type="submit"
+                className="bg-accent hover:bg-accent-dark text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-colors flex items-center gap-1.5 shrink-0"
+              >
+                <Send size={14} /> Subscribe
+              </button>
+            </form>
+          )}
+        </div>
+        {status === "error" && (
+          <p className="text-red-400 text-xs mt-2 text-right">Something went wrong — please try again.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="bg-[#0d1526] text-white border-t-4 border-accent">
+      <NewsletterStrip />
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand column */}

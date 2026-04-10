@@ -2,6 +2,7 @@ export const dynamic = "force-static";
 
 import type { MetadataRoute } from "next";
 import { flooringTypes } from "@/lib/flooring-data";
+import { posts } from "@/lib/blog-data";
 
 const baseUrl = "https://www.kelownaflooringsuperstore.com";
 
@@ -13,14 +14,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const blogPages = posts.map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/flooring`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: baseUrl,                           lastModified: new Date(), changeFrequency: "weekly",   priority: 1.0 },
+    { url: `${baseUrl}/flooring`,             lastModified: new Date(), changeFrequency: "weekly",   priority: 0.9 },
+    { url: `${baseUrl}/estimates`,            lastModified: new Date(), changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${baseUrl}/contact`,              lastModified: new Date(), changeFrequency: "monthly",  priority: 0.8 },
+    { url: `${baseUrl}/sales`,                lastModified: new Date(), changeFrequency: "weekly",   priority: 0.8 },
+    { url: `${baseUrl}/financing`,            lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${baseUrl}/room-visualizer`,      lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${baseUrl}/about`,                lastModified: new Date(), changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${baseUrl}/blog`,                 lastModified: new Date(), changeFrequency: "weekly",   priority: 0.7 },
+    { url: `${baseUrl}/faq`,                  lastModified: new Date(), changeFrequency: "monthly",  priority: 0.6 },
     ...flooringPages,
-    { url: `${baseUrl}/estimates`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/sales`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
+    ...blogPages,
   ];
 }

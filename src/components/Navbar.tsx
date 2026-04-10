@@ -8,32 +8,52 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown, MapPin } from "lucide-react";
 
 const flooringTypes = [
-  { name: "Laminate", href: "/flooring/laminate", desc: "Affordable & durable" },
-  { name: "Hardwood", href: "/flooring/hardwood", desc: "Classic & timeless" },
-  { name: "Carpet", href: "/flooring/carpet", desc: "Soft & warm" },
-  { name: "Vinyl Plank", href: "/flooring/vinyl-plank", desc: "Waterproof & versatile" },
+  { name: "Laminate",       href: "/flooring/laminate",       desc: "Affordable & durable" },
+  { name: "Hardwood",       href: "/flooring/hardwood",       desc: "Classic & timeless" },
+  { name: "Carpet",         href: "/flooring/carpet",         desc: "Soft & warm" },
+  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    desc: "Waterproof & versatile" },
   { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", desc: "Resilient & eco-friendly" },
-  { name: "Tile", href: "/flooring/tile", desc: "Elegant & lasting" },
-  { name: "Commercial", href: "/flooring/commercial", desc: "Built for business" },
-  { name: "Area Rugs", href: "/flooring/area-rugs", desc: "Style & comfort" },
+  { name: "Tile",           href: "/flooring/tile",           desc: "Elegant & lasting" },
+  { name: "Commercial",     href: "/flooring/commercial",     desc: "Built for business" },
+  { name: "Area Rugs",      href: "/flooring/area-rugs",      desc: "Style & comfort" },
 ];
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Flooring", href: "/flooring", hasDropdown: true },
-  { name: "Room Visualizer", href: "/room-visualizer" },
-  { name: "Sales", href: "/sales" },
-  { name: "Financing", href: "/financing" },
-  { name: "Blog", href: "/blog" },
-  { name: "FAQ", href: "/faq" },
+// "More" dropdown links
+const moreLinks = [
+  { name: "Room Visualizer", href: "/room-visualizer", desc: "See floors in your space" },
+  { name: "Financing",       href: "/financing",       desc: "Flexible payment options" },
+  { name: "FAQ",             href: "/faq",             desc: "Common questions answered" },
+  { name: "About Us",        href: "/about",           desc: "Our story & franchise" },
+  { name: "Blog",            href: "/blog",            desc: "Tips, guides & trends" },
+];
+
+// Primary nav — kept short so desktop doesn't overflow
+const primaryLinks = [
+  { name: "Home",    href: "/" },
+  { name: "Flooring", href: "/flooring", hasDropdown: "flooring" },
+  { name: "Sales",   href: "/sales" },
   { name: "Contact", href: "/contact" },
+  { name: "More",    href: "#",          hasDropdown: "more" },
+];
+
+// All links shown flat in mobile menu
+const mobileLinks = [
+  { name: "Home",            href: "/" },
+  { name: "About",           href: "/about" },
+  { name: "Flooring",        href: "/flooring", hasDropdown: true },
+  { name: "Room Visualizer", href: "/room-visualizer" },
+  { name: "Sales",           href: "/sales" },
+  { name: "Financing",       href: "/financing" },
+  { name: "Blog",            href: "/blog" },
+  { name: "FAQ",             href: "/faq" },
+  { name: "Contact",         href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen]                       = useState(false);
+  const [scrolled, setScrolled]                   = useState(false);
+  const [flooringOpen, setFlooringOpen]           = useState(false);
+  const [moreOpen, setMoreOpen]                   = useState(false);
   const [mobileFlooringOpen, setMobileFlooringOpen] = useState(false);
   const pathname = usePathname();
 
@@ -45,7 +65,8 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsOpen(false);
-    setDropdownOpen(false);
+    setFlooringOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -103,72 +124,105 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-0.5">
-            {navLinks.map((link) =>
-              link.hasDropdown ? (
-                <div
-                  key={link.name}
-                  className="relative"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
-                >
-                  <button
-                    className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
-                      pathname.startsWith("/flooring")
-                        ? "text-accent"
-                        : "text-white/75 hover:text-white hover:bg-white/5"
-                    }`}
+            {primaryLinks.map((link) => {
+              if (link.hasDropdown === "flooring") {
+                return (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => setFlooringOpen(true)}
+                    onMouseLeave={() => setFlooringOpen(false)}
                   >
-                    {link.name}
-                    <ChevronDown
-                      size={13}
-                      className={`transition-transform duration-200 ${
-                        dropdownOpen ? "rotate-180" : ""
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                        pathname.startsWith("/flooring")
+                          ? "text-accent"
+                          : "text-white/75 hover:text-white hover:bg-white/5"
                       }`}
-                    />
-                  </button>
-
-                  <AnimatePresence>
-                    {dropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 6, scale: 0.97 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 6, scale: 0.97 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-charcoal border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden"
-                      >
-                        <Link
-                          href="/flooring"
-                          className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 hover:bg-primary/20 transition-colors group"
+                    >
+                      {link.name}
+                      <ChevronDown size={13} className={`transition-transform duration-200 ${flooringOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {flooringOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-charcoal border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden"
                         >
-                          <span className="text-sm font-bold text-accent">
-                            All Flooring Types
-                          </span>
-                          <ChevronDown
-                            size={14}
-                            className="text-white/30 -rotate-90 group-hover:text-accent transition-colors"
-                          />
-                        </Link>
-                        <div className="grid grid-cols-2 gap-px p-1 bg-white/5">
-                          {flooringTypes.map((type) => (
+                          <Link
+                            href="/flooring"
+                            className="flex items-center justify-between px-5 py-3.5 border-b border-white/10 hover:bg-primary/20 transition-colors group"
+                          >
+                            <span className="text-sm font-bold text-accent">All Flooring Types</span>
+                            <ChevronDown size={14} className="text-white/30 -rotate-90 group-hover:text-accent transition-colors" />
+                          </Link>
+                          <div className="grid grid-cols-2 gap-px p-1 bg-white/5">
+                            {flooringTypes.map((type) => (
+                              <Link
+                                key={type.href}
+                                href={type.href}
+                                className="flex flex-col px-4 py-3 rounded-xl hover:bg-primary/25 transition-colors group"
+                              >
+                                <span className="text-sm font-semibold text-white/85 group-hover:text-white transition-colors">{type.name}</span>
+                                <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors mt-0.5">{type.desc}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              if (link.hasDropdown === "more") {
+                return (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => setMoreOpen(true)}
+                    onMouseLeave={() => setMoreOpen(false)}
+                  >
+                    <button
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-lg transition-all ${
+                        moreLinks.some((m) => pathname === m.href)
+                          ? "text-accent"
+                          : "text-white/75 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      {link.name}
+                      <ChevronDown size={13} className={`transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {moreOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.97 }}
+                          transition={{ duration: 0.15, ease: "easeOut" }}
+                          className="absolute top-full right-0 mt-2 w-56 bg-charcoal border border-white/10 rounded-2xl shadow-2xl shadow-black/40 overflow-hidden p-1.5"
+                        >
+                          {moreLinks.map((item) => (
                             <Link
-                              key={type.href}
-                              href={type.href}
+                              key={item.href}
+                              href={item.href}
                               className="flex flex-col px-4 py-3 rounded-xl hover:bg-primary/25 transition-colors group"
                             >
-                              <span className="text-sm font-semibold text-white/85 group-hover:text-white transition-colors">
-                                {type.name}
-                              </span>
-                              <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors mt-0.5">
-                                {type.desc}
-                              </span>
+                              <span className="text-sm font-semibold text-white/85 group-hover:text-white transition-colors">{item.name}</span>
+                              <span className="text-xs text-white/40 group-hover:text-white/60 transition-colors mt-0.5">{item.desc}</span>
                             </Link>
                           ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -180,8 +234,8 @@ export default function Navbar() {
                 >
                   {link.name}
                 </Link>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -214,7 +268,7 @@ export default function Navbar() {
             className="lg:hidden overflow-hidden border-t border-white/8"
           >
             <div className="bg-dark px-4 py-5 space-y-1">
-              {navLinks.map((link) =>
+              {mobileLinks.map((link) =>
                 link.hasDropdown ? (
                   <div key={link.name}>
                     <button
@@ -222,12 +276,7 @@ export default function Navbar() {
                       className="flex items-center justify-between w-full px-4 py-3 text-white/80 font-semibold rounded-xl hover:bg-white/5 transition-colors"
                     >
                       Flooring
-                      <ChevronDown
-                        size={16}
-                        className={`transition-transform ${
-                          mobileFlooringOpen ? "rotate-180" : ""
-                        }`}
-                      />
+                      <ChevronDown size={16} className={`transition-transform ${mobileFlooringOpen ? "rotate-180" : ""}`} />
                     </button>
                     <AnimatePresence>
                       {mobileFlooringOpen && (
@@ -237,10 +286,7 @@ export default function Navbar() {
                           exit={{ opacity: 0, height: 0 }}
                           className="overflow-hidden pl-4 mt-1 space-y-0.5"
                         >
-                          <Link
-                            href="/flooring"
-                            className="block px-4 py-2.5 text-accent text-sm font-bold rounded-lg hover:bg-primary/15 transition-colors"
-                          >
+                          <Link href="/flooring" className="block px-4 py-2.5 text-accent text-sm font-bold rounded-lg hover:bg-primary/15 transition-colors">
                             All Flooring Types
                           </Link>
                           {flooringTypes.map((type) => (
