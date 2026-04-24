@@ -3,20 +3,24 @@
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 
-/* All links point to Canadian manufacturer / brand sites. */
+/* All logos are real brand marks; hrefs verified to resolve (200/301). */
 const brands = [
-  { name: "Mohawk",             src: "/assets/images/brands/mohawk.svg",      w: 148, h: 42, href: "https://www.mohawkflooring.com/" },
-  { name: "Beaulieu Canada",    src: "/assets/images/brands/beaulieu.jpg",    w: 160, h: 42, href: "https://beaulieucanada.com/" },
-  { name: "Shaw Floors",        src: "/assets/images/brands/shaw.webp",       w: 130, h: 42, href: "https://shawfloors.com/" },
-  { name: "Grandeur Flooring",  src: "/assets/images/brands/grandeur.svg",    w: 152, h: 42, href: "https://grandeurflooring.ca/" },
-  { name: "Aladdin Commercial", src: "/assets/images/brands/aladdin.svg",     w: 180, h: 42, href: "https://www.aladdincommercial.com/" },
-  { name: "Ames Tile",          src: "/assets/images/brands/ames.png",        w: 110, h: 42, href: "https://amestile.com/" },
-  { name: "Daltile",            src: "/assets/images/brands/daltile.png",     w: 110, h: 42, href: "https://www.daltile.com/" },
-  { name: "Opus Hardwood",      src: "/assets/images/brands/opus.svg",        w: 188, h: 42, href: "https://opushardwood.com/" },
-  { name: "Godfrey Hirst",      src: "/assets/images/brands/godfrey.png",     w: 200, h: 42, href: "https://www.godfreyhirst.com/" },
-  { name: "DreamWeaver",        src: "/assets/images/brands/dreamweaver.svg", w: 196, h: 42, href: "https://dreamweavercarpet.com/" },
-  { name: "Fuzion Flooring",    src: "/assets/images/brands/fuzion.jpg",      w: 150, h: 42, href: "https://fuzionflooring.com/" },
-  { name: "TORLYS",             src: "/assets/images/brands/torlys.svg",      w: 120, h: 42, href: "https://www.torlys.com/" },
+  { name: "Mohawk",             src: "/assets/images/brands/mohawk-real.svg",        w: 150, h: 42, href: "https://www.mohawkflooring.com/" },
+  { name: "Beaulieu Canada",    src: "/assets/images/brands/beaulieu-real.png",      w: 160, h: 42, href: "https://beaulieucanada.com/" },
+  { name: "Shaw Floors",        src: "/assets/images/brands/shaw-industries.svg",    w: 140, h: 42, href: "https://shawfloors.com/" },
+  { name: "Grandeur Flooring",  src: "/assets/images/brands/grandeur-real.png",      w: 100, h: 42, href: "https://grandeurflooring.ca/" },
+  { name: "Aladdin Commercial", src: "/assets/images/brands/aladdin-real.png",       w: 170, h: 42, href: "https://www.aladdincommercial.com/" },
+  { name: "Ames Tile",          src: "/assets/images/brands/ames.png",               w: 110, h: 42, href: "https://amestile.com/" },
+  { name: "Daltile",            src: "/assets/images/brands/daltile.png",            w: 110, h: 42, href: "https://www.daltile.com/" },
+  { name: "Opus Floors Canada", src: "/assets/images/brands/opus-real.png",          w: 160, h: 42, href: "https://opusfloors.ca/" },
+  { name: "Godfrey Hirst",      src: "/assets/images/brands/godfrey-hirst.png",      w: 170, h: 42, href: "https://www.godfreyhirst.com/" },
+  { name: "DreamWeaver",        src: "/assets/images/brands/dreamweaver-real.svg",   w: 170, h: 42, href: "https://www.dreamweavercarpet.com/" },
+  { name: "Fuzion Flooring",    src: "/assets/images/brands/fuzion-real.svg",        w: 150, h: 42, href: "https://fuzionflooring.com/" },
+  { name: "TORLYS",             src: "/assets/images/brands/torlys.svg",             w: 120, h: 42, href: "https://www.torlys.com/" },
+  { name: "Vidar Flooring",     src: "/assets/images/brands/vidar-real.png",         w: 160, h: 42, href: "https://www.vidarflooring.com/" },
+  { name: "Home's Pros",        src: "/assets/images/brands/homespros-real.png",     w: 150, h: 48, href: "https://www.homespros.ca/" },
+  { name: "FloorTek",           src: "/assets/images/brands/floortek.svg",           w: 150, h: 42, href: "https://floortek.ca/" },
+  { name: "Twelve Oaks",        src: "/assets/images/brands/twelve-oaks-real.png",   w: 160, h: 48, href: "https://twelveoaks.ca/" },
 ];
 
 const doubled = [...brands, ...brands];
@@ -29,32 +33,39 @@ export default function BrandPartners() {
   const startScroll = useRef(0);
   const dragDistance = useRef(0);
 
-  /* Pointer-based drag-to-scroll (works for mouse + touch + pen) */
+  /* Pointer-based drag-to-scroll (works for mouse + touch + pen).
+   * NOTE: we intentionally do NOT call setPointerCapture — doing so routes
+   * subsequent pointer events (including the click!) to the track div and
+   * blocks the <a> anchors inside from navigating. */
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     const el = trackRef.current;
     if (!el) return;
-    setDragging(true);
     setPaused(true);
     startX.current = e.clientX;
     startScroll.current = el.scrollLeft;
     dragDistance.current = 0;
-    el.setPointerCapture(e.pointerId);
+    /* Only enter "dragging" once the user has actually moved — lets taps
+     * on the logo tiles navigate without being treated as a drag. */
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!dragging) return;
     const el = trackRef.current;
     if (!el) return;
+    /* No drag in progress until the pointer is down AND has moved > threshold */
+    if (startX.current === 0 && !dragging) return;
     const delta = e.clientX - startX.current;
-    dragDistance.current = Math.abs(delta);
+    const dist = Math.abs(delta);
+    if (!dragging && dist < 5) return;
+    if (!dragging) setDragging(true);
+    dragDistance.current = dist;
     el.scrollLeft = startScroll.current - delta;
   };
 
-  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+  const onPointerUp = () => {
     setDragging(false);
-    try { trackRef.current?.releasePointerCapture(e.pointerId); } catch {}
-    /* Resume auto-scroll after 2s of no drag */
-    setTimeout(() => setPaused(false), 2000);
+    startX.current = 0;
+    /* Resume auto-scroll after a short pause */
+    setTimeout(() => setPaused(false), 1500);
   };
 
   /* If the user drags more than a few pixels, block the anchor click that
@@ -105,7 +116,6 @@ export default function BrandPartners() {
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}
-          onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => { if (!dragging) setPaused(false); }}
           className={`flex gap-6 items-center overflow-x-auto no-scrollbar select-none ${
             dragging ? "cursor-grabbing" : "cursor-grab"
@@ -121,14 +131,14 @@ export default function BrandPartners() {
               aria-label={`Visit ${brand.name}`}
               onClick={onLinkClick}
               draggable={false}
-              className="flex items-center justify-center px-5 py-3 rounded-xl border border-gray-100 bg-gray-50 shrink-0 h-16 hover:border-accent/40 hover:bg-white hover:shadow-md transition-all"
+              className="flex items-center justify-center px-5 py-3 rounded-xl border border-gray-100 bg-gray-50 shrink-0 w-44 h-20 hover:border-accent/40 hover:bg-white hover:shadow-md transition-all"
             >
               <Image
                 src={brand.src}
                 alt={brand.name}
                 width={brand.w}
                 height={brand.h}
-                className="object-contain max-h-10 w-auto pointer-events-none"
+                className="object-contain max-h-12 max-w-[140px] w-auto h-auto pointer-events-none grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
                 unoptimized
                 draggable={false}
               />

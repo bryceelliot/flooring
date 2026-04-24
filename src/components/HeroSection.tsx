@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,20 +8,28 @@ import { Phone, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react
 
 const slides = [
   { src: "/assets/images/hero-walnut.webp",  type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
-  { src: "/assets/images/hero-kurang.webp",  type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
+  { src: "/assets/images/showroom-11.webp",  type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
   { src: "/assets/images/showroom-10.webp",  type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
   { src: "/assets/images/showroom-08.webp",  type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
   { src: "/assets/images/showroom-07.webp",  type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile"        },
   { src: "/assets/images/showroom-01.webp",  type: "Kelowna Showroom",    tagline: "Choose a sample. Arrives in 3–5 days.",focal: "center 50%", href: "/flooring"             },
 ];
 
-const INTERVAL = 5500;
+const INTERVAL = 5000;
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
+
+  /* Auto-resume after any manual pause so the slideshow never stays stuck. */
+  const pauseBriefly = useCallback(() => {
+    pauseBriefly();
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => setPaused(false), 8000);
+  }, []);
 
   useEffect(() => {
     if (paused) return;
@@ -29,12 +37,10 @@ export default function HeroSection() {
     return () => clearInterval(t);
   }, [next, paused]);
 
+  useEffect(() => () => { if (resumeTimer.current) clearTimeout(resumeTimer.current); }, []);
+
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
       {/* Background slideshow */}
@@ -163,14 +169,14 @@ export default function HeroSection() {
 
       {/* Arrows */}
       <button
-        onClick={() => { setCurrent((c) => (c - 1 + slides.length) % slides.length); setPaused(true); }}
+        onClick={() => { setCurrent((c) => (c - 1 + slides.length) % slides.length); pauseBriefly(); }}
         aria-label="Previous slide"
         className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
       >
         <ChevronLeft size={18} />
       </button>
       <button
-        onClick={() => { setCurrent((c) => (c + 1) % slides.length); setPaused(true); }}
+        onClick={() => { setCurrent((c) => (c + 1) % slides.length); pauseBriefly(); }}
         aria-label="Next slide"
         className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/10 hover:bg-white/22 border border-white/15 flex items-center justify-center text-white transition-all backdrop-blur-sm"
       >
@@ -183,7 +189,7 @@ export default function HeroSection() {
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => { setCurrent(i); setPaused(true); }}
+              onClick={() => { setCurrent(i); pauseBriefly(); }}
               aria-label={`Go to slide ${i + 1}`}
               className="relative flex items-center justify-center focus:outline-none"
               style={{ minWidth: 18, minHeight: 18 }}

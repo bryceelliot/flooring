@@ -123,6 +123,53 @@ export default function FinancingPage() {
         </div>
       </section>
 
+      {/* ── Financing partner ─────────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-light rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://ifinancecanada.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit iFinance Canada"
+                  className="shrink-0 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all"
+                >
+                  <Image
+                    src="/assets/images/brands/ifinance.svg"
+                    alt="iFinance — flooring financing partner"
+                    width={170}
+                    height={56}
+                    className="object-contain h-12 w-auto"
+                    unoptimized
+                  />
+                </a>
+                <div>
+                  <p className="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-1">
+                    Our Financing Partner
+                  </p>
+                  <h2 className="text-xl sm:text-2xl font-black text-charcoal leading-tight">
+                    Powered by iFinance
+                  </h2>
+                  <p className="text-gray-500 text-sm mt-2 max-w-md">
+                    We&apos;ve partnered with iFinance Canada to offer flexible payment plans for your flooring project. Fast approvals, transparent terms.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://ifinancecanada.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all whitespace-nowrap"
+              >
+                Learn More <ArrowRight size={15} />
+              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* ── Benefits ──────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

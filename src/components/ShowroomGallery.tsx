@@ -6,6 +6,20 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import bp from "@/lib/bp";
 
 const photos = [
+  /* Recently photographed showroom aisles — lead with these */
+  { src: `${bp}/assets/images/flooring/vinyl-plank/vinyl-plank-01.webp`, alt: "Vinyl Area — Kelowna Flooring Superstore showroom" },
+  { src: `${bp}/assets/images/flooring/carpet/carpet-03.webp`, alt: "Carpet Area — Beaulieu Canada carpet display" },
+  { src: `${bp}/assets/images/flooring/laminate/laminate-02.webp`, alt: "Laminate Area — Kelowna Flooring Superstore" },
+  { src: `${bp}/assets/images/flooring/tile/tile-03.webp`, alt: "Daltile display — tile showroom" },
+  { src: `${bp}/assets/images/flooring/hardwood/hardwood-04.webp`, alt: "Hardwood displays — Fuzion Flooring" },
+  { src: `${bp}/assets/images/flooring/vinyl-plank/vinyl-plank-02.webp`, alt: "Luxury vinyl plank samples at the Vinyl Area" },
+  { src: `${bp}/assets/images/flooring/carpet/carpet-01.webp`, alt: "DreamWeaver carpet display on sale" },
+  { src: `${bp}/assets/images/flooring/tile/tile-06.webp`, alt: "Ames Tile & Stone display" },
+  { src: `${bp}/assets/images/flooring/hardwood/hardwood-05.webp`, alt: "ResWood hardwood plank samples" },
+  { src: `${bp}/assets/images/flooring/vinyl-plank/vinyl-plank-05.webp`, alt: "Luxury vinyl plank aisle" },
+  { src: `${bp}/assets/images/flooring/tile/tile-01.webp`, alt: "Porcelain tile display with Daltile and Ames" },
+  { src: `${bp}/assets/images/flooring/carpet/carpet-04.webp`, alt: "Beaulieu and Godfrey Hirst carpet selection" },
+  /* Older archive shots */
   { src: `${bp}/assets/images/showroom-01.webp`, alt: "Kelowna Flooring Superstore showroom" },
   { src: `${bp}/assets/images/showroom-02.webp`, alt: "Flooring display in Kelowna showroom" },
   { src: `${bp}/assets/images/showroom-03.webp`, alt: "Hardwood flooring samples" },

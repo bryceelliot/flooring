@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import MobileCallButton from "@/components/MobileCallButton";
 import Script from "next/script";
-import MobileBottomBar from "@/components/MobileBottomBar";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -115,9 +115,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <MobileBottomBar />
-        {/* Bottom padding so mobile content isn't hidden by sticky bar */}
-        <div className="h-[57px] lg:hidden" />
+        <MobileCallButton />
         <GoogleAnalytics />
       </body>
     </html>

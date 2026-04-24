@@ -54,12 +54,25 @@ export default function FlooringPage() {
               has everything you need on display — order from samples and we'll have it ready to install within days.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
-              {["Laminate", "Hardwood", "Carpet", "Vinyl Plank", "Tile", "Area Rugs"].map((type) => (
-                <span key={type} className="bg-white/10 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1.5 rounded-full">
-                  {type}
-                </span>
+              {[
+                { name: "Laminate",    href: "/flooring/laminate" },
+                { name: "Hardwood",    href: "/flooring/hardwood" },
+                { name: "Carpet",      href: "/flooring/carpet" },
+                { name: "Vinyl Plank", href: "/flooring/vinyl-plank" },
+                { name: "Tile",        href: "/flooring/tile" },
+                { name: "Area Rugs",   href: "/flooring/area-rugs" },
+                { name: "Linoleum",    href: "/flooring/linoleum-sheet" },
+                { name: "Commercial",  href: "/flooring/commercial" },
+                { name: "Cork",        href: "/flooring/cork" },
+              ].map((t) => (
+                <Link
+                  key={t.name}
+                  href={t.href}
+                  className="bg-white/10 hover:bg-accent border border-white/15 hover:border-accent text-white/80 hover:text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
+                >
+                  {t.name}
+                </Link>
               ))}
-              <span className="bg-white/10 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1.5 rounded-full">+ more</span>
             </div>
           </AnimateOnScroll>
         </div>

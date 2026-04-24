@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Send, CheckCircle2, ChevronRight, ChevronLeft } from "lucide-react";
 import { trackFormSubmit } from "@/lib/ga";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/kfssteam@gmail.com";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+const RECIPIENT = "kfssteam@gmail.com";
 
 const flooringOptions = [
   "Laminate", "Hardwood", "Carpet", "Vinyl Plank",
@@ -60,26 +61,38 @@ export default function EstimateForm() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    try {
-      const body = new FormData();
-      body.append("_subject", "New Estimate Request — KFSS Website");
-      (Object.entries(data) as [string, string][]).forEach(([k, v]) => body.append(k, v));
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body,
-      });
-      if (res.ok) {
-        setSubmitted(true);
-        trackFormSubmit("estimate");
-      } else {
-        setError("Something went wrong. Please call us at (250) 860-7847.");
-      }
-    } catch {
-      setError("Something went wrong. Please call us at (250) 860-7847.");
-    } finally {
-      setLoading(false);
+    if (WEB3FORMS_KEY) {
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `New Estimate Request from ${data.first_name} ${data.last_name}`,
+            from_name: `${data.first_name} ${data.last_name}`,
+            replyto: data.email,
+            ...data,
+            botcheck: "",
+          }),
+        });
+        const r = await res.json().catch(() => ({}));
+        if (res.ok && r.success) {
+          setSubmitted(true);
+          trackFormSubmit("estimate");
+          setLoading(false);
+          return;
+        }
+      } catch { /* fall through to mailto */ }
     }
+    /* Mailto fallback */
+    const subject = encodeURIComponent(`Estimate Request from ${data.first_name} ${data.last_name}`);
+    const body = encodeURIComponent(
+      `Name: ${data.first_name} ${data.last_name}\nEmail: ${data.email}\nPhone: ${data.phone}\nAddress: ${data.address}\nFlooring Type: ${data.flooring_type}\nArea: ${data.area}\n\nNotes:\n${data.notes}`
+    );
+    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+    trackFormSubmit("estimate");
+    setLoading(false);
   }
 
   if (submitted) {

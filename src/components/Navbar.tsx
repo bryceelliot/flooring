@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, ChevronDown, MapPin, Calculator, Sparkles } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, MapPin, Calculator, Sparkles, Layers } from "lucide-react";
 
 const flooringTypes = [
   { name: "Laminate",       href: "/flooring/laminate" },
@@ -30,6 +30,7 @@ const navLinks = [
 const toolLinks = [
   { name: "Cost Calculator",   href: "/calculator",       icon: Calculator, desc: "Estimate your project cost" },
   { name: "Find My Floor",     href: "/find-my-floor",    icon: Sparkles,   desc: "5-question style quiz" },
+  { name: "Visualize Your Floor", href: "/visualize",     icon: Layers,     desc: "See it in your room before you buy" },
 ];
 
 export default function Navbar() {
@@ -72,13 +73,22 @@ export default function Navbar() {
             <MapPin size={14} className="shrink-0" />
             Unit 16, 830 McCurdy Place, Kelowna, BC
           </span>
-          <a
-            href="tel:2508607847"
-            className="flex items-center gap-2 text-white font-bold text-lg hover:text-accent transition-colors"
-          >
-            <Phone size={15} />
-            (250) 860-7847
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="sms:2508607847"
+              className="hidden sm:flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-3 py-1 rounded-full text-xs transition-colors"
+              aria-label="Text us"
+            >
+              Text Us
+            </a>
+            <a
+              href="tel:2508607847"
+              className="flex items-center gap-2 text-white font-bold text-lg hover:text-accent transition-colors"
+            >
+              <Phone size={15} />
+              (250) 860-7847
+            </a>
+          </div>
         </div>
       </div>
 

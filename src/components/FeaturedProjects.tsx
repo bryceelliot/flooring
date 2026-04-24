@@ -1,0 +1,172 @@
+"use client";
+
+import { useState, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { projects } from "@/lib/projects";
+
+export default function FeaturedProjects() {
+  const [activeProject, setActiveProject] = useState(0);
+  const [activePhoto, setActivePhoto] = useState(0);
+
+  const project = projects[activeProject];
+
+  const selectProject = (i: number) => {
+    setActiveProject(i);
+    setActivePhoto(0);
+  };
+
+  const prevPhoto = () =>
+    setActivePhoto((p) => (p - 1 + project.photos.length) % project.photos.length);
+  const nextPhoto = () =>
+    setActivePhoto((p) => (p + 1) % project.photos.length);
+
+  /* Touch/pointer swipe */
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
+  const swiping = useRef(false);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    swipeStart.current = { x: t.clientX, y: t.clientY };
+    swiping.current = false;
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!swipeStart.current) return;
+    const t = e.touches[0];
+    const dx = t.clientX - swipeStart.current.x;
+    const dy = t.clientY - swipeStart.current.y;
+    if (!swiping.current && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) {
+      swiping.current = true;
+    }
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!swipeStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - swipeStart.current.x;
+    const dy = t.clientY - swipeStart.current.y;
+    swipeStart.current = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) nextPhoto(); else prevPhoto();
+    }
+    swiping.current = false;
+  };
+
+  return (
+    <div className="grid lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
+      {/* Main photo viewer */}
+      <div
+        className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {project.photos.map((p, i) => (
+          <Image
+            key={p.src}
+            src={p.src}
+            alt={p.alt}
+            fill
+            priority={i === 0}
+            sizes="(max-width: 1024px) 100vw, 70vw"
+            className={`object-cover transition-opacity duration-500 ${
+              i === activePhoto ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+
+        {project.photos.length > 1 && (
+          <>
+            <button
+              onClick={prevPhoto}
+              aria-label="Previous photo"
+              className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 w-11 h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+            >
+              <ChevronLeft size={22} className="text-charcoal" />
+            </button>
+            <button
+              onClick={nextPhoto}
+              aria-label="Next photo"
+              className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 w-11 h-11 rounded-full bg-white/95 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+            >
+              <ChevronRight size={22} className="text-charcoal" />
+            </button>
+          </>
+        )}
+
+        <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full pointer-events-none">
+          {activePhoto + 1} / {project.photos.length}
+        </div>
+
+        <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm text-charcoal px-4 py-2 rounded-full pointer-events-none shadow-md">
+          <div className="flex items-center gap-2 text-xs font-bold">
+            <MapPin size={13} className="text-accent" />
+            {project.name}
+          </div>
+        </div>
+      </div>
+
+      {/* Side panel */}
+      <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-3 lg:grid-cols-1 gap-3">
+          {projects.map((p, i) => (
+            <button
+              key={p.slug}
+              onClick={() => selectProject(i)}
+              className={`text-left rounded-xl p-4 border-2 transition-all ${
+                i === activeProject
+                  ? "bg-primary text-white border-primary shadow-lg"
+                  : "bg-white text-charcoal border-gray-200 hover:border-primary/50"
+              }`}
+            >
+              <div className={`text-[11px] font-bold tracking-widest uppercase mb-1 ${
+                i === activeProject ? "text-white/75" : "text-accent"
+              }`}>
+                Featured Project
+              </div>
+              <div className="font-black text-base lg:text-lg leading-tight">{p.name}</div>
+              <div className={`text-xs mt-0.5 ${i === activeProject ? "text-white/70" : "text-gray-500"}`}>
+                {p.neighborhood}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="bg-light border border-gray-100 rounded-xl p-5">
+          <div className="text-[10px] font-bold tracking-widest uppercase text-accent mb-2">
+            Flooring Used
+          </div>
+          <div className="font-bold text-charcoal text-sm mb-4">{project.flooringTypes.join(" · ")}</div>
+          <p className="text-gray-600 text-sm leading-relaxed">{project.summary}</p>
+          <Link
+            href={`/projects/${project.slug}`}
+            className="inline-flex items-center gap-1 mt-4 text-accent text-sm font-bold hover:translate-x-1 transition-transform"
+          >
+            View full project <ArrowRight size={13} />
+          </Link>
+        </div>
+
+        <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar" style={{ scrollbarWidth: "none" }}>
+          {project.photos.map((p, i) => (
+            <button
+              key={p.src}
+              onClick={() => setActivePhoto(i)}
+              aria-label={`View photo ${i + 1}`}
+              className={`relative shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                i === activePhoto ? "border-accent ring-2 ring-accent/30" : "border-transparent opacity-60 hover:opacity-100"
+              }`}
+            >
+              <Image
+                src={p.src}
+                alt=""
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

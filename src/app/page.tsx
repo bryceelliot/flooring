@@ -4,13 +4,14 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import HeroSection from "@/components/HeroSection";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import GoogleReviews from "@/components/GoogleReviews";
 import {
-  Phone, ArrowRight, Star,
-  ExternalLink, MapPin,
+  Phone, ArrowRight,
+  MapPin,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -81,62 +82,6 @@ const flooring = [
 ];
 
 
-const testimonials = [
-  {
-    name: "Rob Hutchings",
-    date: "January 2025",
-    avatar: "https://lh3.googleusercontent.com/a/default-user=s40-c",
-    initials: "RH",
-    color: "#1B2A52",
-    rating: 5,
-    text: "We recently purchased carpet for three rooms in our house through Kelowna Flooring Superstore. From the minute we entered their showroom, the whole experience was seamless and pleasant. Both Selina and Shaun were extremely helpful and knowledgeable about their products, and offered very efficient response and delivery times. When it came to installation, Cory was punctual, cordial, helpful, and excellent at his job. We couldn't be more pleased!",
-  },
-  {
-    name: "Jenni I.",
-    date: "February 2025",
-    avatar: "",
-    initials: "JI",
-    color: "#E8423C",
-    rating: 5,
-    text: "We had a fantastic experience with Kelowna Flooring Superstore. Shaun and Selina were incredibly helpful when we were choosing our flooring. They were knowledgeable, patient, and really went out of their way to work with our timeline. The installation was done by Jessie and Clarke, and they truly went above and beyond. Their workmanship was excellent and the finished result looks amazing.",
-  },
-  {
-    name: "Thomas",
-    date: "March 2025",
-    avatar: "",
-    initials: "TH",
-    color: "#243566",
-    rating: 5,
-    text: "From start to finish, the entire carpet installation experience was seamless. The team was incredibly responsive at every step. A special shout-out to Cory, the installer — professional, efficient, and clearly skilled at what he does. The workmanship is excellent, and the whole process felt easy and well-managed. Highly recommend.",
-  },
-  {
-    name: "Michelle K.",
-    date: "December 2024",
-    avatar: "",
-    initials: "MK",
-    color: "#2a7a5a",
-    rating: 5,
-    text: "Absolutely love our new hardwood floors! The team at Kelowna Flooring Superstore helped us pick the perfect colour and style for our open-concept living area. The installation was flawless and completed in one day. Our home looks completely transformed. Would recommend to anyone in the Okanagan.",
-  },
-  {
-    name: "David & Carol P.",
-    date: "November 2024",
-    avatar: "",
-    initials: "DC",
-    color: "#7a3a2a",
-    rating: 5,
-    text: "We replaced all the flooring in our home — hardwood in the main areas and carpet in the bedrooms. The whole process was stress-free. Selina helped us coordinate everything and the crew was respectful of our home. The price was very competitive and the quality is outstanding. Very happy customers!",
-  },
-  {
-    name: "Linda S.",
-    date: "October 2024",
-    avatar: "",
-    initials: "LS",
-    color: "#5a2a7a",
-    rating: 5,
-    text: "As a senior on a budget I was nervous about the whole process. The staff were patient, never rushed me, and explained everything clearly. The vinyl plank they recommended is beautiful and so easy to clean. The installer was wonderful — very careful and tidy. I tell everyone about this store!",
-  },
-];
 
 /* ─── Page ──────────────────────────────────────────────────── */
 export default function HomePage() {
@@ -375,79 +320,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonials ──────────────────────────────────────── */}
-      <section className="py-24 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Real Reviews</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              What Our Customers Say
-            </h2>
-            <p className="text-gray-500 text-base mt-3">
-              <span className="font-bold text-charcoal">4.9★</span> · Verified Google reviews from real Kelowna customers.
-            </p>
-          </AnimateOnScroll>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <AnimateOnScroll key={t.name} delay={i * 0.08}>
-                <div className="bg-white rounded-2xl p-7 card-hover h-full flex flex-col shadow-card-warm border border-gray-100/50">
-                  {/* Header: avatar + name + date */}
-                  <div className="flex items-center gap-4 mb-5">
-                    <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-base shrink-0"
-                      style={{ background: t.color }}
-                    >
-                      {t.initials}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-bold text-charcoal text-base">{t.name}</div>
-                      <div className="flex items-center gap-2 mt-0.5">
-                        {/* Google G icon */}
-                        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
-                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                        <span className="text-gray-600 text-sm">Google · {t.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-4">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} size={16} className="fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  {/* Review text */}
-                  <p className="text-gray-600 text-base leading-relaxed flex-1">
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-
-          <AnimateOnScroll className="text-center mt-10">
-            <a
-              href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-6 py-3.5 rounded-xl text-sm transition-all card-hover shadow-sm"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0" aria-hidden="true">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-              </svg>
-              Read All Google Reviews
-              <ExternalLink size={13} />
-            </a>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      {/* ── Google Reviews (live via Places API with static fallback) ── */}
+      <GoogleReviews />
 
       {/* ── Before / After project carousel ──────────────────── */}
       <ProjectsCarousel />
@@ -484,28 +358,21 @@ export default function HomePage() {
       {/* ── Instagram feed ────────────────────────────────────── */}
       <InstagramFeed />
 
-      {/* ── Before & After slider ─────────────────────────────── */}
+      {/* ── Featured Projects ─────────────────────────────────── */}
       <section className="py-20 sm:py-24 bg-light">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">Before &amp; After</span>
+            <span className="section-label mb-4">Featured Projects</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-4 leading-tight">
-              Drag to See the<br className="sm:hidden" /> <span className="gradient-text">Transformation</span>
+              Real Homes,<br className="sm:hidden" /> <span className="gradient-text">Real Floors</span>
             </h2>
             <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-xl mx-auto">
-              Carpeted staircase renovation in a Kelowna home. Slide the handle to compare.
+              A closer look at recent Kelowna installs from our crews.
             </p>
           </AnimateOnScroll>
 
           <AnimateOnScroll>
-            <div className="relative h-[400px] sm:h-[520px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-              <BeforeAfterSlider
-                before="/assets/images/flooring/stairs-before.jpg"
-                after="/assets/images/flooring/stairs-after.jpg"
-                beforeAlt="Worn carpet on staircase — before"
-                afterAlt="Brand new carpet on staircase — after"
-              />
-            </div>
+            <FeaturedProjects />
           </AnimateOnScroll>
         </div>
       </section>

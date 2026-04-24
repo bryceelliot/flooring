@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 160" role="img" aria-label="Affiliated Weavers — Delight your Senses">
+  <rect width="420" height="160" fill="#ffffff"/>
+  <!-- 4 stacked bars, light to dark -->
+  <g>
+    <rect x="30"  y="38"  width="90" height="14" fill="#E6C9C2"/>
+    <rect x="30"  y="58"  width="90" height="14" fill="#D1A89F"/>
+    <rect x="30"  y="78"  width="90" height="14" fill="#B7857B"/>
+    <rect x="30"  y="98"  width="90" height="14" fill="#9F6B61"/>
+  </g>
+  <g font-family="'Helvetica Neue', Arial, sans-serif" fill="#A9776D">
+    <text x="140" y="82" font-size="30" font-weight="400">Affiliated Weavers</text>
+    <text x="140" y="108" font-size="16" font-weight="300" fill="#D1A89F">Delight your Senses</text>
+  </g>
+</svg>

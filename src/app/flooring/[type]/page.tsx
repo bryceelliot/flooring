@@ -5,8 +5,9 @@ import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { flooringTypes, getFlooringBySlug, brandDeepLinks } from "@/lib/flooring-data";
 import { CheckCircle2, ArrowRight, Phone, ChevronRight } from "lucide-react";
-import bp from "@/lib/bp";
 import WishlistButton from "@/components/WishlistButton";
+import FlooringCarousel from "@/components/FlooringCarousel";
+import FlooringTypeReviews from "@/components/FlooringTypeReviews";
 
 interface Props {
   params: Promise<{ type: string }>;
@@ -16,13 +17,68 @@ interface Props {
  * Tile and linoleum-sheet use stand-ins until we get real photos. */
 const typePhotos: Record<string, { src: string; focal: string }> = {
   "hardwood":       { src: "/assets/images/showroom-01.webp",   focal: "center 50%" }, // real hardwood display rack
-  "vinyl-plank":    { src: "/assets/images/showroom-06.webp",   focal: "center 50%" }, // real Cascade Luxury Vinyl display
+  "vinyl-plank":    { src: "/assets/images/flooring/vinyl-plank/vinyl-plank-hero.webp", focal: "center 60%" }, // new install — finished basement vinyl plank
   "laminate":       { src: "/assets/images/showroom-08.webp",   focal: "center 50%" }, // real laminate samples
   "carpet":         { src: "/assets/images/showroom-10.webp",   focal: "center 40%" }, // real carpet display
-  "tile":           { src: "/assets/images/showroom-07.webp",   focal: "center 50%" }, // placeholder — need real tile photo
+  "tile":           { src: "/assets/images/flooring/tile/tile-01.webp", focal: "center 50%" }, // real tile showroom shot
   "area-rugs":      { src: "/assets/images/showroom-04.webp",   focal: "center 45%" }, // real area rugs
   "commercial":     { src: "/assets/images/showroom-02.webp",   focal: "center 50%" }, // Fuzion display — professional look
   "linoleum-sheet": { src: "/assets/images/showroom-05.webp",   focal: "center 50%" }, // placeholder — need real linoleum photo
+  "cork":           { src: "/assets/images/showroom-09.webp",   focal: "center 50%" }, // placeholder — need real cork photo
+};
+
+/* Per-type in-store photo galleries — real Kelowna showroom shots. */
+const typeGalleries: Record<string, string[]> = {
+  hardwood: [
+    "/assets/images/flooring/hardwood/hardwood-01.webp",
+    "/assets/images/flooring/hardwood/hardwood-03.webp",
+    "/assets/images/flooring/hardwood/hardwood-04.webp",
+    "/assets/images/flooring/hardwood/hardwood-05.webp",
+  ],
+  laminate: [
+    "/assets/images/flooring/laminate/laminate-01.webp",
+    "/assets/images/flooring/laminate/laminate-02.webp",
+  ],
+  "vinyl-plank": [
+    "/assets/images/flooring/vinyl-plank/vinyl-plank-01.webp",
+    "/assets/images/flooring/vinyl-plank/vinyl-plank-02.webp",
+    "/assets/images/flooring/vinyl-plank/vinyl-plank-03.webp",
+    "/assets/images/flooring/vinyl-plank/vinyl-plank-04.webp",
+    "/assets/images/flooring/vinyl-plank/vinyl-plank-05.webp",
+  ],
+  tile: [
+    "/assets/images/flooring/tile/tile-01.webp",
+    "/assets/images/flooring/tile/tile-02.webp",
+    "/assets/images/flooring/tile/tile-03.webp",
+    "/assets/images/flooring/tile/tile-04.webp",
+    "/assets/images/flooring/tile/tile-05.webp",
+    "/assets/images/flooring/tile/tile-06.webp",
+    "/assets/images/flooring/tile/tile-07.webp",
+  ],
+  carpet: [
+    "/assets/images/flooring/carpet/carpet-01.webp",
+    "/assets/images/flooring/carpet/carpet-02.webp",
+    "/assets/images/flooring/carpet/carpet-03.webp",
+    "/assets/images/flooring/carpet/carpet-04.webp",
+  ],
+  "area-rugs": [
+    "/assets/images/showroom-04.webp",
+    "/assets/images/showroom-13.webp",
+    "/assets/images/showroom-10.webp",
+    "/assets/images/showroom-14.webp",
+  ],
+  "linoleum-sheet": [
+    "/assets/images/showroom-05.webp",
+    "/assets/images/showroom-09.webp",
+    "/assets/images/showroom-12.webp",
+  ],
+  commercial: [
+    "/assets/images/showroom-02.webp",
+    "/assets/images/showroom-11.webp",
+    "/assets/images/showroom-15.webp",
+    "/assets/images/projects/commercial-refresh/hallway-after.webp",
+    "/assets/images/projects/commercial-refresh/basement-after.webp",
+  ],
 };
 
 export async function generateStaticParams() {
@@ -53,9 +109,38 @@ export default async function FlooringTypePage({ params }: Props) {
   if (!flooring) notFound();
 
   const photo = typePhotos[flooring.slug];
+  const gallery = typeGalleries[flooring.slug] ?? [];
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
+      { "@type": "ListItem", position: 2, name: "Flooring", item: "https://www.kfssflooring.com/flooring" },
+      { "@type": "ListItem", position: 3, name: flooring.name, item: `https://www.kfssflooring.com/flooring/${flooring.slug}` },
+    ],
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${flooring.name} Flooring`,
+    description: flooring.metaDescription,
+    brand: { "@type": "Brand", name: "Kelowna Flooring Superstore" },
+    category: flooring.name,
+    image: photo ? `https://www.kfssflooring.com${photo.src}` : undefined,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "CAD",
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "LocalBusiness", name: "Kelowna Flooring Superstore" },
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         {photo && (
@@ -105,32 +190,6 @@ export default async function FlooringTypePage({ params }: Props) {
           </AnimateOnScroll>
         </div>
       </section>
-
-      {/* Vinyl Plank video */}
-      {flooring.slug === "vinyl-plank" && (
-        <section className="py-20 bg-[#0d1526]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <AnimateOnScroll className="text-center mb-10">
-              <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-                See It In Action
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">
-                Waterproof Luxury. Real Results.
-              </h2>
-            </AnimateOnScroll>
-            <div className="rounded-2xl overflow-hidden max-w-3xl mx-auto shadow-2xl shadow-black/50 border border-white/10">
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                className="w-full aspect-video bg-black"
-              >
-                <source src={`${bp}/assets/videos/vinylpost.mp4`} type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── Overview ──────────────────────────────────────────── */}
       <section className="py-24 bg-white">
@@ -254,6 +313,33 @@ export default async function FlooringTypePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── In-Store Carousel ─────────────────────────────────── */}
+      {gallery.length > 0 && (
+        <section className="py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <AnimateOnScroll className="text-center mb-10">
+              <span className="section-label mb-4">In Our Showroom</span>
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+                {flooring.name} on Display in Kelowna
+              </h2>
+              <p className="text-gray-500 text-base sm:text-lg mt-3 max-w-2xl mx-auto">
+                Swipe through real photos from our West Kelowna showroom. Come see, touch, and compare samples in person.
+              </p>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll>
+              <FlooringCarousel
+                photos={gallery}
+                altBase={`${flooring.name} display`}
+              />
+            </AnimateOnScroll>
+          </div>
+        </section>
+      )}
+
+      {/* ── Per-type Google reviews (keyword-filtered) ────────── */}
+      <FlooringTypeReviews flooringName={flooring.name} />
 
       {/* ── Care & Maintenance ────────────────────────────────── */}
       <section className="py-24 bg-[#0d1526]">

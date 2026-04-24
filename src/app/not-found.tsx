@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, ArrowRight, Phone } from "lucide-react";
+import { Home, ArrowRight, Phone, MessageSquare, Search } from "lucide-react";
 
 const flooringLinks = [
   { name: "Laminate", href: "/flooring/laminate" },
@@ -8,6 +8,17 @@ const flooringLinks = [
   { name: "Vinyl Plank", href: "/flooring/vinyl-plank" },
   { name: "Tile", href: "/flooring/tile" },
   { name: "Area Rugs", href: "/flooring/area-rugs" },
+  { name: "Cork", href: "/flooring/cork" },
+  { name: "Commercial", href: "/flooring/commercial" },
+];
+
+const popularPages = [
+  { name: "Flooring Prices Kelowna", href: "/flooring-prices-kelowna" },
+  { name: "Best Flooring Kelowna", href: "/best-flooring-kelowna" },
+  { name: "Recent Projects", href: "/projects" },
+  { name: "Free Estimate", href: "/estimates" },
+  { name: "Cost Calculator", href: "/calculator" },
+  { name: "Find My Floor", href: "/find-my-floor" },
 ];
 
 export default function NotFound() {
@@ -51,6 +62,29 @@ export default function NotFound() {
           >
             <Phone size={16} /> (250) 860-7847
           </a>
+          <a
+            href="sms:2508607847"
+            className="flex items-center gap-2 glass text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all hover:bg-white/10"
+          >
+            <MessageSquare size={16} /> Text Us
+          </a>
+        </div>
+
+        <div className="mb-10">
+          <p className="text-white/30 text-xs font-bold tracking-widest uppercase mb-5 flex items-center justify-center gap-2">
+            <Search size={11} /> Popular Pages
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {popularPages.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="px-4 py-2 bg-accent/10 hover:bg-accent/20 border border-accent/25 hover:border-accent/50 text-white/75 hover:text-white rounded-lg text-sm transition-all"
+              >
+                {l.name}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div>

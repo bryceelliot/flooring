@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Plus, Trash2, ArrowRight, Phone } from "lucide-react";
+import { Plus, Trash2, ArrowRight, Phone, Mail, Check } from "lucide-react";
 
 const FLOORING = [
   { slug: "laminate",       name: "Laminate",       matLow: 3,   matHigh: 7,  instLow: 2,   instHigh: 4, color: "#d97706" },
@@ -23,11 +23,16 @@ function fmt(n: number) {
   return n.toLocaleString("en-CA", { style: "currency", currency: "CAD", maximumFractionDigits: 0 });
 }
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+
 export default function FlooringCalculator() {
   const [rooms, setRooms]           = useState<Room[]>([{ id: nextId++, name: "Living Room", length: "", width: "" }]);
   const [flooringSlug, setFlooringSlug] = useState("vinyl-plank");
   const [complexity, setComplexity] = useState<"straight" | "diagonal" | "complex">("straight");
   const [includeInstall, setIncludeInstall] = useState(true);
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadName, setLeadName] = useState("");
+  const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const flooring = FLOORING.find(f => f.slug === flooringSlug)!;
 
@@ -57,6 +62,52 @@ export default function FlooringCalculator() {
   }
   function removeRoom(id: number) {
     setRooms(r => r.filter(x => x.id !== id));
+  }
+
+  async function sendLead(e: React.FormEvent) {
+    e.preventDefault();
+    if (!leadEmail) return;
+    setLeadStatus("sending");
+    const roomList = rooms
+      .filter(r => parseFloat(r.length) > 0 && parseFloat(r.width) > 0)
+      .map(r => `  ${r.name}: ${r.length}' × ${r.width}' = ${(parseFloat(r.length) * parseFloat(r.width)).toFixed(0)} sqft`)
+      .join("\n");
+    const body =
+      `Calculator estimate summary:\n\n` +
+      `Flooring: ${flooring.name}\n` +
+      `Complexity: ${complexity} layout (${(wasteFactor * 100).toFixed(0)}% waste)\n` +
+      `Install included: ${includeInstall ? "Yes" : "No"}\n\n` +
+      `Rooms:\n${roomList || "(none)"}\n\n` +
+      `Base sqft: ${baseSqFt.toFixed(0)}\n` +
+      `Total with waste: ${totalSqFt} sqft\n\n` +
+      `Material: ${fmt(matLow)} – ${fmt(matHigh)}\n` +
+      (includeInstall ? `Installation: ${fmt(insLow)} – ${fmt(insHigh)}\n` : "") +
+      `TOTAL ESTIMATE: ${fmt(totLow)} – ${fmt(totHigh)}\n`;
+    if (!WEB3FORMS_KEY) { setLeadStatus("sent"); return; }
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Calculator Lead: ${leadName || "Website visitor"} — ${fmt(totLow)} to ${fmt(totHigh)}`,
+          from_name: leadName || "Calculator Lead",
+          replyto: leadEmail,
+          name: leadName,
+          email: leadEmail,
+          flooring: flooring.name,
+          total_sqft: totalSqFt,
+          estimate_low: fmt(totLow),
+          estimate_high: fmt(totHigh),
+          message: body,
+          botcheck: "",
+        }),
+      });
+      const r = await res.json().catch(() => ({}));
+      setLeadStatus(res.ok && r.success ? "sent" : "error");
+    } catch {
+      setLeadStatus("error");
+    }
   }
   function updateRoom(id: number, field: keyof Room, value: string) {
     setRooms(r => r.map(x => x.id === id ? { ...x, [field]: value } : x));
@@ -252,10 +303,50 @@ export default function FlooringCalculator() {
                 </Link>
                 <a
                   href="tel:2508607847"
-                  className="flex items-center justify-center gap-2 border border-white/20 text-white/70 hover:text-white hover:border-white/40 font-semibold px-5 py-3 rounded-xl text-sm transition-all w-full"
+                  className="flex items-center justify-center gap-2 border border-white/20 text-white/70 hover:text-white hover:border-white/40 font-semibold px-5 py-3 rounded-xl text-sm transition-all w-full mb-5"
                 >
                   <Phone size={14} /> (250) 860-7847
                 </a>
+
+                {/* Email this estimate — light lead capture */}
+                <div className="pt-5 border-t border-white/10">
+                  {leadStatus === "sent" ? (
+                    <div className="flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-300 rounded-xl px-3 py-2.5 text-xs">
+                      <Check size={14} /> Sent! Our team will follow up with a free exact quote.
+                    </div>
+                  ) : (
+                    <form onSubmit={sendLead} className="space-y-2">
+                      <p className="text-white/50 text-xs mb-2 flex items-center gap-1.5">
+                        <Mail size={12} /> Want us to save this estimate and follow up?
+                      </p>
+                      <input
+                        type="text"
+                        value={leadName}
+                        onChange={(e) => setLeadName(e.target.value)}
+                        placeholder="Name (optional)"
+                        className="w-full bg-white/5 border border-white/15 text-white placeholder-white/35 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-accent transition-colors"
+                      />
+                      <input
+                        type="email"
+                        value={leadEmail}
+                        onChange={(e) => setLeadEmail(e.target.value)}
+                        placeholder="Your email"
+                        required
+                        className="w-full bg-white/5 border border-white/15 text-white placeholder-white/35 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-accent transition-colors"
+                      />
+                      <button
+                        type="submit"
+                        disabled={leadStatus === "sending"}
+                        className="w-full bg-white/10 hover:bg-primary border border-white/20 text-white font-semibold px-3 py-2 rounded-lg text-xs transition-all disabled:opacity-60"
+                      >
+                        {leadStatus === "sending" ? "Sending..." : "Save & Follow Up"}
+                      </button>
+                      {leadStatus === "error" && (
+                        <p className="text-accent text-xs">Couldn&apos;t send — try again or call us.</p>
+                      )}
+                    </form>
+                  )}
+                </div>
               </>
             )}
           </div>

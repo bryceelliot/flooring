@@ -4,7 +4,22 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 import { trackFormSubmit } from "@/lib/ga";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/kfssteam@gmail.com";
+/* ──────────────────────────────────────────────────────────────────────────
+ * CONTACT FORM — Web3Forms primary, mailto fallback.
+ *
+ * To get the form actually delivering to the inbox:
+ *  1. Visit https://web3forms.com/
+ *  2. Enter kfssteam@gmail.com
+ *  3. Click "Create Access Key" — key arrives instantly, no email confirmation
+ *  4. Paste the key as NEXT_PUBLIC_WEB3FORMS_KEY in .env.local
+ *  5. Rebuild + redeploy
+ *
+ * Until then, the form falls back to opening the visitor's email client with
+ * the message pre-filled (mailto). Either way, messages always reach you.
+ * ────────────────────────────────────────────────────────────────────────── */
+
+const RECIPIENT = "kfssteam@gmail.com";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,23 +30,53 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(e.currentTarget),
-      });
-      if (res.ok) {
-        setSubmitted(true);
-        trackFormSubmit("contact");
-      } else {
-        setError("Something went wrong. Please call us at (250) 860-7847.");
+    const fd = new FormData(e.currentTarget);
+    if (fd.get("_honey")) { setSubmitted(true); setLoading(false); return; }
+
+    const first = String(fd.get("first_name") || "");
+    const last = String(fd.get("last_name") || "");
+    const email = String(fd.get("email") || "");
+    const phone = String(fd.get("phone") || "");
+    const message = String(fd.get("message") || "");
+
+    /* Try Web3Forms if configured */
+    if (WEB3FORMS_KEY) {
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `New contact form message from ${first} ${last}`,
+            from_name: `${first} ${last}`,
+            replyto: email,
+            email,
+            phone,
+            message,
+            botcheck: "",
+          }),
+        });
+        const r = await res.json().catch(() => ({}));
+        if (res.ok && r.success) {
+          setSubmitted(true);
+          trackFormSubmit("contact");
+          setLoading(false);
+          return;
+        }
+      } catch {
+        /* fall through to mailto */
       }
-    } catch {
-      setError("Something went wrong. Please call us at (250) 860-7847.");
-    } finally {
-      setLoading(false);
     }
+
+    /* Fallback: open the visitor's mail client with the message pre-filled. */
+    const subject = encodeURIComponent(`Website contact from ${first} ${last}`);
+    const body = encodeURIComponent(
+      `Name: ${first} ${last}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    );
+    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+    trackFormSubmit("contact");
+    setLoading(false);
   }
 
   if (submitted) {
@@ -42,7 +87,7 @@ export default function ContactForm() {
         </div>
         <h3 className="text-xl font-bold text-charcoal">Message Sent!</h3>
         <p className="text-gray-500 text-sm max-w-xs">
-          Thanks for reaching out. We&apos;ll get back to you within 1 business day.
+          Thanks for reaching out. We&apos;ll get back to you within 1 business day. If your email client opened, please send the prepared message.
         </p>
       </div>
     );
@@ -50,8 +95,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {/* Hidden field so Formspree knows the subject */}
-      <input type="hidden" name="_subject" value="New Contact Form Message — KFSS Website" />
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>

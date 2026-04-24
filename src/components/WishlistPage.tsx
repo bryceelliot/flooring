@@ -6,7 +6,8 @@ import { Heart, Trash2, ArrowRight, Phone, ExternalLink } from "lucide-react";
 import { getWishlist, toggleWishlist } from "@/lib/wishlist";
 import { flooringTypes } from "@/lib/flooring-data";
 
-const SEND_URL = "https://formspree.io/kfssteam@gmail.com";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
+const RECIPIENT = "kfssteam@gmail.com";
 
 export default function WishlistPage() {
   const [slugs, setSlugs]     = useState<string[]>([]);
@@ -32,23 +33,35 @@ export default function WishlistPage() {
     if (slugs.length === 0) return;
     setStatus("sending");
     const items = slugs.map(s => flooringTypes.find(f => f.slug === s)?.name ?? s).join(", ");
-    try {
-      const res = await fetch(SEND_URL, {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({
-          _subject: "Sample / Estimate Request — KFSS Website",
-          name,
-          email,
-          phone,
-          flooring_interest: items,
-          notes,
-        }),
-      });
-      setStatus(res.ok ? "sent" : "error");
-    } catch {
-      setStatus("error");
+    if (WEB3FORMS_KEY) {
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { Accept: "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            subject: `Sample Request from ${name}`,
+            from_name: name,
+            replyto: email,
+            name,
+            email,
+            phone,
+            flooring_interest: items,
+            notes,
+            botcheck: "",
+          }),
+        });
+        const r = await res.json().catch(() => ({}));
+        if (res.ok && r.success) { setStatus("sent"); return; }
+      } catch { /* fall through */ }
     }
+    /* Mailto fallback */
+    const subject = encodeURIComponent(`Sample Request from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInterested in: ${items}\n\nNotes:\n${notes}`
+    );
+    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
+    setStatus("sent");
   }
 
   const savedItems = slugs
