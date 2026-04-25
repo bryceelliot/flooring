@@ -225,6 +225,63 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Meet the Team ─────────────────────────────────────── */}
+      <section className="py-24 bg-light">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-12">
+            <span className="section-label mb-4">Our Team</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+              Meet the Team Behind Your Floor
+            </h2>
+            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
+              A family-run Kelowna crew — showroom staff, installers, and our shop dog.
+            </p>
+          </AnimateOnScroll>
+
+          {/* Full group photo — aspect matched to the natural image so no heads are cropped */}
+          <AnimateOnScroll>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
+              <Image
+                src="/assets/images/team-photo.webp"
+                alt="Kelowna Flooring Superstore team — showroom staff, installers, and shop dog in front of the Flooring Superstores mural"
+                width={1448}
+                height={1086}
+                className="w-full h-auto"
+                priority={false}
+              />
+            </div>
+          </AnimateOnScroll>
+
+          {/* Individual team portraits */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+            {[
+              { src: "/assets/images/team-shaun.webp",       name: "Shaun",   role: "Showroom Specialist" },
+              { src: "/assets/images/team-selina.webp",      name: "Selina",  role: "Showroom Specialist" },
+              { src: "/assets/images/team-dog.webp",         name: "Our Shop Dog", role: "Chief Greeter" },
+              { src: "/assets/images/team-dog-service.webp", name: "Service Dog",  role: "Showroom Comfort" },
+            ].map((m, i) => (
+              <AnimateOnScroll key={m.name} delay={i * 0.08}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+                  <div className="relative aspect-square bg-light">
+                    <Image
+                      src={m.src}
+                      alt={`${m.name} — ${m.role} at Kelowna Flooring Superstore`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <p className="font-black text-charcoal text-sm">{m.name}</p>
+                    <p className="text-accent text-[10px] font-bold uppercase tracking-widest mt-1">{m.role}</p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Location & Hours ──────────────────────────────────── */}
       <section className="py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
