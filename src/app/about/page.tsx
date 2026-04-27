@@ -253,12 +253,11 @@ export default function AboutPage() {
           </AnimateOnScroll>
 
           {/* Individual team portraits */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
             {[
               { src: "/assets/images/team-shaun.webp",       name: "Shaun",   role: "Showroom Specialist" },
               { src: "/assets/images/team-selina.webp",      name: "Selina",  role: "Showroom Specialist" },
               { src: "/assets/images/team-dog.webp",         name: "Our Shop Dog", role: "Chief Greeter" },
-              { src: "/assets/images/team-dog-service.webp", name: "Service Dog",  role: "Showroom Comfort" },
             ].map((m, i) => (
               <AnimateOnScroll key={m.name} delay={i * 0.08}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
