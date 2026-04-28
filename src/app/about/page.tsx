@@ -186,28 +186,31 @@ export default function AboutPage() {
                 name: "Shaun",
                 role: "Showroom Specialist",
                 bio: "Shaun has been helping Kelowna homeowners navigate flooring choices for years. Known for his patience, product knowledge, and ability to match the perfect floor to any lifestyle and budget.",
-                initial: "S",
-                color: "bg-primary",
+                photo: "/assets/images/team-shaun.webp",
               },
               {
                 name: "Selina",
                 role: "Design Consultant",
                 bio: "Selina brings a designer's eye to every consultation. She specialises in helping customers visualise how different flooring choices will look in their space — and loves the transformation reveal.",
-                initial: "Se",
-                color: "bg-accent",
+                photo: "/assets/images/team-selina.webp",
               },
               {
                 name: "Our Install Crew",
                 role: "Professional Installers",
                 bio: "Our installation teams are experienced, meticulous, and treat every home like their own. From subfloor prep to final trim, they take pride in flawless results every time.",
-                initial: "IC",
-                color: "bg-[#243566]",
+                photo: "/assets/images/team-photo.webp",
               },
             ].map((member, i) => (
               <AnimateOnScroll key={member.name} delay={i * 0.1}>
                 <div className="bg-light rounded-2xl p-7 border border-gray-100 flex flex-col items-center text-center h-full">
-                  <div className={`w-16 h-16 rounded-2xl ${member.color} text-white font-black text-xl flex items-center justify-center mb-5 shadow-lg`}>
-                    {member.initial}
+                  <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-5 shadow-lg">
+                    <Image
+                      src={member.photo}
+                      alt={`${member.name} — ${member.role}`}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
                   </div>
                   <h3 className="font-black text-charcoal text-lg">{member.name}</h3>
                   <p className="text-accent text-xs font-bold tracking-wider uppercase mt-1 mb-4">{member.role}</p>
