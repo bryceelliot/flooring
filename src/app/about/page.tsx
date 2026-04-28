@@ -198,20 +198,28 @@ export default function AboutPage() {
                 name: "Our Install Crew",
                 role: "Professional Installers",
                 bio: "Our installation teams are experienced, meticulous, and treat every home like their own. From subfloor prep to final trim, they take pride in flawless results every time.",
-                photo: "/assets/images/team-photo.webp",
+                photo: null,
+                initial: "IC",
+                color: "bg-[#243566]",
               },
             ].map((member, i) => (
               <AnimateOnScroll key={member.name} delay={i * 0.1}>
                 <div className="bg-light rounded-2xl p-7 border border-gray-100 flex flex-col items-center text-center h-full">
-                  <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-5 shadow-lg">
-                    <Image
-                      src={member.photo}
-                      alt={`${member.name} — ${member.role}`}
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                    />
-                  </div>
+                  {member.photo ? (
+                    <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-5 shadow-lg">
+                      <Image
+                        src={member.photo}
+                        alt={`${member.name} — ${member.role}`}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`w-16 h-16 rounded-2xl ${member.color} text-white font-black text-xl flex items-center justify-center mb-5 shadow-lg`}>
+                      {member.initial}
+                    </div>
+                  )}
                   <h3 className="font-black text-charcoal text-lg">{member.name}</h3>
                   <p className="text-accent text-xs font-bold tracking-wider uppercase mt-1 mb-4">{member.role}</p>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{member.bio}</p>
