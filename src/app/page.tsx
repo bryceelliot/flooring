@@ -289,7 +289,7 @@ export default function HomePage() {
               { src: "/assets/images/showroom-01.webp", label: "Main Showroom" },
               { src: "/assets/images/hardwood-showroom-full.webp", label: "Hardwood Display" },
               { src: "/assets/images/showroom-13.webp", label: "Carpet Selection" },
-              { src: "/assets/images/showroom-07.webp", label: "Tile Collection" },
+              { src: "/assets/images/flooring/tile/tile-01.webp", label: "Tile Collection" },
               { src: "/assets/images/showroom-08.webp", label: "Laminate Samples" },
               { src: "/assets/images/showroom-10.webp", label: "Carpet Studio" },
               { src: "/assets/images/vinyl-plank-showroom.webp", label: "Vinyl Plank" },
