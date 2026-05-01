@@ -17,10 +17,10 @@ type Slide = {
 
 const slides: Slide[] = [
   { src: "/assets/images/hero-showroom.webp",    type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
-  { src: "/assets/images/showroom-11.webp",    type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
+  { src: "/assets/images/vinyl-plank-showroom.webp",    type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
   { src: "/assets/images/showroom-10.webp",    type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
   { src: "/assets/images/showroom-08.webp",    type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },
-  { src: "/assets/images/showroom-07.webp",    type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile" },
+  { src: "/assets/images/flooring/tile/tile-01.webp",    type: "Porcelain Tile",      tagline: "Timeless. Waterproof. Built for the Okanagan.", focal: "center 50%", href: "/flooring/tile" },
 ];
 
 const INTERVAL = 5000;
