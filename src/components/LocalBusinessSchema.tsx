@@ -99,6 +99,7 @@ export default async function LocalBusinessSchema() {
       "https://www.facebook.com/kelownaflooringsuperstore",
       "https://www.instagram.com/kelownaflooringss/",
       "https://www.youtube.com/@KelownaFlooringSuperstore-w3d",
+      "https://www.houzz.com/pro/peter-b96/kelowna-flooring-superstore",
     ],
     knowsAbout: [
       "Flooring installation",
