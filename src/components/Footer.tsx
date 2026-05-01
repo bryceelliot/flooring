@@ -148,7 +148,7 @@ export default function Footer() {
             <a href="https://www.facebook.com/kelownaflooringsuperstore" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <FacebookIcon />
             </a>
-            <a href="https://www.instagram.com/kelownaflooringsuperstore/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+            <a href="https://www.instagram.com/kelownaflooringss/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <InstagramIcon />
             </a>
             <a href="https://www.youtube.com/@KelownaFlooringSuperstore-w3d" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">

@@ -97,7 +97,7 @@ export default async function LocalBusinessSchema() {
         ]),
     sameAs: [
       "https://www.facebook.com/kelownaflooringsuperstore",
-      "https://www.instagram.com/kelownaflooringsuperstore/",
+      "https://www.instagram.com/kelownaflooringss/",
       "https://www.youtube.com/@KelownaFlooringSuperstore-w3d",
     ],
     knowsAbout: [
