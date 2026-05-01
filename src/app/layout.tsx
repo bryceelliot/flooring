@@ -6,12 +6,12 @@ import Footer from "@/components/Footer";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import MobileCallButton from "@/components/MobileCallButton";
-import Script from "next/script";
+import RoomvoLauncher from "@/components/RoomvoLauncher";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "700", "800"],
   display: "swap",
 });
 
@@ -114,20 +114,13 @@ export default function RootLayout({
       <head>
         <LocalBusinessSchema />
         <link rel="preload" as="image" href="/assets/images/hero-walnut.webp" fetchPriority="high" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <Script
-          id="roomvoAssistant"
-          src="https://www.roomvo.com/static/scripts/b2b/common/assistant.js"
-          strategy="lazyOnload"
-          data-locale="en-us"
-          data-position="bottom-right"
-        />
       </head>
       <body className="antialiased bg-white">
         <Navbar />
         <main>{children}</main>
         <Footer />
         <MobileCallButton />
+        <RoomvoLauncher />
         <GoogleAnalytics />
       </body>
     </html>
