@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${c.service} ${c.city}`,
     description: c.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/${c.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/${c.slug}` },
     openGraph: {
       title: `${c.service} in ${c.city} — Kelowna Flooring Superstore`,
       description: c.metaDescription,
@@ -76,8 +76,8 @@ export default async function ServiceComboPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: `${c.service} ${c.city}`, item: `https://www.kfssflooring.com/${c.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: `${c.service} ${c.city}`, item: `https://www.kelownaflooringsuperstore.com/${c.slug}` },
     ],
   };
 

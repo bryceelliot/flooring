@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Customer Reviews — Kelowna Flooring Superstore",
   description:
     "Real Google reviews from Kelowna homeowners. Read what customers say about our showroom team, installers, products, and the McCurdy Place experience.",
-  alternates: { canonical: "https://www.kfssflooring.com/reviews" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/reviews" },
   openGraph: {
     title: "Customer Reviews — Kelowna Flooring Superstore",
     description:
@@ -38,9 +38,9 @@ export default async function ReviewsPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Kelowna Flooring Superstore",
-    image: "https://www.kfssflooring.com/assets/images/showroom-01.webp",
-    "@id": "https://www.kfssflooring.com",
-    url: "https://www.kfssflooring.com",
+    image: "https://www.kelownaflooringsuperstore.com/assets/images/showroom-01.webp",
+    "@id": "https://www.kelownaflooringsuperstore.com",
+    url: "https://www.kelownaflooringsuperstore.com",
     telephone: "+1-250-860-7847",
     address: {
       "@type": "PostalAddress",
@@ -92,14 +92,31 @@ export default async function ReviewsPage() {
               ({total} reviews)
             </span>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href={allReviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-4 rounded-xl inline-flex items-center gap-2 shadow-lg"
+              className="bg-white hover:bg-gray-100 text-charcoal font-bold px-7 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg"
             >
-              Read All Reviews on Google <ArrowRight className="w-4 h-4" />
+              <svg viewBox="0 0 48 48" className="w-5 h-5" aria-hidden="true">
+                <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+                <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+                <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+              </svg>
+              Read on Google
+            </a>
+            <a
+              href="https://www.yelp.ca/biz/kelowna-flooring-superstore-kelowna-2?osq=Kelowna+Flooring+Superstore"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#d32323] hover:bg-[#b81e1e] text-white font-bold px-7 py-4 rounded-xl inline-flex items-center gap-3 shadow-lg"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true">
+                <path d="M20.16 12.594l-1.591-.52c-1.16-.379-1.836-.52-2.054-.39-.298.156-.42.65-.404 1.484.083 1.43.298 2.86.654 4.246.142.515.298.834.512.96.215.13.494.17.846.13.298-.04.594-.17.876-.39l3.354-2.66c.215-.17.298-.39.298-.65 0-.26-.083-.48-.298-.65-.215-.17-.494-.26-.876-.39l-1.317-.17zM5.99 11.764l5.46 1.78c.44.13.79.39 1.04.78.25.39.345.83.345 1.32 0 .78-.298 1.43-.876 1.95l-3.354 2.66c-.215.17-.494.26-.876.26-.298 0-.594-.04-.876-.13-.215-.13-.42-.32-.512-.65l-1.317-3.96c-.17-.52-.298-1.04-.298-1.56 0-.65.215-1.17.594-1.56.42-.39.846-.65 1.317-.78l-.747-.11zM11.622 2.226c.298-.17.594-.26.876-.26.298 0 .594.09.876.26l4.706 2.86c.215.17.345.39.345.65 0 .26-.083.48-.298.65l-2.674 2.34c-.298.26-.65.39-1.06.39s-.79-.17-1.04-.52l-2.674-3.96c-.17-.26-.298-.52-.298-.78 0-.26.083-.48.298-.65l.943-.98zM5.99 7.524l3.354 2.6c.298.26.65.39 1.04.39.42 0 .79-.17 1.04-.52.298-.39.42-.83.345-1.3l-.946-5.07c-.083-.26-.215-.48-.42-.65-.215-.13-.494-.17-.846-.17-.298 0-.594.13-.876.39L5.49 6.224c-.215.17-.345.39-.345.65 0 .26.083.48.298.65h.547z"/>
+              </svg>
+              Read on Yelp
             </a>
           </div>
         </div>

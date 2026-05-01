@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Refer a Friend — Kelowna Flooring Superstore",
   description:
     "Refer a friend to Kelowna Flooring Superstore and earn a $200 credit on your next project. Simple, transparent referral program for past customers.",
-  alternates: { canonical: "https://www.kfssflooring.com/referrals" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/referrals" },
   openGraph: {
     title: "Refer a Friend — Kelowna Flooring Superstore",
     description: "Earn $200 for every flooring project you refer.",

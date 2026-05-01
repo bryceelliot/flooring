@@ -25,7 +25,7 @@ interface Props {
 
 export default function ShareButtons({ title, path }: Props) {
   const [copied, setCopied] = useState(false);
-  const url = `https://www.kfssflooring.com${path}`;
+  const url = `https://www.kelownaflooringsuperstore.com${path}`;
   const enc = encodeURIComponent;
 
   const share = {

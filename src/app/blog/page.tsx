@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Flooring Blog — Tips, Guides & Trends",
   description:
     "Flooring tips, inspiration, and guides from the experts at Kelowna Flooring Superstore. Covering hardwood, carpet, vinyl plank, tile and more.",
-  alternates: { canonical: "https://www.kfssflooring.com/blog" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/blog" },
 };
 
 export default function BlogPage() {

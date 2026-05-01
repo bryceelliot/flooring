@@ -11,7 +11,7 @@ import { answerPages } from "@/lib/answer-pages";
 import { projects } from "@/lib/projects";
 import { servicePages as adjacentServices } from "@/lib/service-pages";
 
-const baseUrl = "https://www.kfssflooring.com";
+const baseUrl = "https://www.kelownaflooringsuperstore.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const flooringPages = flooringTypes.map((f) => ({

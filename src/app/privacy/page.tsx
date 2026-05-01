@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for Kelowna Flooring Superstore — how we collect, use, and protect your information.",
   alternates: {
-    canonical: "https://www.kfssflooring.com/privacy",
+    canonical: "https://www.kelownaflooringsuperstore.com/privacy",
   },
   robots: { index: false, follow: false },
 };
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-charcoal mb-3">1. Who We Are</h2>
             <p>
               Kelowna Flooring Superstore (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) operates
-              the website at <strong>kfssflooring.com</strong>. We are located at Unit 16,
+              the website at <strong>kelownaflooringsuperstore.com</strong>. We are located at Unit 16,
               830 McCurdy Place, Kelowna, BC V1X 8C8. You can reach us at{" "}
               <a href="mailto:kfssteam@gmail.com" className="text-primary hover:underline">
                 kfssteam@gmail.com

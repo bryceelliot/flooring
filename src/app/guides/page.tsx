@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Kelowna Flooring Guides & Advice",
   description:
     "Kelowna flooring guides — installation timelines, best flooring by room, Okanagan climate tips. Practical advice from a 30+ year local shop.",
-  alternates: { canonical: "https://www.kfssflooring.com/guides" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/guides" },
   openGraph: {
     title: "Kelowna Flooring Guides & Advice",
     description: "Guides on timeline, room-by-room flooring picks, and Okanagan climate considerations.",

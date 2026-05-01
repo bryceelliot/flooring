@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Kelowna Flooring Superstore" }],
   creator: "Kelowna Flooring Superstore",
   publisher: "Flooring Superstores",
-  metadataBase: new URL("https://www.kfssflooring.com"),
+  metadataBase: new URL("https://www.kelownaflooringsuperstore.com"),
   alternates: {
-    canonical: "https://www.kfssflooring.com",
+    canonical: "https://www.kelownaflooringsuperstore.com",
   },
   verification: {
     google: "hKxpRfUeR2d1u-4BhGv-zYUd-eL3bzZwq5tuKY_c5lc",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.kfssflooring.com",
+    url: "https://www.kelownaflooringsuperstore.com",
     siteName: "Kelowna Flooring Superstore",
     title: "Kelowna Flooring Superstore | Flooring For Life",
     description:

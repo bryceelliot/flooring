@@ -5,6 +5,23 @@ Options -MultiViews -Indexes
   RewriteEngine On
   RewriteBase /
 
+  # ── Canonical host: 301 everything to https://www.kelownaflooringsuperstore.com
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://www.kelownaflooringsuperstore.com%{REQUEST_URI} [R=301,L]
+
+  # Redirect kfssflooring.com (and www) → www.kelownaflooringsuperstore.com
+  RewriteCond %{HTTP_HOST} ^(www\.)?kfssflooring\.com$ [NC]
+  RewriteRule ^ https://www.kelownaflooringsuperstore.com%{REQUEST_URI} [R=301,L]
+
+  # Redirect kfssflooring.online → www.kelownaflooringsuperstore.com
+  RewriteCond %{HTTP_HOST} ^(www\.)?kfssflooring\.online$ [NC]
+  RewriteRule ^ https://www.kelownaflooringsuperstore.com%{REQUEST_URI} [R=301,L]
+
+  # Redirect bare kelownaflooringsuperstore.com → www version
+  RewriteCond %{HTTP_HOST} ^kelownaflooringsuperstore\.com$ [NC]
+  RewriteRule ^ https://www.kelownaflooringsuperstore.com%{REQUEST_URI} [R=301,L]
+
   # Serve real files and directories directly (CSS, JS, images, videos)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: p.metaTitle,
     description: p.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/compare/${p.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/compare/${p.slug}` },
     openGraph: {
       title: p.metaTitle,
       description: p.metaDescription,
@@ -56,18 +56,18 @@ export default async function ComparePage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      logo: { "@type": "ImageObject", url: "https://www.kfssflooring.com/logo.webp" },
+      logo: { "@type": "ImageObject", url: "https://www.kelownaflooringsuperstore.com/logo.webp" },
     },
-    image: `https://www.kfssflooring.com${p.heroImage}`,
-    mainEntityOfPage: `https://www.kfssflooring.com/compare/${p.slug}`,
+    image: `https://www.kelownaflooringsuperstore.com${p.heroImage}`,
+    mainEntityOfPage: `https://www.kelownaflooringsuperstore.com/compare/${p.slug}`,
   };
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.kfssflooring.com/compare" },
-      { "@type": "ListItem", position: 3, name: p.title, item: `https://www.kfssflooring.com/compare/${p.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Compare", item: "https://www.kelownaflooringsuperstore.com/compare" },
+      { "@type": "ListItem", position: 3, name: p.title, item: `https://www.kelownaflooringsuperstore.com/compare/${p.slug}` },
     ],
   };
 

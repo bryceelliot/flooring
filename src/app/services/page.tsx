@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Flooring Services Kelowna",
   description:
     "Beyond flooring sales — Kelowna Flooring Superstore offers removal, subfloor repair, baseboards & trim, and in-floor heating. All-in-one project quotes.",
-  alternates: { canonical: "https://www.kfssflooring.com/services" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/services" },
 };
 
 export default function ServicesIndex() {

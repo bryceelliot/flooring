@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Flooring Financing Options — Kelowna",
   description:
     "Flexible financing options for flooring in Kelowna. Get the floors you love now and pay over time. Ask about our current financing programs at Kelowna Flooring Superstore.",
-  alternates: { canonical: "https://www.kfssflooring.com/financing" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/financing" },
 };
 
 const benefits = [

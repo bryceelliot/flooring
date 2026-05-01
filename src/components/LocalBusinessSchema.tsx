@@ -7,9 +7,9 @@ export default async function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "FlooringStore",
     name: "Kelowna Flooring Superstore",
-    image: "https://www.kfssflooring.com/logo.webp",
-    logo: "https://www.kfssflooring.com/logo.webp",
-    url: "https://www.kfssflooring.com",
+    image: "https://www.kelownaflooringsuperstore.com/logo.webp",
+    logo: "https://www.kelownaflooringsuperstore.com/logo.webp",
+    url: "https://www.kelownaflooringsuperstore.com",
     telephone: "+12508607847",
     email: "kfssteam@gmail.com",
     description:
@@ -27,7 +27,7 @@ export default async function LocalBusinessSchema() {
       latitude: 49.8885,
       longitude: -119.4395,
     },
-    hasMap: "https://gmb.kfssflooring.com",
+    hasMap: "https://gmb.kelownaflooringsuperstore.com",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -96,8 +96,8 @@ export default async function LocalBusinessSchema() {
           },
         ]),
     sameAs: [
-      "https://facebook.kfssflooring.com",
-      "https://instagram.kfssflooring.com",
+      "https://facebook.kelownaflooringsuperstore.com",
+      "https://instagram.kelownaflooringsuperstore.com",
       "https://x.com/KelownaFloorSS",
     ],
     knowsAbout: [

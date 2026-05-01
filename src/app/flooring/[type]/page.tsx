@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${tn} Flooring Near Me — Kelowna | ${tn} Store & Installation`,
     description: flooring.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/flooring/${flooring.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/flooring/${flooring.slug}` },
     keywords: [
       `${tnLower} near me`,
       `${tnLower} flooring near me`,
@@ -134,9 +134,9 @@ export default async function FlooringTypePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Flooring", item: "https://www.kfssflooring.com/flooring" },
-      { "@type": "ListItem", position: 3, name: flooring.name, item: `https://www.kfssflooring.com/flooring/${flooring.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Flooring", item: "https://www.kelownaflooringsuperstore.com/flooring" },
+      { "@type": "ListItem", position: 3, name: flooring.name, item: `https://www.kelownaflooringsuperstore.com/flooring/${flooring.slug}` },
     ],
   };
 
@@ -147,7 +147,7 @@ export default async function FlooringTypePage({ params }: Props) {
     description: flooring.metaDescription,
     brand: { "@type": "Brand", name: "Kelowna Flooring Superstore" },
     category: flooring.name,
-    image: photo ? `https://www.kfssflooring.com${photo.src}` : undefined,
+    image: photo ? `https://www.kelownaflooringsuperstore.com${photo.src}` : undefined,
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "CAD",
@@ -167,7 +167,7 @@ export default async function FlooringTypePage({ params }: Props) {
     description: flooring.metaDescription,
     provider: {
       "@type": "LocalBusiness",
-      "@id": "https://www.kfssflooring.com/#kelownaflooringsuperstore",
+      "@id": "https://www.kelownaflooringsuperstore.com/#kelownaflooringsuperstore",
       name: "Kelowna Flooring Superstore",
       telephone: "+12508607847",
       address: {

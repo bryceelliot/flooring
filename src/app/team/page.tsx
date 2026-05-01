@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Meet the Team — Kelowna Flooring Superstore",
   description:
     "Meet the Kelowna Flooring Superstore team — showroom staff who guide your flooring choices and installers named in our Google reviews for exceptional work.",
-  alternates: { canonical: "https://www.kfssflooring.com/team" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/team" },
   openGraph: {
     title: "Meet the Team — Kelowna Flooring Superstore",
     description: "Showroom staff + installers named in 4.9★ Google reviews — the people who make your floor happen.",

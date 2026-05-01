@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "All Flooring Types — In-Stock Kelowna",
   description:
     "Browse all flooring types at Kelowna Flooring Superstore — laminate, hardwood, carpet, vinyl plank, tile, linoleum, commercial, and area rugs. All in-stock with expert installation.",
-  alternates: { canonical: "https://www.kfssflooring.com/flooring" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/flooring" },
 };
 
 const flooringPhotos: Record<string, { img: string; focal: string; tag: string }> = {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Recent Flooring Projects — Kelowna",
   description:
     "Real Kelowna flooring installs by Kelowna Flooring Superstore — Glenpark Village Meadows, Springfield Manor, The Peaks, and more. Photos + flooring used + project details.",
-  alternates: { canonical: "https://www.kfssflooring.com/projects" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/projects" },
   openGraph: {
     title: "Recent Flooring Projects — Kelowna Flooring Superstore",
     description: "Real Kelowna flooring installs from our crews. Photos + flooring used + project details.",

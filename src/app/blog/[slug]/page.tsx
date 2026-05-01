@@ -21,7 +21,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.metaDescription,
     alternates: {
-      canonical: `https://www.kfssflooring.com/blog/${slug}`,
+      canonical: `https://www.kelownaflooringsuperstore.com/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
@@ -116,19 +116,19 @@ export default async function BlogPostPage({
     "@type": "Article",
     headline: post.title,
     description: post.metaDescription,
-    image: `https://www.kfssflooring.com${post.img}`,
+    image: `https://www.kelownaflooringsuperstore.com${post.img}`,
     datePublished: post.date,
     author: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      url: "https://www.kfssflooring.com",
+      url: "https://www.kelownaflooringsuperstore.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.kfssflooring.com/logo.webp",
+        url: "https://www.kelownaflooringsuperstore.com/logo.webp",
       },
     },
   };

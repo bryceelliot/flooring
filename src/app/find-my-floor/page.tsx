@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Find My Floor — Flooring Style Quiz | Kelowna Flooring Superstore",
   description:
     "Not sure which flooring is right for you? Answer 5 quick questions and get a personalized recommendation for your home in Kelowna.",
-  alternates: { canonical: "https://www.kfssflooring.com/find-my-floor" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/find-my-floor" },
 };
 
 export default function FindMyFloorPage() {

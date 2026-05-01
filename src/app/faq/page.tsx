@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions — Flooring Kelowna",
   description:
     "Answers to the most common questions about flooring installation, costs, timelines, and products at Kelowna Flooring Superstore. Get expert answers before you buy.",
-  alternates: { canonical: "https://www.kfssflooring.com/faq" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/faq" },
 };
 
 const faqCategories = [

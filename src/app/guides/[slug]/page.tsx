@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: g.metaTitle,
     description: g.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/guides/${g.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/guides/${g.slug}` },
     openGraph: {
       title: g.metaTitle,
       description: g.metaDescription,
@@ -69,10 +69,10 @@ export default async function GuidePage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      logo: { "@type": "ImageObject", url: "https://www.kfssflooring.com/logo.webp" },
+      logo: { "@type": "ImageObject", url: "https://www.kelownaflooringsuperstore.com/logo.webp" },
     },
-    image: `https://www.kfssflooring.com${g.heroImage}`,
-    mainEntityOfPage: `https://www.kfssflooring.com/guides/${g.slug}`,
+    image: `https://www.kelownaflooringsuperstore.com${g.heroImage}`,
+    mainEntityOfPage: `https://www.kelownaflooringsuperstore.com/guides/${g.slug}`,
   };
   const faqSchema = {
     "@context": "https://schema.org",
@@ -87,9 +87,9 @@ export default async function GuidePage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.kfssflooring.com/guides" },
-      { "@type": "ListItem", position: 3, name: g.title, item: `https://www.kfssflooring.com/guides/${g.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.kelownaflooringsuperstore.com/guides" },
+      { "@type": "ListItem", position: 3, name: g.title, item: `https://www.kelownaflooringsuperstore.com/guides/${g.slug}` },
     ],
   };
 

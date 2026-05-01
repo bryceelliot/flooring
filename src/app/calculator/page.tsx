@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Flooring Cost Calculator Kelowna",
   description:
     "Instantly estimate your flooring project cost. Enter your room dimensions and flooring type to get a price range for materials and installation in Kelowna.",
-  alternates: { canonical: "https://www.kfssflooring.com/calculator" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/calculator" },
 };
 
 export default function CalculatorPage() {

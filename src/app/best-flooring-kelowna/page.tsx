@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Best Flooring Store in Kelowna (2026 Guide)",
   description:
     "Honest comparison of Kelowna's top flooring stores in 2026 — pricing, selection, installation, reviews. Independent breakdown to help you choose the right shop for your home.",
-  alternates: { canonical: "https://www.kfssflooring.com/best-flooring-kelowna" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/best-flooring-kelowna" },
   openGraph: {
     title: "Best Flooring Store in Kelowna — 2026 Comparison Guide",
     description: "Independent comparison of Kelowna flooring stores. Pricing, selection, installation, reviews.",
@@ -151,17 +151,17 @@ export default function BestFlooringKelowna() {
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      logo: { "@type": "ImageObject", url: "https://www.kfssflooring.com/logo.webp" },
+      logo: { "@type": "ImageObject", url: "https://www.kelownaflooringsuperstore.com/logo.webp" },
     },
-    image: "https://www.kfssflooring.com/assets/images/showroom-01.webp",
-    mainEntityOfPage: "https://www.kfssflooring.com/best-flooring-kelowna",
+    image: "https://www.kelownaflooringsuperstore.com/assets/images/showroom-01.webp",
+    mainEntityOfPage: "https://www.kelownaflooringsuperstore.com/best-flooring-kelowna",
   };
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Best Flooring Kelowna", item: "https://www.kfssflooring.com/best-flooring-kelowna" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Best Flooring Kelowna", item: "https://www.kelownaflooringsuperstore.com/best-flooring-kelowna" },
     ],
   };
 

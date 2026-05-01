@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: { canonical: `https://www.kfssflooring.com/service-areas/${area.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/service-areas/${area.slug}` },
     openGraph: {
       title,
       description,
@@ -42,9 +42,9 @@ export default async function ServiceAreaPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.kfssflooring.com/service-areas" },
-      { "@type": "ListItem", position: 3, name: area.name, item: `https://www.kfssflooring.com/service-areas/${area.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.kelownaflooringsuperstore.com/service-areas" },
+      { "@type": "ListItem", position: 3, name: area.name, item: `https://www.kelownaflooringsuperstore.com/service-areas/${area.slug}` },
     ],
   };
 

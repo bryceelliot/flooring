@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Visualize Your Floor — Kelowna Room Visualizer",
   description:
     "Upload a photo of your room and see exactly how Kelowna Flooring Superstore products will look — laminate, hardwood, vinyl plank, tile. Powered by Roomvo.",
-  alternates: { canonical: "https://www.kfssflooring.com/visualize" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/visualize" },
   openGraph: {
     title: "Visualize Your Floor — Kelowna Flooring Superstore",
     description: "Upload your room photo and see our products installed before you buy.",

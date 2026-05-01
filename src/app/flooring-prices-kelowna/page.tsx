@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Flooring Prices Kelowna (2026 Price Guide)",
   description:
     "2026 Kelowna flooring prices by type — laminate, hardwood, carpet, vinyl plank, tile. Installed $/sqft ranges, what drives cost, how to compare quotes. Updated April 2026.",
-  alternates: { canonical: "https://www.kfssflooring.com/flooring-prices-kelowna" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/flooring-prices-kelowna" },
   openGraph: {
     title: "Flooring Prices Kelowna — 2026 Price Guide",
     description: "Installed $/sqft ranges for every flooring type in Kelowna, updated April 2026.",
@@ -189,17 +189,17 @@ export default function FlooringPricesKelowna() {
     publisher: {
       "@type": "Organization",
       name: "Kelowna Flooring Superstore",
-      logo: { "@type": "ImageObject", url: "https://www.kfssflooring.com/logo.webp" },
+      logo: { "@type": "ImageObject", url: "https://www.kelownaflooringsuperstore.com/logo.webp" },
     },
-    image: "https://www.kfssflooring.com/assets/images/showroom-08.webp",
-    mainEntityOfPage: "https://www.kfssflooring.com/flooring-prices-kelowna",
+    image: "https://www.kelownaflooringsuperstore.com/assets/images/showroom-08.webp",
+    mainEntityOfPage: "https://www.kelownaflooringsuperstore.com/flooring-prices-kelowna",
   };
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Flooring Prices Kelowna", item: "https://www.kfssflooring.com/flooring-prices-kelowna" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Flooring Prices Kelowna", item: "https://www.kelownaflooringsuperstore.com/flooring-prices-kelowna" },
     ],
   };
 

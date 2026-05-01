@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Free Flooring Estimate Kelowna",
   description:
     "Get a free flooring estimate from Kelowna Flooring Superstore. We measure your space and provide a detailed quote — no obligation. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kfssflooring.com/estimates" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/estimates" },
 };
 
 const steps = [

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Kelowna Flooring Superstore | In-Stock Flooring For Life",
   description:
     "Kelowna's premier flooring store. In-stock laminate, hardwood, carpet, vinyl plank, tile & more. Expert installation across the Okanagan. Free estimates. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kfssflooring.com" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com" },
 };
 
 /* ─── FAQ schema (SEO) ─────────────────────────────────────── */

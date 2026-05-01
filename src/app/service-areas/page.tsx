@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Service Areas — Flooring Across the Okanagan",
   description:
     "Kelowna Flooring Superstore installs across Kelowna, West Kelowna, Lake Country, Peachland, and Summerland. Free in-home estimates throughout the Okanagan.",
-  alternates: { canonical: "https://www.kfssflooring.com/service-areas" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/service-areas" },
   openGraph: {
     title: "Service Areas — Flooring Across the Okanagan",
     description: "We install across Kelowna, West Kelowna, Lake Country, Peachland & Summerland.",

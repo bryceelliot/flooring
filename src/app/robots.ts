@@ -38,7 +38,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       ...aiRules,
     ],
-    sitemap: "https://www.kfssflooring.com/sitemap.xml",
-    host: "https://www.kfssflooring.com",
+    sitemap: "https://www.kelownaflooringsuperstore.com/sitemap.xml",
+    host: "https://www.kelownaflooringsuperstore.com",
   };
 }

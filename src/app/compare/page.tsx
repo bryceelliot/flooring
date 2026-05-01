@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Flooring Comparison Guides — Kelowna",
   description:
     "Side-by-side flooring comparisons for Kelowna homes — vinyl plank vs laminate, engineered vs solid hardwood, pet-friendly options, rentals, and more.",
-  alternates: { canonical: "https://www.kfssflooring.com/compare" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/compare" },
   openGraph: {
     title: "Flooring Comparison Guides — Kelowna",
     description: "Side-by-side flooring comparisons for Kelowna homes.",

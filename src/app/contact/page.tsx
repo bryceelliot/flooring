@@ -17,7 +17,7 @@ function XIcon() {
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Contact Kelowna Flooring Superstore. Visit our showroom at Unit 16, 830 McCurdy Place, Kelowna BC or call (250) 860-7847. Free estimates available.",
-  alternates: { canonical: "https://www.kfssflooring.com/contact" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/contact" },
 };
 
 const hours = [
@@ -89,7 +89,7 @@ export default function ContactPage() {
                       Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8
                     </p>
                     <a
-                      href="https://gmb.kfssflooring.com"
+                      href="https://gmb.kelownaflooringsuperstore.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-primary text-sm font-bold mt-2 hover:text-accent transition-colors"
@@ -147,8 +147,8 @@ export default function ContactPage() {
                 <h3 className="font-bold text-charcoal mb-4">Follow Us</h3>
                 <div className="flex gap-3">
                   {[
-                    { href: "https://facebook.kfssflooring.com", label: "Facebook", Icon: FacebookIcon },
-                    { href: "https://instagram.kfssflooring.com", label: "Instagram", Icon: InstagramIcon },
+                    { href: "https://facebook.kelownaflooringsuperstore.com", label: "Facebook", Icon: FacebookIcon },
+                    { href: "https://instagram.kelownaflooringsuperstore.com", label: "Instagram", Icon: InstagramIcon },
                     { href: "https://x.com/KelownaFloorSS", label: "Twitter / X", Icon: XIcon },
                   ].map(({ href, label, Icon }) => (
                     <a
@@ -179,7 +179,7 @@ export default function ContactPage() {
               <span className="font-semibold text-sm">Unit 16, 830 McCurdy Place, Kelowna, BC V1X 7S5</span>
             </div>
             <a
-              href="https://gmb.kfssflooring.com"
+              href="https://gmb.kelownaflooringsuperstore.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent font-bold text-xs hover:text-white transition-colors"

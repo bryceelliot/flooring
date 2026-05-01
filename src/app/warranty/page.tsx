@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Flooring Warranty & Guarantee — Kelowna",
   description:
     "Every floor we install is backed by the manufacturer's warranty plus our own craftsmanship guarantee. Here's exactly what's covered, what isn't, and how to make a claim.",
-  alternates: { canonical: "https://www.kfssflooring.com/warranty" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/warranty" },
   openGraph: {
     title: "Flooring Warranty & Guarantee — Kelowna Flooring Superstore",
     description: "Manufacturer warranty + our craftsmanship guarantee on every install. Exactly what's covered.",

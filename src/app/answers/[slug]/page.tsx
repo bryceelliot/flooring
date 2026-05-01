@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: p.metaTitle,
     description: p.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/answers/${p.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/answers/${p.slug}` },
     openGraph: {
       title: p.metaTitle,
       description: p.metaDescription,
@@ -86,9 +86,9 @@ export default async function AnswerPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Answers", item: "https://www.kfssflooring.com/answers" },
-      { "@type": "ListItem", position: 3, name: p.question, item: `https://www.kfssflooring.com/answers/${p.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Answers", item: "https://www.kelownaflooringsuperstore.com/answers" },
+      { "@type": "ListItem", position: 3, name: p.question, item: `https://www.kelownaflooringsuperstore.com/answers/${p.slug}` },
     ],
   };
 

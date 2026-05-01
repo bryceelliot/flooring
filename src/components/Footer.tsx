@@ -218,7 +218,7 @@ export default function Footer() {
             <li className="flex gap-3">
               <MapPin size={16} className="text-accent mt-0.5 shrink-0" />
               <a
-                href="https://gmb.kfssflooring.com"
+                href="https://gmb.kelownaflooringsuperstore.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/55 hover:text-white text-base leading-relaxed transition-colors"

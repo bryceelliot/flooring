@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${p.name} — Kelowna Flooring Project`,
     description: p.metaDescription,
-    alternates: { canonical: `https://www.kfssflooring.com/projects/${p.slug}` },
+    alternates: { canonical: `https://www.kelownaflooringsuperstore.com/projects/${p.slug}` },
     openGraph: {
       title: `${p.name} — Kelowna Flooring Superstore`,
       description: p.metaDescription,
@@ -40,9 +40,9 @@ export default async function ProjectPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kfssflooring.com" },
-      { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.kfssflooring.com/projects" },
-      { "@type": "ListItem", position: 3, name: p.name, item: `https://www.kfssflooring.com/projects/${p.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kelownaflooringsuperstore.com" },
+      { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.kelownaflooringsuperstore.com/projects" },
+      { "@type": "ListItem", position: 3, name: p.name, item: `https://www.kelownaflooringsuperstore.com/projects/${p.slug}` },
     ],
   };
   const projectSchema = {
@@ -50,7 +50,7 @@ export default async function ProjectPage({ params }: Props) {
     "@type": "CreativeWork",
     name: p.name,
     description: p.description,
-    image: p.photos.map((ph) => `https://www.kfssflooring.com${ph.src}`),
+    image: p.photos.map((ph) => `https://www.kelownaflooringsuperstore.com${ph.src}`),
     creator: { "@type": "LocalBusiness", name: "Kelowna Flooring Superstore" },
     contentLocation: { "@type": "Place", name: p.neighborhood },
     dateCreated: p.completed,

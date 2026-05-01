@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Quick Flooring Answers — Kelowna",
   description:
     "Quick answers to the most common Kelowna flooring questions — pricing, removal, pet-friendly options, what laminate is, how to choose flooring.",
-  alternates: { canonical: "https://www.kfssflooring.com/answers" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/answers" },
 };
 
 export default function AnswersIndex() {

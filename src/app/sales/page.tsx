@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Sales & Promotions — Flooring Deals Kelowna",
   description:
     "Current flooring sales and promotions at Kelowna Flooring Superstore. In-stock deals on carpet, vinyl plank, laminate, area rugs and more. Limited stock. Call (250) 860-7847.",
-  alternates: { canonical: "https://www.kfssflooring.com/sales" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/sales" },
 };
 
 const sales = [

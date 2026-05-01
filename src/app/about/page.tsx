@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Kelowna Flooring Superstore — Kelowna's locally owned flooring store, part of the Flooring Superstores franchise, with 30+ years serving the Central Okanagan.",
-  alternates: { canonical: "https://www.kfssflooring.com/about" },
+  alternates: { canonical: "https://www.kelownaflooringsuperstore.com/about" },
 };
 
 const values = [
@@ -306,7 +306,7 @@ export default function AboutPage() {
                   <div>
                     <div className="text-white font-semibold">Showroom Address</div>
                     <div className="text-white/55 text-sm mt-1">Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8</div>
-                    <a href="https://gmb.kfssflooring.com" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
+                    <a href="https://gmb.kelownaflooringsuperstore.com" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
                       Get Directions →
                     </a>
                   </div>
