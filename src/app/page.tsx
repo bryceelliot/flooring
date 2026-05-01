@@ -285,40 +285,8 @@ export default function HomePage() {
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { src: "/assets/images/showroom-01.webp", label: "Main Showroom" },
-              { src: "/assets/images/hardwood-showroom-full.webp", label: "Hardwood Display" },
-              { src: "/assets/images/showroom-13.webp", label: "Carpet Selection" },
-              { src: "/assets/images/flooring/tile/tile-01.webp", label: "Tile Collection" },
-              { src: "/assets/images/showroom-08.webp", label: "Laminate Samples" },
-              { src: "/assets/images/showroom-10.webp", label: "Carpet Studio" },
-              { src: "/assets/images/vinyl-plank-showroom.webp", label: "Vinyl Plank" },
-              { src: "/assets/images/showroom-04.webp", label: "Area Rugs" },
-            ].map((shot, i) => (
-              <AnimateOnScroll key={shot.src} delay={(i % 4) * 0.06}>
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
-                  <Image
-                    src={shot.src}
-                    alt={shot.label}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  <p className="absolute bottom-3 left-4 right-4 text-white font-bold text-sm">
-                    {shot.label}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-
-          <AnimateOnScroll className="mt-12">
+          <AnimateOnScroll>
             <div className="max-w-4xl mx-auto">
-              <p className="text-white/60 text-xs font-bold tracking-widest uppercase text-center mb-4">
-                Full Showroom Walkthrough
-              </p>
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
                 <iframe
                   src="https://www.youtube.com/embed/WoQ_5q8xsEs?rel=0"
