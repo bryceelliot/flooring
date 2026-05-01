@@ -117,7 +117,7 @@ export default async function LocalBusinessSchema() {
       "Old floor removal",
       "Stair flooring",
       "In-floor heating compatible flooring",
-      "Flooring financing via iFinance Canada",
+      "Flooring financing available",
     ],
     makesOffer: [
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Carpet Installation Kelowna" } },

@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     q: "Does financing change the total Kelowna flooring price?",
-    a: "Our financing through iFinance Canada splits the same total into monthly payments — not a markup. We don't change the project price based on payment method.",
+    a: "Financing splits the same total into monthly payments — not a markup. We don't change the project price based on payment method.",
   },
 ];
 

@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: "Do Kelowna flooring stores offer financing?",
-    a: "Yes — Kelowna Flooring Superstore partners with iFinance Canada for flexible monthly-payment plans. Most locally owned stores offer some form of financing; ask up front about terms, rates, and whether materials + installation + removal are all covered.",
+    a: "Yes — Kelowna Flooring Superstore offers flexible monthly-payment plans. Most locally owned stores offer some form of financing; ask up front about terms, rates, and whether materials + installation + removal are all covered.",
   },
 ];
 

@@ -77,18 +77,18 @@ export const projects: Project[] = [
     name: "The Peaks",
     neighborhood: "Kelowna, BC",
     city: "Kelowna",
-    flooringTypes: ["Engineered Hardwood", "Plush Carpet", "Porcelain Tile"],
+    flooringTypes: ["Luxury Vinyl Plank", "Plush Carpet", "Porcelain Tile"],
     squareFootage: "Full-home install",
     duration: "5 days on site",
     homeType: "Custom family home, designer-finished",
     summary:
-      "Full-home flooring install featuring wide-plank engineered hardwood through the main living areas and premium soft carpet in the bedrooms.",
+      "Full-home flooring install featuring wide-plank luxury vinyl plank through the main living areas and premium soft carpet in the bedrooms.",
     description:
-      "The Peaks project is one of our showcase Kelowna installs. Wide-plank engineered hardwood across the main floor, plush nylon carpet in the bedrooms, porcelain tile in the wet areas. Designer-finished throughout with custom transitions, stair nosings, and matched trim.",
+      "The Peaks project is one of our showcase Kelowna installs. Wide-plank luxury vinyl plank across the main floor, plush nylon carpet in the bedrooms, porcelain tile in the wet areas. Designer-finished throughout with custom transitions, stair nosings, and matched trim.",
     photos: seq("the-peaks", "peaks", 1, 11, "The Peaks Kelowna"),
     heroImage: "/assets/images/projects/the-peaks/peaks-01.webp",
     metaDescription:
-      "The Peaks — full-home Kelowna flooring install with engineered hardwood and plush carpet. Designer-finished by Kelowna Flooring Superstore.",
+      "The Peaks — full-home Kelowna flooring install with luxury vinyl plank and plush carpet. Designer-finished by Kelowna Flooring Superstore.",
     completed: "2025-09-01",
   },
 ];
