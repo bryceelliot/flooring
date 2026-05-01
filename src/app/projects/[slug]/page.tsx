@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { projects, getProjectBySlug } from "@/lib/projects";
-import { ArrowRight, Phone, MapPin, ChevronRight, Calendar, Ruler, Clock, Home as HomeIcon } from "lucide-react";
+import { ArrowRight, Phone, MapPin, ChevronRight, Calendar, Ruler, Clock, Home as HomeIcon, Quote, Star } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -54,6 +54,15 @@ export default async function ProjectPage({ params }: Props) {
     creator: { "@type": "LocalBusiness", name: "Kelowna Flooring Superstore" },
     contentLocation: { "@type": "Place", name: p.neighborhood },
     dateCreated: p.completed,
+    ...(p.testimonial && {
+      review: {
+        "@type": "Review",
+        author: { "@type": "Person", name: p.testimonial.author },
+        reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+        reviewBody: p.testimonial.quote,
+        ...(p.testimonial.source && { publisher: { "@type": "Organization", name: p.testimonial.source } }),
+      },
+    }),
   };
 
   const others = projects.filter((x) => x.slug !== p.slug);
@@ -125,6 +134,49 @@ export default async function ProjectPage({ params }: Props) {
           </AnimateOnScroll>
         </div>
       </section>
+
+      {p.testimonial && (
+        <section className="py-16 bg-light border-y border-gray-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <article className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-5">
+                  <Quote className="w-7 h-7 text-accent/40" />
+                  <div className="flex">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-charcoal text-base sm:text-lg leading-relaxed">
+                  &ldquo;{p.testimonial.quote}&rdquo;
+                </p>
+                <footer className="mt-6 pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <div className="font-black text-charcoal text-sm">
+                      {p.testimonial.author}
+                      {p.testimonial.location && (
+                        <span className="text-gray-400 font-normal">
+                          {" "}— {p.testimonial.location}
+                        </span>
+                      )}
+                    </div>
+                    {p.testimonial.date && (
+                      <div className="text-gray-400 text-xs mt-0.5">
+                        {p.testimonial.date}
+                        {p.testimonial.source && ` · via ${p.testimonial.source}`}
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-xs font-bold tracking-wider uppercase text-accent bg-accent/10 px-3 py-1 rounded-full">
+                    Verified Customer
+                  </span>
+                </footer>
+              </article>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      )}
 
       {/* Photo gallery */}
       <section className="py-16 bg-white">

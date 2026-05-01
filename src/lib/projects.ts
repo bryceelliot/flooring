@@ -4,6 +4,14 @@
 
 export interface ProjectPhoto { src: string; alt: string }
 
+export interface ProjectTestimonial {
+  quote: string;
+  author: string;
+  location?: string;
+  date?: string;
+  source?: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -19,6 +27,7 @@ export interface Project {
   metaDescription: string;
   heroImage: string;
   completed: string;
+  testimonial?: ProjectTestimonial;
 }
 
 function seq(project: string, base: string, start: number, end: number, altBase: string): ProjectPhoto[] {
@@ -52,6 +61,14 @@ export const projects: Project[] = [
     metaDescription:
       "Glenpark Village Meadows flooring install in Kelowna — luxury vinyl plank and carpet tile through common areas on Whitman Road. Commercial install by Kelowna Flooring Superstore.",
     completed: "2026-04-23",
+    testimonial: {
+      quote:
+        "We had an excellent experience with Kelowna Flooring Superstore. Their team installed carpet tiles throughout our complex: the hallways and common areas, as well as replacing the carpet on the stairs which included new nosing. The carpet in the gym was replaced with glue-down vinyl plank flooring. The quality of their work was outstanding, and everything was completed professionally and efficiently. When we purchased extra boxes of carpet tile to have on hand, the owner delivered them personally. I highly recommend Kelowna Flooring Superstore for anyone looking for reliable, high-quality flooring services.",
+      author: "Bonnie B.",
+      location: "Kelowna, BC",
+      date: "April 30, 2026",
+      source: "Yelp",
+    },
   },
   {
     slug: "springfield-manor",
