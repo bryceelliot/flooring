@@ -1,0 +1,52 @@
+name: Refresh Google Reviews
+
+# Rebuilds and redeploys the site every 6 hours so the Google Places API call
+# in src/lib/google-reviews.ts re-fetches fresh review data and bakes it into
+# the static export. Manual runs are also allowed.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # every 6 hours, on the hour, UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (pulls fresh Google reviews via Places API)
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+        run: npm run build
+
+      - name: FTP deploy to Bluehost
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.BLUEHOST_FTP_HOST }}
+          username: ${{ secrets.BLUEHOST_FTP_USER }}
+          password: ${{ secrets.BLUEHOST_FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /website_ae22452a/
+          protocol: ftp
+          port: 21
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
