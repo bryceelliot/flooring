@@ -161,6 +161,14 @@ export default function Footer() {
                 <path d="M17.5 12.5L12 9.25v6.5l-5.5-3.25V22h11v-9.5zM6.5 2v8.25L17.5 16.5V8.25L6.5 2z"/>
               </svg>
             </a>
+            <a href="https://x.com/KelownaFloorSS" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+              <XIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/shaun-chartrand-13079a47" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/>
+              </svg>
+            </a>
             <a href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
