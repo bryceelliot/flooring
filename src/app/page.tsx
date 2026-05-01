@@ -314,10 +314,22 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimateOnScroll className="text-center mt-10">
-            <p className="text-white/50 text-base">
-              Full walk-through video coming soon.
-            </p>
+          <AnimateOnScroll className="mt-12">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-white/60 text-xs font-bold tracking-widest uppercase text-center mb-4">
+                Full Showroom Walkthrough
+              </p>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
+                <iframe
+                  src="https://www.youtube.com/embed/Yg_kt6pVxLc?rel=0"
+                  title="Kelowna Flooring Superstore — Showroom Walkthrough"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
           </AnimateOnScroll>
         </div>
       </section>
@@ -386,7 +398,7 @@ export default function HomePage() {
       <section className="py-24 relative overflow-hidden bg-[#0d1526]">
         {/* Background image with heavy overlay */}
         <Image
-          src="/assets/images/hero-walnut.webp"
+          src="/assets/images/hero-showroom.webp"
           alt=""
           fill
           aria-hidden="true"

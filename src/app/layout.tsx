@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       "Kelowna's premier flooring destination. Massive in-stock selection, expert installation, free estimates. (250) 860-7847.",
     images: [
       {
-        url: "/assets/images/hero-walnut.webp",
+        url: "/assets/images/hero-showroom.webp",
         width: 1200,
         height: 630,
         alt: "Beautiful walnut hardwood flooring installed in a Kelowna home",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     description:
       "In-stock flooring showroom in Kelowna. Laminate, hardwood, carpet, vinyl plank & more. Free estimates.",
     creator: "@KelownaFloorSS",
-    images: ["/assets/images/hero-walnut.webp"],
+    images: ["/assets/images/hero-showroom.webp"],
   },
   robots: {
     index: true,
@@ -113,7 +113,7 @@ export default function RootLayout({
     <html lang="en" className={plusJakartaSans.variable}>
       <head>
         <LocalBusinessSchema />
-        <link rel="preload" as="image" href="/assets/images/hero-walnut.webp" fetchPriority="high" />
+        <link rel="preload" as="image" href="/assets/images/hero-showroom.webp" fetchPriority="high" />
       </head>
       <body className="antialiased bg-white">
         <Navbar />

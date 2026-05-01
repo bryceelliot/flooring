@@ -129,7 +129,7 @@ export default function EstimatesPage() {
             {/* Photo teaser */}
             <div className="mt-6 relative h-48 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/assets/images/hero-walnut.webp"
+                src="/assets/images/hero-showroom.webp"
                 alt="Beautiful hardwood flooring installed by Kelowna Flooring Superstore"
                 fill
                 className="object-cover object-[center_55%]"

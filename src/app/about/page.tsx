@@ -24,7 +24,7 @@ export default function AboutPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
-          src="/assets/images/hero-walnut.webp"
+          src="/assets/images/hero-showroom.webp"
           alt=""
           fill
           aria-hidden="true"
@@ -306,7 +306,7 @@ export default function AboutPage() {
                   <div>
                     <div className="text-white font-semibold">Showroom Address</div>
                     <div className="text-white/55 text-sm mt-1">Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8</div>
-                    <a href="https://gmb.kelownaflooringsuperstore.com" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC" target="_blank" rel="noopener noreferrer" className="text-accent text-sm font-semibold mt-1 block hover:underline">
                       Get Directions →
                     </a>
                   </div>

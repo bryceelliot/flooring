@@ -132,7 +132,7 @@ export const posts: BlogPost[] = [
     category: "Maintenance",
     readTime: "4 min read",
     date: "Feb 2026",
-    img: "/assets/images/hero-walnut.webp",
+    img: "/assets/images/hero-showroom.webp",
     focal: "center 55%",
     metaDescription:
       "Learn how to care for hardwood floors in Kelowna and the Okanagan's dry climate. Expert tips on humidity control, cleaning, and seasonal maintenance from Kelowna Flooring Superstore.",
@@ -748,7 +748,7 @@ export const posts: BlogPost[] = [
     category: "Buying Guide",
     readTime: "5 min read",
     date: "Apr 2026",
-    img: "/assets/images/hero-walnut.webp",
+    img: "/assets/images/hero-showroom.webp",
     focal: "center 55%",
     metaDescription:
       "Engineered hardwood vs solid hardwood — what's the real difference? Compare stability, moisture tolerance, installation, cost, and refinishing in this expert guide from Kelowna Flooring Superstore.",

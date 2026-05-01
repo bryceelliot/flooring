@@ -37,7 +37,7 @@ const reviews = [
     date: "February 2025",
     rating: 5,
     text: "We had a fantastic experience with Kelowna Flooring Superstore. Shaun and Selina were incredibly helpful when we were choosing our flooring. They were knowledgeable, patient, and really went out of their way to work with our timeline. The installation was done by Jessie and Clarke, and they truly went above and beyond. Their workmanship was excellent and the finished result looks amazing.",
-    photo: "/assets/images/hero-walnut.webp",
+    photo: "/assets/images/hero-showroom.webp",
     photoAlt: "Hardwood flooring — Kelowna home",
     product: "Engineered Hardwood",
     color: "#E8423C",

@@ -82,7 +82,7 @@ export default function FinancingPage() {
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative pt-52 lg:pt-44 pb-28 overflow-hidden bg-[#0d1526]">
         <Image
-          src="/assets/images/hero-walnut.webp"
+          src="/assets/images/hero-showroom.webp"
           alt=""
           fill
           aria-hidden="true"

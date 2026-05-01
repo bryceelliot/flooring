@@ -27,7 +27,7 @@ export default async function LocalBusinessSchema() {
       latitude: 49.8885,
       longitude: -119.4395,
     },
-    hasMap: "https://gmb.kelownaflooringsuperstore.com",
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -96,9 +96,9 @@ export default async function LocalBusinessSchema() {
           },
         ]),
     sameAs: [
-      "https://facebook.kelownaflooringsuperstore.com",
-      "https://instagram.kelownaflooringsuperstore.com",
-      "https://x.com/KelownaFloorSS",
+      "https://www.facebook.com/kelownaflooringsuperstore",
+      "https://www.instagram.com/kelownaflooringsuperstore/",
+      "https://www.youtube.com/@KelownaFlooringSuperstore-w3d",
     ],
     knowsAbout: [
       "Flooring installation",

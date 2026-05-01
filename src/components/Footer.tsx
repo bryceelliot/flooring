@@ -151,6 +151,11 @@ export default function Footer() {
             <a href="https://www.instagram.com/kelownaflooringsuperstore/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <InstagramIcon />
             </a>
+            <a href="https://www.youtube.com/@KelownaFlooringSuperstore-w3d" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.016 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/>
+              </svg>
+            </a>
             <a href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">
               <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -218,7 +223,7 @@ export default function Footer() {
             <li className="flex gap-3">
               <MapPin size={16} className="text-accent mt-0.5 shrink-0" />
               <a
-                href="https://gmb.kelownaflooringsuperstore.com"
+                href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/55 hover:text-white text-base leading-relaxed transition-colors"

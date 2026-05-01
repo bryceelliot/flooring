@@ -16,7 +16,7 @@ type Slide = {
 };
 
 const slides: Slide[] = [
-  { src: "/assets/images/hero-walnut.webp",    type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
+  { src: "/assets/images/hero-showroom.webp",    type: "Engineered Hardwood", tagline: "Timeless warmth for every home.",      focal: "center 60%", href: "/flooring/hardwood"    },
   { src: "/assets/images/showroom-11.webp",    type: "Luxury Vinyl Plank",  tagline: "Waterproof. Modern. Effortless.",      focal: "center 50%", href: "/flooring/vinyl-plank" },
   { src: "/assets/images/showroom-10.webp",    type: "Premium Carpet",      tagline: "Soft. Cozy. Inviting.",                focal: "center 50%", href: "/flooring/carpet"      },
   { src: "/assets/images/showroom-08.webp",    type: "Laminate Flooring",   tagline: "Durable. Beautiful. Affordable.",      focal: "center 50%", href: "/flooring/laminate"    },

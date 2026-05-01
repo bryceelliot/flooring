@@ -89,7 +89,7 @@ export default function ContactPage() {
                       Unit 16, 830 McCurdy Place<br />Kelowna, BC V1X 8C8
                     </p>
                     <a
-                      href="https://gmb.kelownaflooringsuperstore.com"
+                      href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-primary text-sm font-bold mt-2 hover:text-accent transition-colors"
@@ -179,7 +179,7 @@ export default function ContactPage() {
               <span className="font-semibold text-sm">Unit 16, 830 McCurdy Place, Kelowna, BC V1X 7S5</span>
             </div>
             <a
-              href="https://gmb.kelownaflooringsuperstore.com"
+              href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent font-bold text-xs hover:text-white transition-colors"
