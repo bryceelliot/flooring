@@ -84,14 +84,8 @@ export default function EstimateForm() {
         }
       } catch { /* fall through to mailto */ }
     }
-    /* Mailto fallback */
-    const subject = encodeURIComponent(`Estimate Request from ${data.first_name} ${data.last_name}`);
-    const body = encodeURIComponent(
-      `Name: ${data.first_name} ${data.last_name}\nEmail: ${data.email}\nPhone: ${data.phone}\nAddress: ${data.address}\nFlooring Type: ${data.flooring_type}\nArea: ${data.area}\n\nNotes:\n${data.notes}`
-    );
-    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    trackFormSubmit("estimate");
+    /* Submission failed or not yet configured — be honest, never fake success. */
+    setError(`We couldn't send your request just now. Please call us at (250) 860-7847 or email ${RECIPIENT} and we'll take care of you right away.`);
     setLoading(false);
   }
 

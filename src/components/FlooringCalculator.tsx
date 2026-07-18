@@ -84,7 +84,7 @@ export default function FlooringCalculator() {
       `Material: ${fmt(matLow)} – ${fmt(matHigh)}\n` +
       (includeInstall ? `Installation: ${fmt(insLow)} – ${fmt(insHigh)}\n` : "") +
       `TOTAL ESTIMATE: ${fmt(totLow)} – ${fmt(totHigh)}\n`;
-    if (!WEB3FORMS_KEY) { setLeadStatus("sent"); return; }
+    if (!WEB3FORMS_KEY) { setLeadStatus("error"); return; }
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",

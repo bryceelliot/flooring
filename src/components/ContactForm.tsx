@@ -68,14 +68,8 @@ export default function ContactForm() {
       }
     }
 
-    /* Fallback: open the visitor's mail client with the message pre-filled. */
-    const subject = encodeURIComponent(`Website contact from ${first} ${last}`);
-    const body = encodeURIComponent(
-      `Name: ${first} ${last}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    trackFormSubmit("contact");
+    /* Submission failed or not yet configured — be honest, never fake success. */
+    setError(`We couldn't send your message just now. Please call us at (250) 860-7847 or email ${RECIPIENT} and we'll get right back to you.`);
     setLoading(false);
   }
 
@@ -87,7 +81,7 @@ export default function ContactForm() {
         </div>
         <h3 className="text-xl font-bold text-charcoal">Message Sent!</h3>
         <p className="text-gray-500 text-sm max-w-xs">
-          Thanks for reaching out. We&apos;ll get back to you within 1 business day. If your email client opened, please send the prepared message.
+          Thanks for reaching out. We&apos;ll get back to you within 1 business day.
         </p>
       </div>
     );
