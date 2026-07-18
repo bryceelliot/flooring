@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Layers } from "lucide-react";
+import { useHideOnScrollDown } from "@/components/useHideOnScrollDown";
 
 declare global {
   interface Window {
@@ -11,6 +12,7 @@ declare global {
 
 export default function RoomvoLauncher() {
   const [loading, setLoading] = useState(false);
+  const hidden = useHideOnScrollDown();
 
   const launch = () => {
     if (typeof window === "undefined") return;
@@ -32,7 +34,7 @@ export default function RoomvoLauncher() {
     <button
       onClick={launch}
       aria-label="Visualize flooring in your room"
-      className="fixed bottom-5 right-5 z-40 bg-accent hover:bg-accent/90 text-white font-bold text-sm px-4 py-3 rounded-full shadow-2xl shadow-black/30 inline-flex items-center gap-2 transition-transform hover:scale-105"
+      className={`fixed bottom-5 right-5 z-40 bg-accent hover:bg-accent/90 text-white font-bold text-sm px-4 py-3 rounded-full shadow-2xl shadow-black/30 inline-flex items-center gap-2 transition-all duration-300 hover:scale-105 ${hidden ? "translate-y-28 opacity-0 pointer-events-none" : ""}`}
       style={{ display: loading ? "none" : undefined }}
     >
       <Layers className="w-4 h-4" />

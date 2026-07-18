@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { Phone, MessageSquare, X } from "lucide-react";
+import { useHideOnScrollDown } from "@/components/useHideOnScrollDown";
 
 /* Floating call/text widget visible on mobile only. Positioned bottom-left so
  * it never overlaps the Roomvo assistant (bottom-right). */
 export default function MobileCallButton() {
   const [open, setOpen] = useState(false);
+  const hidden = useHideOnScrollDown() && !open;
 
   return (
-    <div className="lg:hidden fixed bottom-5 left-5 z-40">
+    <div className={`lg:hidden fixed bottom-5 left-5 z-40 transition-all duration-300 ${hidden ? "translate-y-28 opacity-0 pointer-events-none" : ""}`}>
       {open && (
         <div className="flex flex-col gap-2 mb-3">
           <a
