@@ -19,17 +19,17 @@ const pillars = [
   {
     icon: Shield,
     title: "Manufacturer Warranty",
-    body: "Every flooring product we carry ships with its own manufacturer warranty — from 15-year residential laminate warranties to lifetime structural warranties on premium hardwood. We'll hand you the paperwork at delivery.",
+    body: "Every flooring product we carry ships with its own manufacturer warranty, from 15-year residential laminate warranties to lifetime structural warranties on premium hardwood. We'll hand you the paperwork at delivery.",
   },
   {
     icon: Hammer,
     title: "Craftsmanship Guarantee",
-    body: "Our own installation guarantee covers workmanship: if a seam opens up, a plank lifts, a transition shifts — because of how we installed it, we come back and fix it. Full stop.",
+    body: "Our own installation guarantee covers workmanship: if a seam opens up, a plank lifts, or a transition shifts because of how we installed it, we come back and fix it. Full stop.",
   },
   {
     icon: RefreshCw,
     title: "Fast Response",
-    body: "Warranty concerns are handled by the same team that installed your floor. Call us directly — no offshore call centre, no form-submission black hole.",
+    body: "Warranty concerns are handled by the same team that installed your floor. Call us directly. No offshore call centre, no form-submission black hole.",
   },
 ];
 
@@ -50,9 +50,9 @@ const notCovered = [
 ];
 
 const claim = [
-  { step: "1", title: "Call us", body: "(250) 860-7847 — describe what's happening, send a photo if you can." },
+  { step: "1", title: "Call us", body: "(250) 860-7847. Describe what's happening, send a photo if you can." },
   { step: "2", title: "We assess", body: "We'll book a visit to see the issue in person, usually within a week." },
-  { step: "3", title: "We fix", body: "If it's covered, we fix or replace — no charge, no hassle. If it isn't, we'll tell you straight." },
+  { step: "3", title: "We fix", body: "If it's covered, we fix or replace it at no charge, no hassle. If it isn't, we'll tell you straight." },
 ];
 
 export default function WarrantyPage() {
@@ -62,11 +62,8 @@ export default function WarrantyPage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Our Guarantee
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
-              Warranty &<br /><span className="text-accent">Craftsmanship Guarantee</span>
+              Warranty &<br />Craftsmanship Guarantee
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
               Every floor is backed by two things: the product manufacturer&apos;s warranty, and our own promise that the install was done right.
@@ -125,8 +122,7 @@ export default function WarrantyPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">Claim Process</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">How to Make a Claim</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">How to Make a Claim</h2>
           </AnimateOnScroll>
           <div className="grid sm:grid-cols-3 gap-5">
             {claim.map((c) => (
@@ -143,7 +139,7 @@ export default function WarrantyPage() {
       <section className="py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Questions About Your Floor?</h2>
-          <p className="text-white/60 text-lg mt-4">Call us directly — the same team that installed is the one that answers.</p>
+          <p className="text-white/60 text-lg mt-4">Call us directly. The same team that installed is the one that answers.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             <a href="tel:2508607847" className="flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all">
               <Phone size={17} /> (250) 860-7847

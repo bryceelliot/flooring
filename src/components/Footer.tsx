@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Clock, Send } from "lucide-react";
 import { trackPhoneClick } from "@/lib/ga";
-import EmailSignup from "@/components/EmailSignup";
 
 function FacebookIcon() {
   return (
@@ -43,10 +42,10 @@ const flooringLinks = [
 ];
 
 const hours = [
-  { day: "Monday – Tuesday", time: "9:00 AM – 5:00 PM" },
-  { day: "Wednesday", time: "9:00 AM – 2:00 PM" },
-  { day: "Thursday – Friday", time: "9:00 AM – 5:00 PM" },
-  { day: "Saturday", time: "10:00 AM – 2:00 PM" },
+  { day: "Monday - Tuesday", time: "9:00 AM - 5:00 PM" },
+  { day: "Wednesday", time: "9:00 AM - 2:00 PM" },
+  { day: "Thursday - Friday", time: "9:00 AM - 5:00 PM" },
+  { day: "Saturday", time: "10:00 AM - 2:00 PM" },
   { day: "Sunday", time: "Closed" },
 ];
 
@@ -130,7 +129,7 @@ export default function Footer() {
             <div className="inline-block bg-white rounded-lg px-4 py-2 mb-1">
               <Image
                 src="/logo.webp"
-                alt="Flooring Superstores — Kelowna"
+                alt="Flooring Superstores Kelowna"
                 width={220}
                 height={60}
                 className="h-12 w-auto"

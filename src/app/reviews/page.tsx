@@ -73,9 +73,6 @@ export default async function ReviewsPage() {
       <section className="relative pt-52 lg:pt-44 pb-20 overflow-hidden bg-[#0d1526]">
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <span className="inline-block bg-accent/15 text-accent px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase mb-6">
-            Customer Reviews
-          </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
             What Kelowna says about us.
           </h1>

@@ -123,7 +123,7 @@ export default function FlooringCalculator() {
           {/* Step 1: Flooring type */}
           <div>
             <p className="text-white font-bold text-base uppercase tracking-widest mb-4">
-              Step 1 — Choose Your Flooring
+              Step 1: Choose Your Flooring
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {FLOORING.map(f => (
@@ -142,7 +142,7 @@ export default function FlooringCalculator() {
                   />
                   <span className="text-white font-semibold text-sm block">{f.name}</span>
                   <span className="text-white/50 text-xs">
-                    ${f.matLow}–${f.matHigh}/sqft
+                    ${f.matLow}-${f.matHigh}/sqft
                   </span>
                 </button>
               ))}
@@ -152,7 +152,7 @@ export default function FlooringCalculator() {
           {/* Step 2: Room dimensions */}
           <div>
             <p className="text-white font-bold text-base uppercase tracking-widest mb-4">
-              Step 2 — Enter Room Dimensions
+              Step 2: Enter Room Dimensions
             </p>
             <div className="space-y-3">
               {rooms.map(room => (
@@ -219,7 +219,7 @@ export default function FlooringCalculator() {
           {/* Step 3: Options */}
           <div>
             <p className="text-white font-bold text-base uppercase tracking-widest mb-4">
-              Step 3 — Installation Options
+              Step 3: Installation Options
             </p>
             <div className="space-y-4">
               <div>
@@ -277,17 +277,17 @@ export default function FlooringCalculator() {
                   </div>
                   <div className="border-t border-white/10 pt-3 flex justify-between text-sm">
                     <span className="text-white/60">Materials</span>
-                    <span className="text-white font-semibold">{fmt(matLow)} – {fmt(matHigh)}</span>
+                    <span className="text-white font-semibold">{fmt(matLow)} - {fmt(matHigh)}</span>
                   </div>
                   {includeInstall && (
                     <div className="flex justify-between text-sm">
                       <span className="text-white/60">Installation</span>
-                      <span className="text-white font-semibold">{fmt(insLow)} – {fmt(insHigh)}</span>
+                      <span className="text-white font-semibold">{fmt(insLow)} - {fmt(insHigh)}</span>
                     </div>
                   )}
                   <div className="border-t border-white/10 pt-3 flex justify-between">
                     <span className="text-white font-bold">Total Range</span>
-                    <span className="text-accent font-black text-lg">{fmt(totLow)} – {fmt(totHigh)}</span>
+                    <span className="text-accent font-black text-lg">{fmt(totLow)} - {fmt(totHigh)}</span>
                   </div>
                 </div>
 
@@ -299,7 +299,7 @@ export default function FlooringCalculator() {
                   href="/estimates"
                   className="flex items-center justify-center gap-2 bg-accent-dark hover:bg-[#a8281e] text-white font-bold px-5 py-3.5 rounded-xl text-sm transition-all w-full mb-3"
                 >
-                  Get Free Exact Estimate <ArrowRight size={15} />
+                  Free Estimate <ArrowRight size={15} />
                 </Link>
                 <a
                   href="tel:2508607847"
@@ -342,7 +342,7 @@ export default function FlooringCalculator() {
                         {leadStatus === "sending" ? "Sending..." : "Save & Follow Up"}
                       </button>
                       {leadStatus === "error" && (
-                        <p className="text-accent text-xs">Couldn&apos;t send — try again or call us.</p>
+                        <p className="text-accent text-xs">Couldn&apos;t send. Try again or call us.</p>
                       )}
                     </form>
                   )}

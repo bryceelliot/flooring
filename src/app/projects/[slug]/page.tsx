@@ -73,7 +73,7 @@ export default async function ProjectPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }} />
 
       <section className="relative pt-52 lg:pt-44 pb-20 overflow-hidden bg-[#0d1526]">
-        <Image src={p.heroImage} alt={`${p.name} — Kelowna flooring install`} fill priority className="object-cover opacity-30" sizes="100vw" />
+        <Image src={p.heroImage} alt={`${p.name}, Kelowna flooring install`} fill priority className="object-cover opacity-30" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d1526]/96 via-[#0d1526]/72 to-[#0d1526]/40" />
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -157,7 +157,7 @@ export default async function ProjectPage({ params }: Props) {
                       {p.testimonial.author}
                       {p.testimonial.location && (
                         <span className="text-gray-400 font-normal">
-                          {" "}— {p.testimonial.location}
+                          , {p.testimonial.location}
                         </span>
                       )}
                     </div>

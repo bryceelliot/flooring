@@ -144,8 +144,7 @@ export default async function ServicePage({ params }: Props) {
         <section className="py-16 bg-light">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
-              <span className="section-label mb-4">FAQ</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-charcoal mt-3">Common Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-charcoal">Common Questions</h2>
             </AnimateOnScroll>
             <div className="space-y-3">
               {p.faqs.map((f) => (

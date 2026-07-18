@@ -42,16 +42,13 @@ export default function FlooringPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Ships in 3–5 Days
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Every Type of<br />
-              <span className="text-accent">Flooring</span>
+              Flooring
             </h1>
             <p className="text-white/60 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
-              From cozy carpet to stunning hardwood — our Kelowna showroom
-              has everything you need on display — order from samples and we'll have it ready to install within days.
+              From cozy carpet to stunning hardwood, our Kelowna showroom
+              has everything you need on display. Order from samples and we'll have it ready to install within days.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               {[
@@ -82,8 +79,7 @@ export default function FlooringPage() {
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Our Collection</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
               Browse by Category
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
@@ -137,19 +133,17 @@ export default function FlooringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
-              <span className="section-label mb-4">Why Shop With Us</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
-                Browse Samples,{" "}
-                <span className="gradient-text">Installed in Days</span>
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight">
+                Browse Samples, Installed in Days
               </h2>
-              <p className="text-gray-500 text-lg mt-5 leading-relaxed">
-                Our Kelowna showroom has hundreds of styles on display — choose your favourite
-                sample and your order arrives in just 3–5 days, ready for our crew to install.
+              <p className="text-gray-600 text-lg mt-5 leading-relaxed">
+                Our Kelowna showroom has hundreds of styles on display. Choose your favourite
+                sample and your order arrives in just 3-5 days, ready for our crew to install.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   "Hundreds of styles on display in our showroom",
-                  "Order from samples — arrives in 3–5 days",
+                  "Order from samples and it arrives in 3-5 days",
                   "Free in-home estimates across the Okanagan",
                   "Professional installation by our experienced crews",
                   "Part of the Flooring Superstores franchise network",
@@ -162,7 +156,7 @@ export default function FlooringPage() {
               </ul>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
                 <Link href="/estimates" className="btn-primary text-sm">
-                  Get Free Estimate <ArrowRight size={16} />
+                  Free Estimate <ArrowRight size={16} />
                 </Link>
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                   Contact Us
@@ -199,11 +193,11 @@ export default function FlooringPage() {
           </h2>
           <p className="text-white/65 mt-4 leading-relaxed">
             Our flooring specialists are here to help. Come visit our showroom or book a free
-            in-home estimate — no obligation, no pressure.
+            in-home estimate. No obligation, no pressure.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-7">
             <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all">
-              Get Free Estimate
+              Free Estimate
             </Link>
             <Link href="/contact" className="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold px-7 py-3.5 rounded-xl text-sm transition-all">
               Contact Us

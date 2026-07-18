@@ -104,7 +104,7 @@ export default async function ServiceComboPage({ params }: Props) {
               <MapPin size={12} /> {c.city}
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              {c.service}<br /><span className="text-accent">in {c.city}</span>
+              {c.service}<br />in {c.city}
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-3xl leading-relaxed">{c.intro}</p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
@@ -177,9 +177,8 @@ export default async function ServiceComboPage({ params }: Props) {
         <section className="py-16 bg-light">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
-              <span className="section-label mb-4">FAQ</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-                {c.service} in {c.city} — Common Questions
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
+                {c.service} in {c.city}: Common Questions
               </h2>
             </AnimateOnScroll>
             <div className="space-y-3">
@@ -205,7 +204,7 @@ export default async function ServiceComboPage({ params }: Props) {
               {related.map((r) => (
                 <Link key={r.slug} href={`/${r.slug}`} className="group bg-light rounded-2xl p-6 border border-gray-100 hover:border-primary transition-all">
                   <h3 className="font-black text-charcoal leading-tight group-hover:text-primary transition-colors">
-                    {r.service} — {r.city}
+                    {r.service} in {r.city}
                   </h3>
                   <span className="inline-flex items-center gap-1 mt-4 text-accent text-sm font-bold group-hover:translate-x-1 transition-transform">
                     Learn more <ArrowRight size={13} />

@@ -18,14 +18,11 @@ export default function AnswersIndex() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Real Answers
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Quick Flooring<br /><span className="text-accent">Answers</span>
+              Quick Flooring<br />Answers
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              The questions Kelowna homeowners actually ask — answered straight, with real numbers.
+              The questions Kelowna homeowners actually ask, answered straight, with real numbers.
             </p>
           </AnimateOnScroll>
         </div>

@@ -25,14 +25,11 @@ export default function ProjectsIndex() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Real Kelowna Installs
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Recent<br /><span className="text-accent">Projects</span>
+              Recent<br />Projects
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              Real flooring installs across Kelowna and the Okanagan. Scroll through each project — full photo sets, flooring used, and the story behind the job.
+              Real flooring installs across Kelowna and the Okanagan. Scroll through each project: full photo sets, flooring used, and the story behind the job.
             </p>
           </AnimateOnScroll>
         </div>

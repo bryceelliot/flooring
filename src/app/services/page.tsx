@@ -19,10 +19,10 @@ export default function ServicesIndex() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Beyond<br /><span className="text-accent">Flooring Sales</span>
+              Beyond<br />Flooring Sales
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              Removal, subfloor prep, baseboards, in-floor heating — all coordinated as part of one Kelowna flooring project.
+              Removal, subfloor prep, baseboards, and in-floor heating, all coordinated as part of one Kelowna flooring project.
             </p>
           </AnimateOnScroll>
         </div>

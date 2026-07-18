@@ -28,28 +28,28 @@ const showroom = [
     role: "Showroom Specialist",
     initials: "SE",
     color: "#E8423C",
-    bio: "Selina coordinates timelines, samples, and install scheduling. Reviewers repeatedly call out her responsiveness — she's the glue between your quote and a finished floor.",
+    bio: "Selina coordinates timelines, samples, and install scheduling. Reviewers repeatedly call out her responsiveness. She's the glue between your quote and a finished floor.",
   },
 ];
 
 const installers = [
   {
     name: "Cory",
-    role: "Lead Installer — Carpet & Stairs",
+    role: "Lead Installer, Carpet & Stairs",
     initials: "CO",
     color: "#243566",
-    bio: "Cory is our go-to for carpet installs and stairs — the work featured in our Before & After showroom transformations. Tidy, punctual, and a craftsman.",
+    bio: "Cory is our go-to for carpet installs and stairs, the work featured in our Before & After showroom transformations. Tidy, punctual, and a craftsman.",
   },
   {
     name: "Jessie",
-    role: "Lead Installer — Hardwood & LVP",
+    role: "Lead Installer, Hardwood & LVP",
     initials: "JE",
     color: "#2a7a5a",
     bio: "Jessie leads on hardwood and luxury vinyl plank jobs. Named repeatedly in our 5-star reviews for workmanship that goes above and beyond.",
   },
   {
     name: "Clarke",
-    role: "Installer — Hardwood & LVP",
+    role: "Installer, Hardwood & LVP",
     initials: "CL",
     color: "#7a3a2a",
     bio: "Clarke works alongside Jessie on our bigger residential jobs. Reviewers mention the two of them by name when the floor turns out exactly how they pictured it.",
@@ -63,11 +63,8 @@ export default function TeamPage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              The People Behind Your Floor
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
-              Meet the<br /><span className="text-accent">Team</span>
+              Meet the<br />Team
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
               Our showroom staff help you choose. Our installers make it real. These are the people Kelowna homeowners name in their Google reviews.
@@ -79,8 +76,7 @@ export default function TeamPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
-            <span className="section-label mb-4">Showroom</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">Who You&apos;ll Meet in Store</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">Who You&apos;ll Meet in Store</h2>
           </AnimateOnScroll>
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {showroom.map((p, i) => (
@@ -106,9 +102,8 @@ export default function TeamPage() {
       <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
-            <span className="section-label mb-4">Installation Crew</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              The Craftsmen Reviewers <span className="gradient-text">Name by Name</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
+              The Craftsmen Reviewers Name by Name
             </h2>
           </AnimateOnScroll>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,7 +150,7 @@ export default function TeamPage() {
       <section className="py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Come Meet Us</h2>
-          <p className="text-white/60 text-lg mt-4">Drop by the showroom on McCurdy Place — or book a free estimate and we&apos;ll come to you.</p>
+          <p className="text-white/60 text-lg mt-4">Drop by the showroom on McCurdy Place, or book a free estimate and we&apos;ll come to you.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all">
               Book Free Estimate <ArrowRight size={16} className="inline ml-1" />

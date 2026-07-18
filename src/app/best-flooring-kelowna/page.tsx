@@ -25,7 +25,7 @@ const shops = [
     bestFor: "Homeowners who want to browse real samples, skip 6-week backorders, and know which installer is walking into their home.",
     pricing: "Competitive mid-market on most types; laminate + LVP often below big-box.",
     installs: "Same-crew install (Cory, Jessie, Clarke named repeatedly in 5-star reviews).",
-    inStock: "Large — laminate, LVP, carpet, hardwood, tile, rugs — most ship 3–5 days.",
+    inStock: "Large: laminate, LVP, carpet, hardwood, tile, rugs. Most ship 3-5 days.",
     notes: "Only Kelowna-based flooring store with a full craftsmanship guarantee + manufacturer warranties.",
     link: "/",
     linkLabel: "Visit Our Showroom",
@@ -41,7 +41,7 @@ const shops = [
     pricing: "Aggressive carpet pricing; hardwood/LVP tends to be mid-market.",
     installs: "Subcontracted install crews vary by job.",
     inStock: "Carpet-heavy inventory; hardwood/LVP selection smaller.",
-    notes: "Part of a national chain — pricing and policies set at head office.",
+    notes: "Part of a national chain. Pricing and policies set at head office.",
   },
   {
     name: "Nufloors Kelowna",
@@ -52,8 +52,8 @@ const shops = [
     bestFor: "Homeowners looking for a traditional retail experience.",
     pricing: "Mid to premium pricing across categories.",
     installs: "In-house + contract installers.",
-    inStock: "Moderate — larger special-order catalog than in-stock.",
-    notes: "Buying group member — access to multiple brand catalogs.",
+    inStock: "Moderate, with a larger special-order catalog than in-stock.",
+    notes: "Buying group member with access to multiple brand catalogs.",
   },
   {
     name: "Carpet One Kelowna",
@@ -84,11 +84,11 @@ const shops = [
 const criteria = [
   {
     title: "In-Stock Selection",
-    body: "How many flooring samples do they physically carry, and how fast can they deliver? Kelowna Flooring Superstore ships most in-stock product in 3–5 days; national chains often quote 4–6 weeks on anything special-order.",
+    body: "How many flooring samples do they physically carry, and how fast can they deliver? Kelowna Flooring Superstore ships most in-stock product in 3-5 days; national chains often quote 4-6 weeks on anything special-order.",
   },
   {
     title: "Installation Quality",
-    body: "Who actually walks into your home? We use the same in-house crew — Cory, Jessie, Clarke — named in our 5-star reviews. Big-box stores subcontract, which means a different crew every job.",
+    body: "Who actually walks into your home? We use the same in-house crew (Cory, Jessie, Clarke) named in our 5-star reviews. Big-box stores subcontract, which means a different crew every job.",
   },
   {
     title: "Post-Install Support",
@@ -96,7 +96,7 @@ const criteria = [
   },
   {
     title: "Price Transparency",
-    body: "Flooring quotes should include everything — material, install, subfloor prep, removal, transitions. Line-item quotes are a green flag; opaque quotes are not.",
+    body: "Flooring quotes should include everything: material, install, subfloor prep, removal, transitions. Line-item quotes are a green flag; opaque quotes are not.",
   },
   {
     title: "Local Reviews",
@@ -107,11 +107,11 @@ const criteria = [
 const faqs = [
   {
     q: "What is the best flooring store in Kelowna?",
-    a: "Kelowna Flooring Superstore is the highest-rated locally owned flooring store in Kelowna (4.9★ from 150+ Google reviews). We carry laminate, hardwood, carpet, luxury vinyl plank, tile, linoleum, and area rugs — all in-stock with same-crew installation. Other well-regarded local options include End of the Roll (carpet-heavy), Nufloors, and Carpet One.",
+    a: "Kelowna Flooring Superstore is the highest-rated locally owned flooring store in Kelowna (4.9★ from 150+ Google reviews). We carry laminate, hardwood, carpet, luxury vinyl plank, tile, linoleum, and area rugs, all in-stock with same-crew installation. Other well-regarded local options include End of the Roll (carpet-heavy), Nufloors, and Carpet One.",
   },
   {
     q: "How much does flooring cost in Kelowna?",
-    a: "As of 2026, typical installed pricing in Kelowna runs: laminate $4–7/sqft, luxury vinyl plank $5–9/sqft, engineered hardwood $8–14/sqft, solid hardwood $10–18/sqft, carpet $4–8/sqft, porcelain tile $9–16/sqft installed. See our Kelowna flooring price guide for detailed breakdowns.",
+    a: "As of 2026, typical installed pricing in Kelowna runs: laminate $4-7/sqft, luxury vinyl plank $5-9/sqft, engineered hardwood $8-14/sqft, solid hardwood $10-18/sqft, carpet $4-8/sqft, porcelain tile $9-16/sqft installed. See our Kelowna flooring price guide for detailed breakdowns.",
   },
   {
     q: "Who installs flooring in Kelowna?",
@@ -119,15 +119,15 @@ const faqs = [
   },
   {
     q: "What's the best flooring for Kelowna's climate?",
-    a: "Kelowna's dry summers and cold winters make engineered hardwood, luxury vinyl plank, and porcelain tile ideal choices. Solid hardwood is beautiful but requires humidity control. LVP is 100% waterproof — best for basements, bathrooms, and homes near the lake.",
+    a: "Kelowna's dry summers and cold winters make engineered hardwood, luxury vinyl plank, and porcelain tile ideal choices. Solid hardwood is beautiful but requires humidity control. LVP is 100% waterproof, so it's the best pick for basements, bathrooms, and homes near the lake.",
   },
   {
     q: "How long does flooring installation take in Kelowna?",
-    a: "Most single-room installs finish in one day. A full-home floor replacement in a typical 1,800–2,400 sqft Kelowna home takes 2–4 days depending on subfloor prep and the type of flooring. Tile jobs take longer (grout cure time) — plan 3–5 days.",
+    a: "Most single-room installs finish in one day. A full-home floor replacement in a typical 1,800-2,400 sqft Kelowna home takes 2-4 days depending on subfloor prep and the type of flooring. Tile jobs take longer (grout cure time), so plan 3-5 days.",
   },
   {
     q: "Do Kelowna flooring stores offer financing?",
-    a: "Yes — Kelowna Flooring Superstore offers flexible monthly-payment plans. Most locally owned stores offer some form of financing; ask up front about terms, rates, and whether materials + installation + removal are all covered.",
+    a: "Yes. Kelowna Flooring Superstore offers flexible monthly-payment plans. Most locally owned stores offer some form of financing; ask up front about terms, rates, and whether materials + installation + removal are all covered.",
   },
 ];
 
@@ -180,14 +180,11 @@ export default function BestFlooringKelowna() {
             <span className="text-white/70">Best Flooring Kelowna</span>
           </nav>
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              2026 Guide
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Best Flooring Store<br /><span className="text-accent">in Kelowna</span>
+              Best Flooring Store<br />in Kelowna
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-3xl leading-relaxed">
-              An honest 2026 comparison of Kelowna&apos;s flooring stores — pricing, selection, installation, reviews. Yes, we&apos;re one of them. We&apos;ll tell you when another shop is a better fit for your project.
+              An honest 2026 comparison of Kelowna&apos;s flooring stores: pricing, selection, installation, reviews. Yes, we&apos;re one of them. We&apos;ll tell you when another shop is a better fit for your project.
             </p>
           </AnimateOnScroll>
         </div>
@@ -196,16 +193,16 @@ export default function BestFlooringKelowna() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
-            <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-4">TL;DR — the short answer</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-4">TL;DR: the short answer</h2>
             <div className="bg-light rounded-2xl p-7 border border-gray-100 text-gray-700 leading-relaxed space-y-4">
               <p>
-                <strong className="text-charcoal">Kelowna Flooring Superstore</strong> is the highest-rated locally owned flooring store in Kelowna, with a 4.9★ average across 150+ Google reviews. We&apos;re the best pick for homeowners who want to see samples in person, get the same crew installing that measured the floor, and skip the 4–6 week backorder waits.
+                <strong className="text-charcoal">Kelowna Flooring Superstore</strong> is the highest-rated locally owned flooring store in Kelowna, with a 4.9★ average across 150+ Google reviews. We&apos;re the best pick for homeowners who want to see samples in person, get the same crew installing that measured the floor, and skip the 4-6 week backorder waits.
               </p>
               <p>
                 <strong className="text-charcoal">When you might prefer someone else:</strong> If you&apos;re doing a DIY small patch job with no installation, big-box stores are convenient for pickup. If you&apos;re only shopping for carpet on a very tight budget, End of the Roll is competitive. For exclusive premium brand lines, Carpet One has buying-group access.
               </p>
               <p className="text-gray-500 text-sm">
-                Independent comparison — reviews sourced from public Google listings as of 2026.
+                Independent comparison. Reviews sourced from public Google listings as of 2026.
               </p>
             </div>
           </AnimateOnScroll>
@@ -215,8 +212,7 @@ export default function BestFlooringKelowna() {
       <section className="py-16 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">The Comparison</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">Kelowna Flooring Stores at a Glance</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">Kelowna Flooring Stores at a Glance</h2>
           </AnimateOnScroll>
 
           <div className="grid md:grid-cols-2 gap-5">
@@ -284,8 +280,7 @@ export default function BestFlooringKelowna() {
       <section className="py-20 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">FAQ</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">Quick Answers</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">Quick Answers</h2>
           </AnimateOnScroll>
           <div className="space-y-3">
             {faqs.map((f) => (

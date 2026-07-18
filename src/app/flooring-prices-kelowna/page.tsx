@@ -69,7 +69,7 @@ const prices: PriceRow[] = [
     materialHigh: 6,
     installLow: 1.5,
     installHigh: 3,
-    notes: "Underpad is required and priced separately ($0.75–$1.50/sqft). Polyester vs nylon face fibre is the big cost driver.",
+    notes: "Underpad is required and priced separately ($0.75-$1.50/sqft). Polyester vs nylon face fibre is the big cost driver.",
   },
   {
     type: "Porcelain Tile",
@@ -78,7 +78,7 @@ const prices: PriceRow[] = [
     materialHigh: 8,
     installLow: 6,
     installHigh: 12,
-    notes: "Install is the expensive part — substrate prep, thinset, grout, sealer all add up. Large-format tile costs more to install.",
+    notes: "Install is the expensive part: substrate prep, thinset, grout, sealer all add up. Large-format tile costs more to install.",
   },
   {
     type: "Ceramic Tile",
@@ -105,22 +105,22 @@ const prices: PriceRow[] = [
     materialHigh: 15,
     installLow: 0,
     installHigh: 0,
-    notes: "Sold per rug, not per sqft. Custom-bound broadloom runs about $6–$10/sqft finished.",
+    notes: "Sold per rug, not per sqft. Custom-bound broadloom runs about $6-$10/sqft finished.",
   },
 ];
 
 const drivers = [
   {
     title: "Subfloor condition",
-    body: "A flat, dry subfloor is free money. A subfloor that needs leveling, repair, or moisture mitigation can add $2–$5/sqft.",
+    body: "A flat, dry subfloor is free money. A subfloor that needs leveling, repair, or moisture mitigation can add $2-$5/sqft.",
   },
   {
     title: "Old floor removal",
-    body: "Pulling and disposing of existing flooring typically adds $1–$2.50/sqft. Glued-down tile or nailed hardwood costs more than floating laminate.",
+    body: "Pulling and disposing of existing flooring typically adds $1-$2.50/sqft. Glued-down tile or nailed hardwood costs more than floating laminate.",
   },
   {
     title: "Stairs, transitions, mouldings",
-    body: "Stairs run $50–$100 per step installed. Reducers and T-moldings add roughly $12–$20 per linear foot. Quarter-round is cheap but adds up in older homes.",
+    body: "Stairs run $50-$100 per step installed. Reducers and T-moldings add roughly $12-$20 per linear foot. Quarter-round is cheap but adds up in older homes.",
   },
   {
     title: "Furniture + appliance moving",
@@ -128,34 +128,34 @@ const drivers = [
   },
   {
     title: "Rush scheduling",
-    body: "Standard lead time for in-stock flooring is 3–5 days. Rush installs within 48 hours are possible but carry a premium.",
+    body: "Standard lead time for in-stock flooring is 3-5 days. Rush installs within 48 hours are possible but carry a premium.",
   },
 ];
 
 const roomEstimates = [
-  { room: "Small bathroom (30 sqft)", laminate: "~$195–$330", lvp: "~$225–$360", tile: "~$540–$1,200" },
-  { room: "Bedroom (150 sqft)", laminate: "~$600–$1,200", lvp: "~$750–$1,425", tile: "~$1,350–$3,000" },
-  { room: "Living room (300 sqft)", laminate: "~$1,200–$2,400", lvp: "~$1,500–$2,850", tile: "~$2,700–$6,000" },
-  { room: "Main floor (1,200 sqft)", laminate: "~$4,800–$9,600", lvp: "~$6,000–$11,400", tile: "~$10,800–$24,000" },
-  { room: "Whole home (2,000 sqft mixed)", laminate: "~$8,000–$16,000", lvp: "~$10,000–$19,000", tile: "n/a" },
+  { room: "Small bathroom (30 sqft)", laminate: "~$195-$330", lvp: "~$225-$360", tile: "~$540-$1,200" },
+  { room: "Bedroom (150 sqft)", laminate: "~$600-$1,200", lvp: "~$750-$1,425", tile: "~$1,350-$3,000" },
+  { room: "Living room (300 sqft)", laminate: "~$1,200-$2,400", lvp: "~$1,500-$2,850", tile: "~$2,700-$6,000" },
+  { room: "Main floor (1,200 sqft)", laminate: "~$4,800-$9,600", lvp: "~$6,000-$11,400", tile: "~$10,800-$24,000" },
+  { room: "Whole home (2,000 sqft mixed)", laminate: "~$8,000-$16,000", lvp: "~$10,000-$19,000", tile: "n/a" },
 ];
 
 const faqs = [
   {
     q: "How much does flooring cost per square foot in Kelowna?",
-    a: "Installed flooring in Kelowna ranges $4–$18+ per sqft in 2026 depending on type. Laminate is cheapest (~$4–7/sqft installed), solid hardwood and porcelain tile are the most expensive ($10–18/sqft installed). Luxury vinyl plank is the current best-value mid-market option at $5–9/sqft installed.",
+    a: "Installed flooring in Kelowna ranges $4-$18+ per sqft in 2026 depending on type. Laminate is cheapest (~$4-7/sqft installed), solid hardwood and porcelain tile are the most expensive ($10-18/sqft installed). Luxury vinyl plank is the current best-value mid-market option at $5-9/sqft installed.",
   },
   {
     q: "Is hardwood or vinyl plank cheaper in Kelowna?",
-    a: "Luxury vinyl plank is typically 40–60% cheaper than hardwood in Kelowna. Entry LVP lands around $5–6/sqft installed vs $9–12/sqft for entry engineered hardwood. LVP is also waterproof, which hardwood isn't.",
+    a: "Luxury vinyl plank is typically 40-60% cheaper than hardwood in Kelowna. Entry LVP lands around $5-6/sqft installed vs $9-12/sqft for entry engineered hardwood. LVP is also waterproof, which hardwood isn't.",
   },
   {
     q: "What's the cheapest flooring option in Kelowna?",
-    a: "Basic laminate with a simple float installation over an existing flat subfloor is the cheapest: about $4–5/sqft installed. Carpet can be cheaper on material but underpad and installation add up quickly.",
+    a: "Basic laminate with a simple float installation over an existing flat subfloor is the cheapest: about $4-5/sqft installed. Carpet can be cheaper on material but underpad and installation add up quickly.",
   },
   {
     q: "How much does it cost to replace flooring in a 1,500 sqft Kelowna home?",
-    a: "A typical 1,500 sqft main floor replacement in Kelowna runs $6,000–$13,500 for laminate, $7,500–$13,500 for luxury vinyl plank, $13,500–$22,500 for engineered hardwood. Add removal/prep where needed — usually $1,500–$3,000 for a full-home job.",
+    a: "A typical 1,500 sqft main floor replacement in Kelowna runs $6,000-$13,500 for laminate, $7,500-$13,500 for luxury vinyl plank, $13,500-$22,500 for engineered hardwood. Add removal/prep where needed, usually $1,500-$3,000 for a full-home job.",
   },
   {
     q: "Do Kelowna flooring prices include underpad and transitions?",
@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     q: "Does financing change the total Kelowna flooring price?",
-    a: "Financing splits the same total into monthly payments — not a markup. We don't change the project price based on payment method.",
+    a: "Financing splits the same total into monthly payments, not a markup. We don't change the project price based on payment method.",
   },
 ];
 
@@ -218,14 +218,11 @@ export default function FlooringPricesKelowna() {
             <span className="text-white/70">Flooring Prices Kelowna</span>
           </nav>
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Updated April 2026
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Flooring Prices<br /><span className="text-accent">in Kelowna</span>
+              Flooring Prices<br />in Kelowna
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-3xl leading-relaxed">
-              Real installed $/sqft ranges for every flooring type — what drives the price, what a full-home job costs, and how to read a Kelowna flooring quote.
+              Real installed $/sqft ranges for every flooring type: what drives the price, what a full-home job costs, and how to read a Kelowna flooring quote.
             </p>
           </AnimateOnScroll>
         </div>
@@ -257,14 +254,14 @@ export default function FlooringPricesKelowna() {
                       <Link href={`/flooring/${p.slug}`} className="font-bold text-charcoal hover:text-primary">{p.type}</Link>
                       <p className="text-gray-500 text-xs mt-1 leading-relaxed">{p.notes}</p>
                     </td>
-                    <td className="text-right py-3 px-4 text-gray-600 whitespace-nowrap">${fmt(p.materialLow)}–${fmt(p.materialHigh)}</td>
+                    <td className="text-right py-3 px-4 text-gray-600 whitespace-nowrap">${fmt(p.materialLow)}-${fmt(p.materialHigh)}</td>
                     <td className="text-right py-3 px-4 text-gray-600 whitespace-nowrap">
-                      {p.installLow === 0 ? <span className="text-gray-400">—</span> : <>${fmt(p.installLow)}–${fmt(p.installHigh)}</>}
+                      {p.installLow === 0 ? <span className="text-gray-400">n/a</span> : <>${fmt(p.installLow)}-${fmt(p.installHigh)}</>}
                     </td>
                     <td className="text-right py-3 px-4 font-black text-charcoal whitespace-nowrap">
                       {p.installLow === 0
-                        ? <>${fmt(p.materialLow)}–${fmt(p.materialHigh)}</>
-                        : <>${fmt(p.materialLow + p.installLow)}–${fmt(p.materialHigh + p.installHigh)}</>}
+                        ? <>${fmt(p.materialLow)}-${fmt(p.materialHigh)}</>
+                        : <>${fmt(p.materialLow + p.installLow)}-${fmt(p.materialHigh + p.installHigh)}</>}
                     </td>
                   </tr>
                 ))}
@@ -274,7 +271,7 @@ export default function FlooringPricesKelowna() {
 
           <div className="mt-5 flex items-start gap-2 text-gray-500 text-xs">
             <Info size={14} className="mt-0.5 shrink-0" />
-            <span>Kelowna pricing is typically 5–12% lower than Vancouver-metro quotes on the same product thanks to lower retail rents and regional installer rates.</span>
+            <span>Kelowna pricing is typically 5-12% lower than Vancouver-metro quotes on the same product thanks to lower retail rents and regional installer rates.</span>
           </div>
         </div>
       </section>
@@ -283,8 +280,8 @@ export default function FlooringPricesKelowna() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
             <h2 className="text-2xl sm:text-4xl font-black text-charcoal">What a Full Kelowna Flooring Job Looks Like</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              Rough installed totals for common Kelowna rooms and whole homes. These are planning numbers, not quotes — book a free in-home estimate for your exact price.
+            <p className="text-gray-600 mt-3 max-w-xl mx-auto">
+              Rough installed totals for common Kelowna rooms and whole homes. These are planning numbers, not quotes. Book a free in-home estimate for your exact price.
             </p>
           </AnimateOnScroll>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
@@ -331,8 +328,7 @@ export default function FlooringPricesKelowna() {
       <section className="py-20 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">FAQ</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">Kelowna Flooring Price Questions</h2>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">Kelowna Flooring Price Questions</h2>
           </AnimateOnScroll>
           <div className="space-y-3">
             {faqs.map((f) => (

@@ -34,11 +34,8 @@ export default function ServiceAreasPage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Okanagan-Wide
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
-              Where We<br /><span className="text-accent">Install</span>
+              Where We<br />Install
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
               Our Kelowna showroom is home base, but our crews drive across the Central and South Okanagan every week. Find your town below for local details.
@@ -86,7 +83,7 @@ export default function ServiceAreasPage() {
       <section className="py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl font-black text-white">Outside these areas?</h2>
-          <p className="text-white/60 text-lg mt-4">Give us a call — if we can drive it, we probably can quote it.</p>
+          <p className="text-white/60 text-lg mt-4">Give us a call. If we can drive it, we probably can quote it.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all">
               Book Free Estimate

@@ -25,14 +25,11 @@ export default function VisualizePage() {
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              See It Before You Buy
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-              Visualize Your<br /><span className="text-accent">New Floor</span>
+              Visualize Your<br />New Floor
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              Upload a photo of your room. Pick a flooring sample. See exactly how it&apos;ll look in your home — before you commit. Free, no signup, takes about 2 minutes.
+              Upload a photo of your room. Pick a flooring sample. See exactly how it&apos;ll look in your home before you commit. Free, no signup, takes about 2 minutes.
             </p>
           </AnimateOnScroll>
         </div>
@@ -72,7 +69,7 @@ export default function VisualizePage() {
               <Layers size={48} className="text-accent mx-auto mb-4" />
               <p className="text-charcoal font-bold mb-3">Visualizer powered by Roomvo</p>
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                The visualizer is loaded on every page on this site. Look for the floating assistant icon in the bottom-right corner — tap to start visualizing.
+                The visualizer is loaded on every page on this site. Look for the floating assistant icon in the bottom-right corner and tap to start visualizing.
               </p>
               <p className="text-xs text-gray-400 mt-2">
                 Look for the floating chat icon in the bottom-right corner of any page on this site.
@@ -104,7 +101,7 @@ export default function VisualizePage() {
             <div className="bg-light rounded-2xl p-7 border border-gray-100">
               <h3 className="font-black text-charcoal text-lg mb-2">Book a free estimate</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                Once you&apos;ve narrowed it down, we come to you, measure, and quote everything — material, install, removal, transitions.
+                Once you&apos;ve narrowed it down, we come to you, measure, and quote everything: material, install, removal, transitions.
               </p>
               <Link href="/estimates" className="text-accent font-bold text-sm inline-flex items-center gap-1">
                 Book Estimate <ArrowRight size={13} />

@@ -54,8 +54,7 @@ export default async function FlooringTypeReviews({ flooringName, extraKeywords 
     <section className="py-20 bg-light">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <span className="section-label mb-4">What Customers Say</span>
-          <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+          <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
             {hasKeywordMatch
               ? `Real Google Reviews About Our ${flooringName}`
               : `What Kelowna Customers Are Saying`}

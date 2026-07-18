@@ -149,7 +149,7 @@ export const flooringTypes: FlooringType[] = [
     name: "Laminate",
     tagline: "The Look of Hardwood, Built to Last",
     description:
-      "A cost-effective flooring that gives you the timeless look of hardwood or tile and stone — with outstanding durability.",
+      "A cost-effective flooring that gives you the timeless look of hardwood or tile and stone, with outstanding durability.",
     longDescription:
       "Laminate flooring is one of the most popular choices for Kelowna homeowners who want the beautiful look of hardwood without the higher price tag. Modern laminate technology has advanced dramatically, offering incredibly realistic wood and stone visuals with textures you can feel. It's highly durable, easy to maintain, and perfect for busy households.",
     gradient: "from-amber-900 via-amber-800 to-yellow-900",
@@ -157,13 +157,13 @@ export const flooringTypes: FlooringType[] = [
     features: [
       "Highly realistic wood & stone visuals",
       "Scratch and scuff resistant",
-      "Easy to clean — just sweep and damp mop",
+      "Easy to clean: just sweep and damp mop",
       "Cost-effective alternative to hardwood",
       "Wide variety of styles, grains & colours",
       "Great for high-traffic areas",
     ],
     types: [
-      { name: "Rustic Woods", description: "Mimics distressed wood and barn boards — perfect for a cozy, character-filled space." },
+      { name: "Rustic Woods", description: "Mimics distressed wood and barn boards, perfect for a cozy, character-filled space." },
       { name: "Light & Airy Woods", description: "Bright, Scandinavian-inspired tones that open up any room." },
       { name: "Dark Woods", description: "Dramatic finishes that evoke the richness of exotic hardwoods." },
       { name: "Formal Woods", description: "Sleek, smooth designs that emulate the most expensive hardwood species." },
@@ -172,20 +172,20 @@ export const flooringTypes: FlooringType[] = [
     careItems: [
       "Sweep or vacuum regularly to remove grit and debris",
       "Wipe up spills immediately with a dry or slightly damp cloth",
-      "Use a laminate-specific cleaner — avoid steam mops",
+      "Use a laminate-specific cleaner and avoid steam mops",
       "Place felt pads under furniture legs",
       "Use area rugs in high-traffic zones",
     ],
     installInfo:
-      "Our professional crews handle everything — measurement, old floor removal, and expert installation. Laminate floats over your subfloor for a clean, click-lock installation that's typically completed in a single day.",
+      "Our professional crews handle everything: measurement, old floor removal, and expert installation. Laminate floats over your subfloor for a clean, click-lock installation that's typically completed in a single day.",
     metaDescription:
       
       "Laminate flooring near me in Kelowna — in-stock AC3/AC4/AC5 laminate with realistic wood & stone looks. Same-day pickup + expert installation across Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "How long does laminate flooring last?", a: "Quality laminate typically lasts 15–25 years with proper care. AC3 and AC4 rated laminate is ideal for residential use." },
-      { q: "Can laminate flooring be installed over existing flooring?", a: "Yes — laminate can often float over existing hard floors. We'll assess your subfloor during your free estimate." },
+      { q: "How long does laminate flooring last?", a: "Quality laminate typically lasts 15-25 years with proper care. AC3 and AC4 rated laminate is ideal for residential use." },
+      { q: "Can laminate flooring be installed over existing flooring?", a: "Yes, laminate can often float over existing hard floors. We'll assess your subfloor during your free estimate." },
       { q: "Is laminate flooring waterproof?", a: "Standard laminate is water-resistant but not waterproof. For wet areas like bathrooms, we recommend Luxury Vinyl Plank instead." },
-      { q: "How long does installation take?", a: "Most rooms can be completed in a single day. Larger homes may take 2–3 days depending on scope." },
+      { q: "How long does installation take?", a: "Most rooms can be completed in a single day. Larger homes may take 2-3 days depending on scope." },
     ],
   },
   {
@@ -200,7 +200,7 @@ export const flooringTypes: FlooringType[] = [
     accentColor: "#92400e",
     features: [
       "Increases home resale value",
-      "Looks better with age — can be refinished",
+      "Looks better with age and can be refinished",
       "Natural, warm, and inviting aesthetic",
       "Available in dozens of species and stains",
       "Wide plank options for a modern look",
@@ -214,9 +214,9 @@ export const flooringTypes: FlooringType[] = [
     ],
     careItems: [
       "Sweep or dust-mop daily in high-traffic areas",
-      "Use a hardwood-specific cleaner — never wet-mop",
-      "Maintain indoor humidity between 35–55%",
-      "Refinish every 7–10 years to restore like-new appearance",
+      "Use a hardwood-specific cleaner, never wet-mop",
+      "Maintain indoor humidity between 35-55%",
+      "Refinish every 7-10 years to restore like-new appearance",
       "Use felt pads under all furniture",
     ],
     installInfo:
@@ -225,10 +225,10 @@ export const flooringTypes: FlooringType[] = [
       
       "Hardwood flooring near me in Kelowna — engineered and solid hardwood in stock. Wide-plank options from Grandeur, Opus, Vidar, Pravada, FloorTek. Expert installation across the Central Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "Can hardwood floors be refinished?", a: "Yes — solid hardwood can be sanded and refinished multiple times, making it a truly lifetime floor. Engineered hardwood can typically be refinished 1–2 times." },
+      { q: "Can hardwood floors be refinished?", a: "Yes, solid hardwood can be sanded and refinished multiple times, making it a truly lifetime floor. Engineered hardwood can typically be refinished 1-2 times." },
       { q: "Is hardwood suitable for all rooms?", a: "Hardwood is ideal for living areas, bedrooms, and hallways. Avoid installing in bathrooms or below-grade basements where moisture is a concern." },
-      { q: "How long does hardwood flooring installation take?", a: "Hardwood needs to acclimate to your home for 3–5 days before installation. The install itself typically takes 1–3 days depending on the room size." },
-      { q: "Does hardwood increase home value?", a: "Yes — real hardwood flooring consistently ranks as one of the top home improvements for resale value." },
+      { q: "How long does hardwood flooring installation take?", a: "Hardwood needs to acclimate to your home for 3-5 days before installation. The install itself typically takes 1-3 days depending on the room size." },
+      { q: "Does hardwood increase home value?", a: "Yes, real hardwood flooring consistently ranks as one of the top home improvements for resale value." },
     ],
   },
   {
@@ -238,26 +238,26 @@ export const flooringTypes: FlooringType[] = [
     description:
       "Stain-resistant, energy-efficient, and endlessly comfortable. Carpet is the number one choice for bedrooms and family rooms across the Okanagan.",
     longDescription:
-      "Carpet remains one of the most popular flooring choices for Kelowna homes — and for good reason. It's warm underfoot, quieter than hard floors, and creates a cozy atmosphere in any room. Modern carpet technology offers exceptional stain resistance and durability. We carry major brands including Mohawk, Phenix, and Beaulieu.",
+      "Carpet remains one of the most popular flooring choices for Kelowna homes, and for good reason. It's warm underfoot, quieter than hard floors, and creates a cozy atmosphere in any room. Modern carpet technology offers exceptional stain resistance and durability. We carry major brands including Mohawk, Phenix, and Beaulieu.",
     gradient: "from-violet-900 via-purple-900 to-indigo-950",
     accentColor: "#7c3aed",
     features: [
-      "Soft and warm underfoot — perfect for bedrooms",
+      "Soft and warm underfoot, perfect for bedrooms",
       "Stain-resistant fibres available",
       "Helps insulate rooms and reduce energy costs",
-      "Quieter than hard flooring — great for multi-storey homes",
+      "Quieter than hard flooring, great for multi-storey homes",
       "Hypoallergenic options available",
       "Wide range of colours, textures, and pile heights",
     ],
     types: [
       { name: "Textured Carpet", description: "Deep pile with a velvety, plush feel. Ideal for master bedrooms and lower-traffic spaces." },
       { name: "Cut & Loop", description: "Creates depth and tone variation while remaining soft and durable." },
-      { name: "Berber", description: "Loop-pile construction — easier to maintain with a crisp, clean look." },
+      { name: "Berber", description: "Loop-pile construction that's easier to maintain, with a crisp, clean look." },
       { name: "Commercial Carpet", description: "Durable options including carpet tiles for custom commercial patterns." },
     ],
     careItems: [
       "Vacuum at least twice per week",
-      "Blot spills immediately — never rub",
+      "Blot spills immediately, never rub",
       "Professional deep cleaning recommended annually",
       "Use entrance mats to reduce dirt and grit tracked in",
       "Rotate furniture occasionally to prevent matting",
@@ -268,7 +268,7 @@ export const flooringTypes: FlooringType[] = [
       
       "Carpet near me in Kelowna — plush, twist, berber, and commercial carpet in stock. Beaulieu, DreamWeaver, Godfrey Hirst, Nature's Carpet. Expert installation in Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "Do you remove old carpet before installing new?", a: "Yes — our installation crews remove and dispose of your existing carpet as part of the installation process." },
+      { q: "Do you remove old carpet before installing new?", a: "Yes, our installation crews remove and dispose of your existing carpet as part of the installation process." },
       { q: "What's the best carpet for a household with pets?", a: "We recommend stain-resistant nylon or polyester fibres. Patterns and darker tones also help camouflage pet hair between vacuuming." },
       { q: "How long does carpet installation take?", a: "Most rooms are completed in a single day. We'll give you a firm timeline during your free estimate." },
       { q: "What brands of carpet do you carry?", a: "We carry Mohawk, Phenix, Beaulieu, and other leading carpet manufacturers with a wide in-stock selection." },
@@ -279,13 +279,13 @@ export const flooringTypes: FlooringType[] = [
     name: "Vinyl Plank",
     tagline: "Waterproof Luxury. Zero Compromise.",
     description:
-      "Luxury Vinyl Plank (LVP) delivers the look and feel of real wood with 100% waterproof performance — ideal for kitchens, bathrooms, and basements.",
+      "Luxury Vinyl Plank (LVP) delivers the look and feel of real wood with 100% waterproof performance, ideal for kitchens, bathrooms, and basements.",
     longDescription:
-      "Luxury Vinyl Plank is the fastest-growing flooring category — and it's easy to see why. It's 100% waterproof, scratch-resistant, and available in incredibly realistic wood and stone visuals. Perfect for kitchens, bathrooms, entryways, and basements where moisture is a concern. Great for homes with pets and children.",
+      "Luxury Vinyl Plank is the fastest-growing flooring category, and it's easy to see why. It's 100% waterproof, scratch-resistant, and available in incredibly realistic wood and stone visuals. Perfect for kitchens, bathrooms, entryways, and basements where moisture is a concern. Great for homes with pets and children.",
     gradient: "from-teal-900 via-cyan-900 to-slate-900",
     accentColor: "#0d9488",
     features: [
-      "100% waterproof — ideal for wet areas",
+      "100% waterproof, ideal for wet areas",
       "Realistic wood and stone textures",
       "Scratch and scuff resistant",
       "Comfortable and quieter underfoot than tile",
@@ -294,11 +294,11 @@ export const flooringTypes: FlooringType[] = [
     ],
     types: [
       { name: "Luxury Vinyl Plank (LVP)", description: "Mimics real wood grain, knots, and distressing. Perfect for any room." },
-      { name: "Luxury Vinyl Tile (LVT)", description: "Stone and tile looks in any shape — softer and warmer than real tile." },
+      { name: "Luxury Vinyl Tile (LVT)", description: "Stone and tile looks in any shape, softer and warmer than real tile." },
     ],
     careItems: [
       "Sweep or vacuum regularly",
-      "Mop with a vinyl-safe cleaner — no wax or polish",
+      "Mop with a vinyl-safe cleaner, no wax or polish",
       "Avoid prolonged direct sunlight to prevent fading",
       "Use non-staining chair mats under rolling furniture",
       "Place mats at entryways to catch dirt and grit",
@@ -309,9 +309,9 @@ export const flooringTypes: FlooringType[] = [
       
       "Luxury vinyl plank near me in Kelowna — 100% waterproof LVP in stock. TORLYS, Beaulieu, Fuzion, Grandeur, HTBC, Monterey, Magna, Kennedy. Same-crew install across Kelowna and the Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "Is luxury vinyl plank truly waterproof?", a: "Yes — 100% waterproof through the core. It's the best choice for kitchens, bathrooms, laundry rooms, and basements." },
+      { q: "Is luxury vinyl plank truly waterproof?", a: "Yes, LVP is 100% waterproof through the core. It's the best choice for kitchens, bathrooms, laundry rooms, and basements." },
       { q: "Can vinyl plank be installed over existing flooring?", a: "In most cases, yes. LVP can float over existing hard surfaces as long as the subfloor is flat and structurally sound." },
-      { q: "Is vinyl plank good for homes with dogs?", a: "Absolutely — it's one of the most pet-friendly options. Scratch-resistant, waterproof, and easy to clean." },
+      { q: "Is vinyl plank good for homes with dogs?", a: "Absolutely. It's one of the most pet-friendly options. Scratch-resistant, waterproof, and easy to clean." },
       { q: "How thick should my vinyl plank be?", a: "We recommend at least 6mm total thickness for residential use, with a 20 mil wear layer for durability. We'll guide you through the options in-store." },
     ],
   },
@@ -334,7 +334,7 @@ export const flooringTypes: FlooringType[] = [
       "Great for kitchens, laundry rooms, and commercial spaces",
     ],
     types: [
-      { name: "Sheet Linoleum", description: "Continuous roll installation with minimal seams — ideal for kitchens and laundry rooms." },
+      { name: "Sheet Linoleum", description: "Continuous roll installation with minimal seams, ideal for kitchens and laundry rooms." },
       { name: "Linoleum Tile", description: "Modular format for creative pattern installations." },
     ],
     careItems: [
@@ -350,10 +350,10 @@ export const flooringTypes: FlooringType[] = [
       
       "Sheet vinyl and linoleum near me in Kelowna — Armstrong and Kennedy sheet vinyl in stock. Expert installation in Kelowna, West Kelowna, Lake Country. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "Is linoleum the same as vinyl?", a: "No — linoleum is made from natural materials like linseed oil and cork. Vinyl is petroleum-based. Linoleum is the eco-friendly choice." },
-      { q: "How long does linoleum last?", a: "With proper care, linoleum can last 25–40 years — making it one of the longest-lasting flooring options available." },
-      { q: "Is linoleum hypoallergenic?", a: "Yes — linoleum is naturally anti-bacterial and resistant to mould and mildew, making it ideal for allergy sufferers." },
-      { q: "Can linoleum be repaired if damaged?", a: "Minor scratches can be buffed out with linoleum polish. Larger damage may require a patch — our team can advise." },
+      { q: "Is linoleum the same as vinyl?", a: "No, linoleum is made from natural materials like linseed oil and cork. Vinyl is petroleum-based. Linoleum is the eco-friendly choice." },
+      { q: "How long does linoleum last?", a: "With proper care, linoleum can last 25-40 years, making it one of the longest-lasting flooring options available." },
+      { q: "Is linoleum hypoallergenic?", a: "Yes, linoleum is naturally anti-bacterial and resistant to mould and mildew, making it ideal for allergy sufferers." },
+      { q: "Can linoleum be repaired if damaged?", a: "Minor scratches can be buffed out with linoleum polish. Larger damage may require a patch. Our team can advise." },
     ],
   },
   {
@@ -363,30 +363,30 @@ export const flooringTypes: FlooringType[] = [
     description:
       "From ceramic to natural stone, tile flooring offers unmatched durability, easy maintenance, and timeless style for any room.",
     longDescription:
-      "Tile is the definition of lasting beauty. Whether you choose affordable ceramic, dense porcelain, or luxurious natural stone, tile flooring will look stunning for decades with minimal upkeep. It's the go-to choice for bathrooms, kitchens, and entryways — and increasingly popular for living areas with radiant heat.",
+      "Tile is the definition of lasting beauty. Whether you choose affordable ceramic, dense porcelain, or luxurious natural stone, tile flooring will look stunning for decades with minimal upkeep. It's the go-to choice for bathrooms, kitchens, and entryways, and it's increasingly popular for living areas with radiant heat.",
     gradient: "from-slate-800 via-gray-800 to-zinc-900",
     accentColor: "#64748b",
     features: [
       "Lifetime durability with proper care",
       "Increases home value",
-      "100% waterproof — ideal for wet areas",
+      "100% waterproof, ideal for wet areas",
       "Easy to clean and hypoallergenic",
       "Endless size, shape, and colour options",
       "Compatible with in-floor radiant heating",
     ],
     types: [
-      { name: "Ceramic", description: "Most affordable tile — made from natural clay with a glaze finish. Great for walls and floors." },
+      { name: "Ceramic", description: "The most affordable tile, made from natural clay with a glaze finish. Great for walls and floors." },
       { name: "Porcelain", description: "Denser and more water-resistant than ceramic. Suitable for any application." },
       { name: "Marble", description: "Natural stone with timeless luxury. Requires periodic sealing." },
       { name: "Limestone", description: "Warm, earthy tones with a natural sedimentary texture." },
       { name: "Travertine", description: "A limestone variant with distinctive natural pits and veining." },
       { name: "Slate", description: "Natural anti-slip traction with heat-retention properties." },
-      { name: "Granite", description: "The hardest, most durable natural stone — perfect for kitchens." },
+      { name: "Granite", description: "The hardest, most durable natural stone, perfect for kitchens." },
     ],
     careItems: [
       "Sweep or vacuum to remove grit that scratches grout",
       "Mop weekly with a pH-neutral cleaner",
-      "Seal natural stone every 9–12 months",
+      "Seal natural stone every 9-12 months",
       "Re-grout as needed to prevent moisture infiltration",
       "Wipe spills promptly, especially on marble",
     ],
@@ -397,9 +397,9 @@ export const flooringTypes: FlooringType[] = [
       "Tile near me in Kelowna — porcelain, ceramic, and natural stone from Ceratec, Centura, Tierra Sol, C&S Ceramstone. Expert tile installation + in-floor heating across the Okanagan. Free estimates. Call (250) 860-7847.",
     faqs: [
       { q: "What's the difference between ceramic and porcelain tile?", a: "Porcelain is denser and less porous than ceramic, making it more water and frost resistant. Porcelain is the better choice for wet areas and outdoor use." },
-      { q: "Does tile work with in-floor radiant heating?", a: "Yes — tile is one of the best flooring types for radiant heat. It conducts and holds heat effectively." },
-      { q: "How often does natural stone need to be sealed?", a: "Most natural stone (marble, limestone, travertine) should be sealed every 9–12 months to protect against staining and moisture." },
-      { q: "How long does tile installation take?", a: "Most tile projects take 2–5 days depending on the size and complexity, including grout cure time." },
+      { q: "Does tile work with in-floor radiant heating?", a: "Yes, tile is one of the best flooring types for radiant heat. It conducts and holds heat effectively." },
+      { q: "How often does natural stone need to be sealed?", a: "Most natural stone (marble, limestone, travertine) should be sealed every 9-12 months to protect against staining and moisture." },
+      { q: "How long does tile installation take?", a: "Most tile projects take 2-5 days depending on the size and complexity, including grout cure time." },
     ],
   },
   {
@@ -409,7 +409,7 @@ export const flooringTypes: FlooringType[] = [
     description:
       "Heavy-duty commercial flooring solutions for offices, retail spaces, restaurants, and institutions across Kelowna and the Central Okanagan.",
     longDescription:
-      "Commercial environments demand flooring that can handle heavy foot traffic, wheeled equipment, and the wear and tear of daily business operations — without sacrificing aesthetics. We offer a complete range of commercial flooring solutions, from durable carpet tiles to high-traffic vinyl, polished concrete, and beyond.",
+      "Commercial environments demand flooring that can handle heavy foot traffic, wheeled equipment, and the wear and tear of daily business operations without sacrificing aesthetics. We offer a complete range of commercial flooring solutions, from durable carpet tiles to high-traffic vinyl, polished concrete, and beyond.",
     gradient: "from-gray-900 via-slate-800 to-zinc-900",
     accentColor: "#374151",
     features: [
@@ -421,7 +421,7 @@ export const flooringTypes: FlooringType[] = [
       "Professional consultation and project management",
     ],
     types: [
-      { name: "Commercial Carpet Tile", description: "Modular tiles for custom patterns — easy to replace damaged sections." },
+      { name: "Commercial Carpet Tile", description: "Modular tiles for custom patterns. Damaged sections are easy to replace." },
       { name: "Commercial Vinyl", description: "Heavy-duty sheet and plank vinyl for retail and institutional spaces." },
       { name: "Commercial Laminate", description: "Durable AC4/AC5 rated laminate built for commercial traffic." },
       { name: "Commercial Tile", description: "Porcelain and ceramic options rated for commercial use." },
@@ -438,10 +438,10 @@ export const flooringTypes: FlooringType[] = [
       
       "Commercial flooring near me in Kelowna — Aladdin, Beaulieu Commercial, Buckwold Carpet Craft. Broadloom, carpet tile, LVP for offices, stratas, and rental properties across the Okanagan. Call (250) 860-7847.",
     faqs: [
-      { q: "Do you work with contractors and property managers?", a: "Yes — we work directly with builders, contractors, strata councils, and property managers on commercial and multi-unit projects." },
+      { q: "Do you work with contractors and property managers?", a: "Yes, we work directly with builders, contractors, strata councils, and property managers on commercial and multi-unit projects." },
       { q: "Can you handle large commercial flooring projects?", a: "Absolutely. We have experience with offices, retail spaces, restaurants, and institutional buildings of all sizes." },
-      { q: "Do you offer commercial pricing?", a: "Yes — we offer volume pricing for commercial projects. Contact us for a custom quote." },
-      { q: "How quickly can commercial flooring be installed?", a: "We work around your business hours to minimize disruption. Timeline depends on scope — we'll provide a firm schedule with your quote." },
+      { q: "Do you offer commercial pricing?", a: "Yes, we offer volume pricing for commercial projects. Contact us for a custom quote." },
+      { q: "How quickly can commercial flooring be installed?", a: "We work around your business hours to minimize disruption. Timeline depends on scope, and we'll provide a firm schedule with your quote." },
     ],
   },
   {
@@ -482,23 +482,23 @@ export const flooringTypes: FlooringType[] = [
       "Area rugs near me in Kelowna — Cosmos Carpet and Affiliated Weavers rugs. Custom-bound broadloom + ready-made area rugs. Free showroom visits, Kelowna + Central Okanagan. Call (250) 860-7847.",
     faqs: [
       { q: "What size area rug do I need?", a: "For a living room, all furniture legs should sit on the rug or at least the front legs. For dining rooms, allow 24\" beyond the table on all sides." },
-      { q: "Do I need a rug pad?", a: "Yes — a quality rug pad prevents slipping, protects your hard flooring, and adds cushioning underfoot. We carry rug pads in-store." },
-      { q: "How do I clean an area rug?", a: "Vacuum regularly, rotate every 6 months, and have it professionally cleaned annually. Blot spills immediately — never rub." },
+      { q: "Do I need a rug pad?", a: "Yes, a quality rug pad prevents slipping, protects your hard flooring, and adds cushioning underfoot. We carry rug pads in-store." },
+      { q: "How do I clean an area rug?", a: "Vacuum regularly, rotate every 6 months, and have it professionally cleaned annually. Blot spills immediately, never rub." },
       { q: "Do you carry custom-size rugs?", a: "We carry a range of standard sizes in-stock. Ask our team about special ordering options for custom dimensions." },
     ],
   },
   {
     slug: "cork",
     name: "Cork",
-    tagline: "Soft, Quiet, Sustainable — TORLYS in Stock",
+    tagline: "Soft, Quiet, Sustainable: TORLYS in Stock",
     description:
-      "TORLYS cork flooring at our Kelowna showroom — warm underfoot, naturally insulating, eco-friendly, and surprisingly durable. The boutique choice for Kelowna homes.",
+      "TORLYS cork flooring at our Kelowna showroom: warm underfoot, naturally insulating, eco-friendly, and surprisingly durable. The boutique choice for Kelowna homes.",
     longDescription:
-      "We carry TORLYS cork flooring as our primary cork brand — TORLYS is the Canadian leader in cork and engineered cork-look products, with click-lock installation and a built-in CorkPlus underlayment for sound dampening. Cork is harvested from cork oak bark without harming the tree, making it one of the most sustainable flooring choices available. It's naturally warm, quiet underfoot, hypoallergenic, and a great fit for Kelowna basements, bedrooms, and home offices.",
+      "We carry TORLYS cork flooring as our primary cork brand. TORLYS is the Canadian leader in cork and engineered cork-look products, with click-lock installation and a built-in CorkPlus underlayment for sound dampening. Cork is harvested from cork oak bark without harming the tree, making it one of the most sustainable flooring choices available. It's naturally warm, quiet underfoot, hypoallergenic, and a great fit for Kelowna basements, bedrooms, and home offices.",
     gradient: "from-amber-700 via-orange-800 to-stone-900",
     accentColor: "#a16207",
     features: [
-      "Sustainable — harvested without harming trees",
+      "Sustainable, harvested without harming trees",
       "Warm and soft underfoot",
       "Natural sound absorption",
       "Hypoallergenic and antimicrobial",
@@ -512,20 +512,20 @@ export const flooringTypes: FlooringType[] = [
     ],
     careItems: [
       "Sweep or vacuum regularly to remove grit",
-      "Damp-mop with a cork-safe cleaner — never soak",
-      "Reseal periodically (every 5–7 years) to maintain finish",
+      "Damp-mop with a cork-safe cleaner, never soak",
+      "Reseal periodically (every 5-7 years) to maintain finish",
       "Use felt pads under furniture",
       "Avoid prolonged direct sunlight to prevent fading",
     ],
     installInfo:
-      "Cork floats over a flat subfloor or can be glued down depending on the product. Acclimate cork in your home for 48–72 hours before installation. Our crew handles subfloor prep, layout, and finishing.",
+      "Cork floats over a flat subfloor or can be glued down depending on the product. Acclimate cork in your home for 48-72 hours before installation. Our crew handles subfloor prep, layout, and finishing.",
     metaDescription:
       
       "Cork flooring near me in Kelowna — TORLYS and Opus cork in stock. Warm, quiet, sustainable flooring for Kelowna bedrooms, basements, offices. Expert installation. Free estimates. Call (250) 860-7847.",
     faqs: [
-      { q: "Is cork flooring durable?", a: "Yes — quality cork holds up well to residential traffic and naturally bounces back from indentations. It's not the best fit for very high-traffic commercial spaces but is excellent for homes." },
-      { q: "Is cork waterproof?", a: "Cork is water-resistant when properly sealed but not waterproof. We don't recommend it for bathrooms or laundry rooms — luxury vinyl plank is a safer waterproof choice for those rooms." },
-      { q: "How long does cork flooring last?", a: "With proper care and periodic resealing, quality cork flooring lasts 20–30+ years in a Kelowna home." },
+      { q: "Is cork flooring durable?", a: "Yes, quality cork holds up well to residential traffic and naturally bounces back from indentations. It's not the best fit for very high-traffic commercial spaces but is excellent for homes." },
+      { q: "Is cork waterproof?", a: "Cork is water-resistant when properly sealed but not waterproof. We don't recommend it for bathrooms or laundry rooms. Luxury vinyl plank is a safer waterproof choice for those rooms." },
+      { q: "How long does cork flooring last?", a: "With proper care and periodic resealing, quality cork flooring lasts 20-30+ years in a Kelowna home." },
       { q: "Is cork good for basements?", a: "Cork is excellent for above-grade basements with a vapour barrier in place. For below-grade or moisture-prone basements, luxury vinyl plank is a safer choice." },
     ],
   },

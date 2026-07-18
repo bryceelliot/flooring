@@ -134,7 +134,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-charcoal mb-3">7. Cookies</h2>
             <p>
               We use cookies primarily through Google Analytics. These are small text files stored
-              in your browser. You can control cookies through your browser settings — disabling
+              in your browser. You can control cookies through your browser settings, though disabling
               them may affect some website functionality.
             </p>
           </div>

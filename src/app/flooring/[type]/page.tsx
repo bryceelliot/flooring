@@ -234,19 +234,16 @@ export default async function FlooringTypePage({ params }: Props) {
           </nav>
 
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Samples on Display — Ships in 3–5 Days
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               {flooring.name} Flooring<br />
-              <span className="text-accent">Near Me — Kelowna</span>
+              Near Me in Kelowna
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">
-              {flooring.tagline} Serving Kelowna, West Kelowna, Lake Country, Peachland &amp; Summerland — same-crew install, in-stock samples, free in-home estimates.
+              {flooring.tagline} Serving Kelowna, West Kelowna, Lake Country, Peachland &amp; Summerland: same-crew install, in-stock samples, free in-home estimates.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
-                Get Free Estimate <ArrowRight size={16} />
+                Free Estimate <ArrowRight size={16} />
               </Link>
               <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                 <Phone size={15} /> (250) 860-7847
@@ -261,8 +258,7 @@ export default async function FlooringTypePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <AnimateOnScroll direction="right">
-              <span className="section-label mb-4">Overview</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight">
                 Why Choose {flooring.name}?
               </h2>
               <p className="text-gray-600 leading-relaxed mt-5 text-lg">
@@ -320,8 +316,7 @@ export default async function FlooringTypePage({ params }: Props) {
         <section className="py-16 sm:py-20 bg-white border-y border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-8">
-              <span className="section-label mb-4">Trusted Brands</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
                 {flooring.name} Brands We Carry
               </h2>
               <p className="text-gray-500 text-base sm:text-lg mt-3 max-w-xl mx-auto">
@@ -360,8 +355,7 @@ export default async function FlooringTypePage({ params }: Props) {
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">{flooring.name} Options</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
               Styles &amp; Types We Carry
             </h2>
           </AnimateOnScroll>
@@ -384,8 +378,7 @@ export default async function FlooringTypePage({ params }: Props) {
         <section className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
-              <span className="section-label mb-4">In Our Showroom</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
                 {flooring.name} on Display in Kelowna
               </h2>
               <p className="text-gray-500 text-base sm:text-lg mt-3 max-w-2xl mx-auto">
@@ -409,8 +402,8 @@ export default async function FlooringTypePage({ params }: Props) {
           <h3 className="text-lg sm:text-xl font-black text-charcoal">
             {flooring.name} installation across the Okanagan
           </h3>
-          <p className="text-gray-500 text-sm mt-3 max-w-2xl mx-auto">
-            Same crew, same craftsmanship guarantee — wherever you are.
+          <p className="text-gray-600 text-sm mt-3 max-w-2xl mx-auto">
+            Same crew, same craftsmanship guarantee, wherever you are.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-2">
             {[
@@ -440,9 +433,6 @@ export default async function FlooringTypePage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
-              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-                Maintenance Tips
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-white leading-tight">
                 Caring for Your<br />
                 <span className="text-accent">{flooring.name}</span>
@@ -469,7 +459,7 @@ export default async function FlooringTypePage({ params }: Props) {
                 <h3 className="text-white font-black text-2xl mb-3">Have Questions?</h3>
                 <p className="text-white/55 text-sm leading-relaxed mb-6">
                   Our flooring specialists are happy to answer any questions about{" "}
-                  {flooring.name.toLowerCase()} flooring — care, installation, pricing, and more.
+                  {flooring.name.toLowerCase()} flooring: care, installation, pricing, and more.
                 </p>
                 <a
                   href="tel:2508607847"
@@ -481,7 +471,7 @@ export default async function FlooringTypePage({ params }: Props) {
                   href="/estimates"
                   className="block w-full text-center bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all"
                 >
-                  Get Free Estimate
+                  Free Estimate
                 </Link>
               </div>
             </AnimateOnScroll>
@@ -510,8 +500,7 @@ export default async function FlooringTypePage({ params }: Props) {
           <section className="py-24 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <AnimateOnScroll className="text-center mb-12">
-                <span className="section-label mb-4">FAQ</span>
-                <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+                <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
                   Common Questions About {flooring.name}
                 </h2>
               </AnimateOnScroll>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FlooringCalculator from "@/components/FlooringCalculator";
 import Link from "next/link";
-import { Calculator, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Flooring Cost Calculator Kelowna",
@@ -16,14 +16,9 @@ export default function CalculatorPage() {
       {/* Hero */}
       <section className="bg-[#0d1526] pt-48 lg:pt-36 pb-12 border-b border-white/8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
-              <Calculator size={12} /> Free Tool
-            </span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
             Flooring Cost<br />
-            <span className="text-accent">Calculator</span>
+            Calculator
           </h1>
           <p className="text-white/60 text-lg max-w-xl leading-relaxed mb-6">
             Enter your room dimensions to get an instant cost estimate for materials and installation. No personal info required.
@@ -48,7 +43,7 @@ export default function CalculatorPage() {
             Ready for an Exact Quote?
           </h2>
           <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
-            Our team comes to your home, measures every room, and gives you a detailed price — completely free, no obligation.
+            Our team comes to your home, measures every room, and gives you a detailed price. Completely free, no obligation.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link

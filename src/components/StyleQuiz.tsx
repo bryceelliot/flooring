@@ -19,7 +19,7 @@ function emptyScore(): Score {
 const FLOORING_META: Record<Slug, { name: string; tagline: string; color: string; href: string }> = {
   laminate:          { name: "Laminate",       tagline: "Great look, budget-friendly, built to last.",            color: "#d97706", href: "/flooring/laminate" },
   hardwood:          { name: "Hardwood",        tagline: "Timeless warmth that adds real value to your home.",    color: "#92400e", href: "/flooring/hardwood" },
-  carpet:            { name: "Carpet",          tagline: "Soft, cozy, and quiet — perfect for bedrooms.",         color: "#7c3aed", href: "/flooring/carpet" },
+  carpet:            { name: "Carpet",          tagline: "Soft, cozy, and quiet. Perfect for bedrooms.",          color: "#7c3aed", href: "/flooring/carpet" },
   "vinyl-plank":     { name: "Vinyl Plank",     tagline: "100% waterproof and incredibly durable.",               color: "#0d9488", href: "/flooring/vinyl-plank" },
   "linoleum-sheet":  { name: "Linoleum Sheet",  tagline: "Natural, eco-friendly, and tough as nails.",            color: "#059669", href: "/flooring/linoleum-sheet" },
   tile:              { name: "Tile",            tagline: "Lifetime durability with effortless style.",            color: "#64748b", href: "/flooring/tile" },
@@ -51,8 +51,8 @@ const QUESTIONS: Question[] = [
     question: "How important is water resistance?",
     options: [
       { label: "Critical",     desc: "Wet area, basement, or frequent spills",     score: { "vinyl-plank": 4, tile: 4, "linoleum-sheet": 2 } },
-      { label: "Helpful",      desc: "Family home — accidents happen",             score: { "vinyl-plank": 2, laminate: 1 } },
-      { label: "Not a worry",  desc: "Dry area — bedroom, upstairs office",        score: { hardwood: 2, carpet: 2, laminate: 1 } },
+      { label: "Helpful",      desc: "Family home, accidents happen",              score: { "vinyl-plank": 2, laminate: 1 } },
+      { label: "Not a worry",  desc: "Dry area (bedroom, upstairs office)",        score: { hardwood: 2, carpet: 2, laminate: 1 } },
     ],
   },
   {
@@ -83,7 +83,7 @@ const QUESTIONS: Question[] = [
     subtitle: "All-in (materials + installation)",
     options: [
       { label: "Budget-friendly",  desc: "Under $6/sqft installed",       score: { laminate: 4, "linoleum-sheet": 3, carpet: 2 } },
-      { label: "Mid-range",        desc: "$6–$12/sqft installed",         score: { "vinyl-plank": 3, laminate: 2, hardwood: 1, carpet: 2 } },
+      { label: "Mid-range",        desc: "$6-$12/sqft installed",         score: { "vinyl-plank": 3, laminate: 2, hardwood: 1, carpet: 2 } },
       { label: "Premium",          desc: "Over $12/sqft installed",       score: { hardwood: 4, tile: 3, "vinyl-plank": 1 } },
     ],
   },
@@ -138,14 +138,11 @@ export default function StyleQuiz() {
   if (done) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
-        <span className="inline-block bg-accent/15 border border-accent/30 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-          Your Results
-        </span>
         <h2 className="text-4xl sm:text-5xl font-black text-white mb-3">
           Here&apos;s What We Recommend
         </h2>
         <p className="text-white/55 text-lg mb-12">
-          Based on your answers, here are your top matches — ranked by fit.
+          Based on your answers, here are your top matches, ranked by fit.
         </p>
 
         <div className="space-y-4 mb-12 text-left">
@@ -189,7 +186,7 @@ export default function StyleQuiz() {
             href="/estimates"
             className="flex items-center gap-2 bg-accent-dark hover:bg-[#a8281e] text-white font-bold px-8 py-4 rounded-xl text-base transition-all hover:-translate-y-0.5"
           >
-            Get Free Estimate <ArrowRight size={18} />
+            Free Estimate <ArrowRight size={18} />
           </Link>
           <button
             onClick={reset}

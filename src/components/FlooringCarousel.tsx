@@ -65,7 +65,7 @@ export default function FlooringCarousel({ photos, altBase }: Props) {
           >
             <Image
               src={src}
-              alt={`${altBase} ${i + 1} — Kelowna Flooring Superstore showroom`}
+              alt={`${altBase} ${i + 1}, Kelowna Flooring Superstore showroom`}
               fill
               sizes="(max-width: 640px) 88vw, (max-width: 1024px) 70vw, 55vw"
               className="object-cover"

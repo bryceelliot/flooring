@@ -37,21 +37,18 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Our Story
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Kelowna&apos;s Flooring<br />
-              <span className="text-accent">Experts</span>
+              Experts
             </h1>
             <p className="text-white/60 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
               For over 30 years, we&apos;ve been helping Kelowna homeowners and
-              businesses find the perfect flooring — with honest advice, expert
+              businesses find the perfect flooring, with honest advice, expert
               installation, and a showroom unlike any other in the Okanagan.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
-                Get Free Estimate <ArrowRight size={16} />
+                Free Estimate <ArrowRight size={16} />
               </Link>
               <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                 <Phone size={15} /> (250) 860-7847
@@ -66,15 +63,14 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll direction="right">
-              <span className="section-label mb-4">Who We Are</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight">
                 More Than Just a Flooring Store
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed mt-6">
                 <p>
                   Kelowna Flooring Superstore was built on a simple belief: every
                   homeowner deserves access to beautiful, high-quality flooring at a
-                  fair price — and the expert guidance to make the right choice for their home.
+                  fair price, and the expert guidance to make the right choice for their home.
                 </p>
                 <p>
                   As a proud member of the <strong className="text-primary">Flooring Superstores</strong> franchise,
@@ -85,14 +81,14 @@ export default function AboutPage() {
                 </p>
                 <p>
                   What sets us apart is our team. Our flooring specialists aren&apos;t
-                  salespeople — they&apos;re flooring enthusiasts who genuinely love
+                  salespeople. They&apos;re flooring enthusiasts who genuinely love
                   helping people transform their spaces. We listen, we advise, and we
                   stand behind every floor we sell and install.
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/estimates" className="btn-primary text-sm">
-                  Get Free Estimate <ArrowRight size={16} />
+                  Free Estimate <ArrowRight size={16} />
                 </Link>
                 <Link href="/flooring" className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all">
                   Shop Flooring
@@ -106,7 +102,7 @@ export default function AboutPage() {
                   { value: "30+", label: "Years in Business", color: "bg-primary" },
                   { value: "500+", label: "Happy Customers", color: "bg-accent" },
                   { value: "8+", label: "Flooring Categories", color: "bg-[#243566]" },
-                  { value: "100%", label: "Local Ownership", color: "bg-charcoal" },
+                  { value: "4.9", label: "Google Rating", color: "bg-charcoal" },
                 ].map((s) => (
                   <div key={s.label} className={`${s.color} rounded-2xl p-7 text-white`}>
                     <div className="text-4xl font-black">{s.value}</div>
@@ -131,9 +127,9 @@ export default function AboutPage() {
               className="h-10 w-auto"
             />
             <div className="hidden sm:block w-px h-12 bg-gray-200" />
-            <p className="text-gray-500 text-sm max-w-md leading-relaxed">
+            <p className="text-gray-600 text-sm max-w-md leading-relaxed">
               Kelowna Flooring Superstore is a proud member of the{" "}
-              <strong className="text-primary">Flooring Superstores</strong> franchise —
+              <strong className="text-primary">Flooring Superstores</strong> franchise,
               a trusted Canadian network with a reputation for quality, selection, and service.
             </p>
           </AnimateOnScroll>
@@ -144,8 +140,7 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Our Values</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
               What We Stand For
             </h2>
           </AnimateOnScroll>
@@ -170,13 +165,12 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Meet the Team</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
               The People Behind<br />
-              <span className="gradient-text">Your New Floor</span>
+              Your New Floor
             </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-              Our team brings decades of combined flooring experience — and a genuine passion for helping Kelowna homeowners find the perfect floor.
+            <p className="text-gray-600 text-lg mt-4 max-w-xl mx-auto">
+              Our team brings decades of combined flooring experience, and a genuine passion for helping Kelowna homeowners find the perfect floor.
             </p>
           </AnimateOnScroll>
 
@@ -191,7 +185,7 @@ export default function AboutPage() {
               {
                 name: "Selina",
                 role: "Design Consultant",
-                bio: "Selina brings a designer's eye to every consultation. She specialises in helping customers visualise how different flooring choices will look in their space — and loves the transformation reveal.",
+                bio: "Selina brings a designer's eye to every consultation. She specialises in helping customers visualise how different flooring choices will look in their space, and loves the transformation reveal.",
                 photo: "/assets/images/team-selina.webp",
               },
               {
@@ -209,7 +203,7 @@ export default function AboutPage() {
                     <div className="relative w-24 h-24 rounded-2xl overflow-hidden mb-5 shadow-lg">
                       <Image
                         src={member.photo}
-                        alt={`${member.name} — ${member.role}`}
+                        alt={`${member.name}, ${member.role}`}
                         fill
                         className="object-cover"
                         sizes="96px"
@@ -230,7 +224,7 @@ export default function AboutPage() {
 
           <AnimateOnScroll className="text-center mt-10">
             <p className="text-gray-600 text-sm">
-              Come meet the team in person at our showroom on McCurdy Place — we&apos;d love to help you find your perfect floor.
+              Come meet the team in person at our showroom on McCurdy Place. We&apos;d love to help you find your perfect floor.
             </p>
           </AnimateOnScroll>
         </div>
@@ -240,12 +234,11 @@ export default function AboutPage() {
       <section className="py-24 bg-light">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
-            <span className="section-label mb-4">Our Team</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
               Meet the Team Behind Your Floor
             </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-              A family-run Kelowna crew — showroom staff, installers, and our shop dog.
+            <p className="text-gray-600 text-lg mt-4 max-w-xl mx-auto">
+              A family-run Kelowna crew: showroom staff, installers, and our shop dog.
             </p>
           </AnimateOnScroll>
 
@@ -254,7 +247,7 @@ export default function AboutPage() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
               <Image
                 src="/assets/images/team-photo.webp"
-                alt="Kelowna Flooring Superstore team — showroom staff, installers, and shop dog in front of the Flooring Superstores mural"
+                alt="Kelowna Flooring Superstore team: showroom staff, installers, and shop dog in front of the Flooring Superstores mural"
                 width={1448}
                 height={1086}
                 className="w-full h-auto"
@@ -275,7 +268,7 @@ export default function AboutPage() {
                   <div className="relative aspect-square bg-light">
                     <Image
                       src={m.src}
-                      alt={`${m.name} — ${m.role} at Kelowna Flooring Superstore`}
+                      alt={`${m.name}, ${m.role} at Kelowna Flooring Superstore`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 50vw, 25vw"
@@ -327,7 +320,7 @@ export default function AboutPage() {
                   <div>
                     <div className="text-white font-semibold mb-2">Store Hours</div>
                     <div className="space-y-1.5 text-sm">
-                      {[["Mon – Tue", "9:00 AM – 5:00 PM"], ["Wednesday", "9:00 AM – 2:00 PM"], ["Thu – Fri", "9:00 AM – 5:00 PM"], ["Saturday", "10:00 AM – 2:00 PM"], ["Sunday", "Closed"]].map(([day, time]) => (
+                      {[["Mon - Tue", "9:00 AM - 5:00 PM"], ["Wednesday", "9:00 AM - 2:00 PM"], ["Thu - Fri", "9:00 AM - 5:00 PM"], ["Saturday", "10:00 AM - 2:00 PM"], ["Sunday", "Closed"]].map(([day, time]) => (
                         <div key={day} className="flex justify-between gap-8 text-white/55">
                           <span>{day}</span>
                           <span className={time === "Closed" ? "text-accent" : "text-white/80"}>{time}</span>

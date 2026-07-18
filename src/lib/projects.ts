@@ -36,7 +36,7 @@ function seq(project: string, base: string, start: number, end: number, altBase:
     const num = String(i).padStart(2, "0");
     out.push({
       src: `/assets/images/projects/${project}/${base}-${num}.webp`,
-      alt: `${altBase} — photo ${i}`,
+      alt: `${altBase}, photo ${i}`,
     });
   }
   return out;
@@ -46,16 +46,16 @@ export const projects: Project[] = [
   {
     slug: "glenpark-village-meadows",
     name: "Glenpark Village Meadows",
-    neighborhood: "313–315 Whitman Road, Kelowna",
+    neighborhood: "313-315 Whitman Road, Kelowna",
     city: "Kelowna",
     flooringTypes: ["Luxury Vinyl Plank", "Commercial Carpet Tile"],
     squareFootage: "Multi-unit common areas",
     duration: "Multi-phase commercial install",
-    homeType: "Glenpark Village Meadows — Whitman Road strata community",
+    homeType: "Glenpark Village Meadows, Whitman Road strata community",
     summary:
       "Commercial refresh at Glenpark Village Meadows on Whitman Road. New luxury vinyl plank and patterned carpet tile through hallways and common areas, installed by the KFSS commercial crew.",
     description:
-      "Glenpark Village Meadows is a multi-unit residential community on Whitman Road in Kelowna. Our commercial crew installed luxury vinyl plank and patterned carpet tile through the common hallways and landings — tenant-friendly install windows, minimal downtime, same-crew from measurement through completion. Completed April 2026.",
+      "Glenpark Village Meadows is a multi-unit residential community on Whitman Road in Kelowna. Our commercial crew installed luxury vinyl plank and patterned carpet tile through the common hallways and landings: tenant-friendly install windows, minimal downtime, same-crew from measurement through completion. Completed April 2026.",
     photos: seq("glenpark-village-meadows", "glenpark", 1, 14, "Glenpark Village Meadows Kelowna install"),
     heroImage: "/assets/images/projects/glenpark-village-meadows/glenpark-02.webp",
     metaDescription:
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     flooringTypes: ["Luxury Vinyl Plank", "Commercial Carpet"],
     squareFootage: "Full-building refresh",
     duration: "Multi-phase commercial install",
-    homeType: "Springfield Manor — Hoy Street residential building",
+    homeType: "Springfield Manor, Hoy Street residential building",
     summary:
       "Full building flooring refresh at Springfield Manor on Hoy Street. New luxury vinyl plank and commercial carpet replacing worn broadloom in hallways and units.",
     description:

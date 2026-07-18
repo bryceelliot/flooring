@@ -89,7 +89,7 @@ export default async function ServiceAreaPage({ params }: Props) {
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Flooring in<br />
-              <span className="text-accent">{area.name}</span>
+              {area.name}
             </h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-2xl leading-relaxed">{area.tagline}</p>
             <p className="text-white/45 text-sm mt-3"><span className="font-bold text-white/70">Travel:</span> {area.drivingTime}</p>
@@ -109,9 +109,8 @@ export default async function ServiceAreaPage({ params }: Props) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12">
           <AnimateOnScroll direction="right">
-            <span className="section-label mb-4">Local Flooring</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4 leading-tight">
-              Serving {area.name} <span className="gradient-text">Every Week</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight">
+              Serving {area.name} Every Week
             </h2>
             <p className="text-gray-600 leading-relaxed mt-5 text-lg">{area.intro}</p>
             <ul className="mt-7 space-y-3">
@@ -147,9 +146,8 @@ export default async function ServiceAreaPage({ params }: Props) {
       <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
-            <span className="section-label mb-4">What We Install</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              Every Flooring Type — Delivered to {area.name}
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
+              Every Flooring Type, Delivered to {area.name}
             </h2>
           </AnimateOnScroll>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -179,7 +177,7 @@ export default async function ServiceAreaPage({ params }: Props) {
                 <p className="text-gray-700 text-lg leading-relaxed italic">
                   &ldquo;{area.testimonial.quote}&rdquo;
                 </p>
-                <p className="font-bold text-charcoal mt-5">— {area.testimonial.name}</p>
+                <p className="font-bold text-charcoal mt-5">{area.testimonial.name}</p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -191,8 +189,7 @@ export default async function ServiceAreaPage({ params }: Props) {
         <section className="py-20 bg-light">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="text-center mb-10">
-              <span className="section-label mb-4">FAQ</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
+              <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
                 {area.name} Flooring Questions
               </h2>
             </AnimateOnScroll>

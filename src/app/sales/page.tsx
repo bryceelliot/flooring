@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { ArrowRight, Phone, Tag, CheckCircle2, Flame } from "lucide-react";
+import { ArrowRight, Phone, Tag, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sales & Promotions — Flooring Deals Kelowna",
@@ -15,7 +15,7 @@ const sales = [
   {
     tag: "On Sale",
     badge: "BEST DEAL",
-    title: "Carpet — On Sale Now",
+    title: "Carpet: On Sale Now",
     description:
       "Select Beaulieu and Mohawk carpet styles on sale now. Soft, stain-resistant options for every bedroom and living space. Order from our showroom samples.",
     bullets: ["Nylon & polyester options", "Stain-resistant fibres", "Wide colour selection", "Includes underlayment options"],
@@ -29,7 +29,7 @@ const sales = [
     badge: null,
     title: "Select Area Rugs",
     description:
-      "Add warmth and style instantly. Discounted area rugs in a variety of sizes and patterns — perfect over LVP, hardwood, or tile.",
+      "Add warmth and style instantly. Discounted area rugs in a variety of sizes and patterns, perfect over LVP, hardwood, or tile.",
     bullets: ["Multiple sizes available", "Indoor & entryway styles", "Easy to layer over hard floors", "See styles in our showroom"],
     img: "/assets/images/showroom-04.webp",
     href: "/flooring/area-rugs",
@@ -37,11 +37,11 @@ const sales = [
     focal: "center 45%",
   },
   {
-    tag: "3–5 Day Delivery",
+    tag: "3-5 Day Delivery",
     badge: null,
     title: "Luxury Vinyl Plank",
     description:
-      "Choose from our full range of waterproof LVP samples — perfect for kitchens, bathrooms, basements, and pet-friendly homes. Arrives in 3–5 days.",
+      "Choose from our full range of waterproof LVP samples, perfect for kitchens, bathrooms, basements, and pet-friendly homes. Arrives in 3-5 days.",
     bullets: ["100% waterproof core", "Wear layers up to 20 mil", "Click-lock floating install", "Wood & stone looks"],
     img: "/assets/images/hero-kurang.webp",
     href: "/flooring/vinyl-plank",
@@ -49,11 +49,11 @@ const sales = [
     focal: "center 45%",
   },
   {
-    tag: "3–5 Day Delivery",
+    tag: "3-5 Day Delivery",
     badge: null,
     title: "Laminate Flooring",
     description:
-      "Hardwood looks without the hardwood price. Browse laminate samples in a wide range of widths and finishes — order today, arrives in 3–5 days.",
+      "Hardwood looks without the hardwood price. Browse laminate samples in a wide range of widths and finishes. Order today and it arrives in 3-5 days.",
     bullets: ["AC3 & AC4 wear ratings", "Multiple plank widths", "Easy DIY-friendly install", "Budget to mid-range options"],
     img: "/assets/images/showroom-08.webp",
     href: "/flooring/laminate",
@@ -81,21 +81,17 @@ export default function SalesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              <Flame size={12} />
-              While Stocks Last
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Sales &amp;<br />
-              <span className="text-accent">Promotions</span>
+              Promotions
             </h1>
             <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
-              Current deals on display in our showroom. Choose your sample and your order arrives in 3–5 days — call to confirm pricing and availability.
+              Current deals on display in our showroom. Choose your sample and your order arrives in 3-5 days. Call to confirm pricing and availability.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mt-8">
               <Link href="/estimates" className="btn-primary text-sm">
-                Get Free Estimate <ArrowRight size={15} />
+                Free Estimate <ArrowRight size={15} />
               </Link>
               <a href="tel:2508607847" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/18 border border-white/25 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all">
                 <Phone size={15} /> Confirm Stock
@@ -109,9 +105,8 @@ export default function SalesPage() {
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">On Sale Now</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              See Samples, <span className="gradient-text">Ships in Days</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
+              See Samples, Ships in Days
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
               No waiting. No back-orders. These styles are on our showroom floor right now.
@@ -182,7 +177,7 @@ export default function SalesPage() {
           <div className="flex items-center gap-3">
             <Tag size={16} className="shrink-0" />
             <p className="font-bold text-sm sm:text-base text-center sm:text-left">
-              Pricing and availability subject to change — call to confirm before visiting.
+              Pricing and availability subject to change. Call to confirm before visiting.
             </p>
           </div>
           <a href="tel:2508607847" className="shrink-0 bg-white text-accent font-black px-6 py-2.5 rounded-xl text-sm hover:bg-white/90 transition-colors whitespace-nowrap">
@@ -239,7 +234,7 @@ export default function SalesPage() {
             Don&apos;t See What You&apos;re Looking For?
           </h2>
           <p className="text-white/55 mt-4 leading-relaxed">
-            Our showroom carries far more than what&apos;s listed here. Come in or call — we&apos;ll find the right floor for your space and budget.
+            Our showroom carries far more than what&apos;s listed here. Come in or call and we&apos;ll find the right floor for your space and budget.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-7">
             <Link href="/estimates" className="bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all">

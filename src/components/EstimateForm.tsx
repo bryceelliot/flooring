@@ -13,8 +13,8 @@ const flooringOptions = [
 ];
 
 const areaOptions = [
-  "Under 200 sq ft", "200–500 sq ft", "500–1,000 sq ft",
-  "1,000–2,000 sq ft", "Over 2,000 sq ft", "Not sure yet",
+  "Under 200 sq ft", "200-500 sq ft", "500-1,000 sq ft",
+  "1,000-2,000 sq ft", "Over 2,000 sq ft", "Not sure yet",
 ];
 
 type FormData = {

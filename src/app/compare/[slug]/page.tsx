@@ -92,9 +92,6 @@ export default async function ComparePage({ params }: Props) {
             <span className="text-white/70">{p.title}</span>
           </nav>
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Side-by-Side Comparison
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">{p.title}</h1>
             <p className="text-white/65 text-lg sm:text-xl mt-5 max-w-3xl leading-relaxed">{p.tldr}</p>
           </AnimateOnScroll>
@@ -165,8 +162,7 @@ export default async function ComparePage({ params }: Props) {
       <section className="py-16 bg-light">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="mb-8">
-            <span className="section-label">FAQ</span>
-            <h2 className="text-2xl sm:text-3xl font-black text-charcoal mt-3">Common Questions</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-charcoal">Common Questions</h2>
           </AnimateOnScroll>
           <div className="space-y-3">
             {p.faqs.map((f) => (

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const steps = [
   { num: "01", icon: Phone, title: "Contact Us", desc: "Call or fill out our form to schedule your free estimate at a time that works for you." },
   { num: "02", icon: Ruler, title: "We Measure", desc: "Our expert visits your home or project site and measures every room precisely." },
-  { num: "03", icon: Clock, title: "Get Your Quote", desc: "Receive a detailed, transparent quote including materials & installation — usually within 24 hours." },
+  { num: "03", icon: Clock, title: "Get Your Quote", desc: "Receive a detailed, transparent quote including materials & installation, usually within 24 hours." },
   { num: "04", icon: CalendarCheck, title: "You Decide", desc: "No pressure. Take your time. When you're ready, we schedule your installation." },
 ];
 
@@ -38,16 +38,13 @@ export default function EstimatesPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              No Obligation · 100% Free
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               Free In-Home<br />
-              <span className="text-accent">Estimate</span>
+              Estimate
             </h1>
             <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               We come to you, measure every room, and provide a detailed transparent
-              quote — completely free and with no pressure or obligation.
+              quote, completely free and with no pressure or obligation.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <a href="#estimate-form" className="btn-primary text-sm">
@@ -93,8 +90,7 @@ export default function EstimatesPage() {
       <section id="estimate-form" className="py-24 bg-light scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-start">
           <AnimateOnScroll direction="right">
-            <span className="section-label mb-4">Get Started</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight mt-4 mb-5">
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal leading-tight mb-5">
               Request Your Free Estimate
             </h2>
             <p className="text-gray-500 leading-relaxed mb-8">
@@ -103,7 +99,7 @@ export default function EstimatesPage() {
             </p>
             <div className="space-y-3 mb-8">
               {[
-                "Free — no cost, no obligation, ever",
+                "Free: no cost, no obligation, ever",
                 "We come to you at a time that suits you",
                 "Accurate room measurements by our experts",
                 "Detailed quote including materials & installation",
@@ -123,7 +119,7 @@ export default function EstimatesPage() {
               <a href="tel:2508607847" className="text-primary font-black text-2xl hover:text-accent transition-colors block">
                 (250) 860-7847
               </a>
-              <p className="text-gray-600 text-xs mt-1">Mon–Fri 9–5 · Wed 9–2 · Sat 10–2</p>
+              <p className="text-gray-600 text-xs mt-1">Mon-Fri 9-5 · Wed 9-2 · Sat 10-2</p>
             </div>
 
             {/* Photo teaser */}
@@ -151,7 +147,7 @@ export default function EstimatesPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-charcoal text-lg leading-none">Book Your Estimate</h3>
-                  <p className="text-gray-600 text-xs mt-0.5">Usually scheduled within 2–3 business days</p>
+                  <p className="text-gray-600 text-xs mt-0.5">Usually scheduled within 2-3 business days</p>
                 </div>
               </div>
               <EstimateForm />
@@ -164,7 +160,7 @@ export default function EstimatesPage() {
       <section className="py-16 bg-[#0d1526]">
         <AnimateOnScroll className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-black text-white">Any Questions Before You Book?</h2>
-          <p className="text-white/55 mt-3">Our team is happy to help — call or send us a message.</p>
+          <p className="text-white/55 mt-3">Our team is happy to help. Call or send us a message.</p>
           <div className="flex flex-wrap justify-center gap-4 mt-7">
             <a href="tel:2508607847" className="flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all">
               <Phone size={16} /> (250) 860-7847

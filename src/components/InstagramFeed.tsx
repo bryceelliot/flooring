@@ -42,7 +42,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
 /* Fallback posts — shown until Behold is connected */
 const fallbackPosts = [
-  { src: "/assets/images/showroom-01.webp", alt: "Kelowna showroom — hardwood display" },
+  { src: "/assets/images/showroom-01.webp", alt: "Kelowna showroom hardwood display" },
   { src: "/assets/images/showroom-06.webp", alt: "Luxury vinyl plank samples" },
   { src: "/assets/images/showroom-09.webp", alt: "Shaw carpet styles" },
   { src: "/assets/images/showroom-07.webp", alt: "Laminate & vinyl wall" },

@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 };
 
 const hours = [
-  { day: "Monday – Tuesday", time: "9:00 AM – 5:00 PM", closed: false },
-  { day: "Wednesday", time: "9:00 AM – 2:00 PM", closed: false },
-  { day: "Thursday – Friday", time: "9:00 AM – 5:00 PM", closed: false },
-  { day: "Saturday", time: "10:00 AM – 2:00 PM", closed: false },
+  { day: "Monday - Tuesday", time: "9:00 AM - 5:00 PM", closed: false },
+  { day: "Wednesday", time: "9:00 AM - 2:00 PM", closed: false },
+  { day: "Thursday - Friday", time: "9:00 AM - 5:00 PM", closed: false },
+  { day: "Saturday", time: "10:00 AM - 2:00 PM", closed: false },
   { day: "Sunday", time: "Closed", closed: true },
 ];
 
@@ -47,16 +47,13 @@ export default function ContactPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Get in Touch
-            </span>
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-white leading-tight">
               We&apos;d Love to<br />
-              <span className="text-accent">Hear From You</span>
+              Hear From You
             </h1>
             <p className="text-white/60 text-base sm:text-lg mt-5 max-w-xl leading-relaxed">
               Whether you have a question about flooring, want to book a free estimate,
-              or just want to visit our showroom — we&apos;re here to help.
+              or just want to visit our showroom, we&apos;re here to help.
             </p>
           </AnimateOnScroll>
         </div>

@@ -113,9 +113,6 @@ export default async function AnswerPage({ params }: Props) {
             <span className="text-white/70 truncate max-w-[60vw]">{p.question}</span>
           </nav>
           <AnimateOnScroll>
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
-              Quick Answer
-            </span>
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">{p.question}</h1>
           </AnimateOnScroll>
         </div>
@@ -147,8 +144,7 @@ export default async function AnswerPage({ params }: Props) {
         <section className="py-16 bg-light">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <AnimateOnScroll className="mb-8">
-              <span className="section-label">FAQ</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-charcoal mt-3">Related Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-charcoal">Related Questions</h2>
             </AnimateOnScroll>
             <div className="space-y-3">
               {p.faqs.map((f) => (
