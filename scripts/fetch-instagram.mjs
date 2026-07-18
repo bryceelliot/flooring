@@ -113,7 +113,7 @@ async function main() {
 
   const token = await refreshTokenIfPossible(TOKEN);
   const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
-  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${MAX * 2}&access_token=${token}`;
+  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${MAX * 3}&access_token=${token}`;
 
   let items;
   try {
@@ -130,9 +130,10 @@ async function main() {
     return;
   }
 
-  // Keep only items that have an image we can show (photos + album covers +
-  // video thumbnails), newest first, capped at MAX.
-  const usable = items
+  // Candidates that have an image we can show (photos + album covers + video
+  // thumbnails), newest first. We download from this pool until we have MAX
+  // GOOD images, skipping the black cover frames some Reels return.
+  const candidates = items
     .map((it) => ({
       id: it.id,
       permalink: it.permalink,
@@ -140,18 +141,21 @@ async function main() {
       imageUrl: it.media_type === "VIDEO" ? it.thumbnail_url : it.media_url,
       timestamp: it.timestamp,
     }))
-    .filter((it) => it.imageUrl && it.permalink)
-    .slice(0, MAX);
+    .filter((it) => it.imageUrl && it.permalink);
 
-  if (usable.length === 0) {
+  if (candidates.length === 0) {
     log("no usable media returned — keeping existing cache.");
     return;
   }
 
   await mkdir(IMG_DIR, { recursive: true });
 
+  // Solid-black Reel cover frames compress to ~3KB; real photos are 30KB+.
+  const MIN_BYTES = 12000;
+
   const manifest = [];
-  for (const it of usable) {
+  for (const it of candidates) {
+    if (manifest.length >= MAX) break;
     try {
       const res = await fetch(it.imageUrl);
       if (!res.ok) {
@@ -159,6 +163,10 @@ async function main() {
         continue;
       }
       const buf = Buffer.from(await res.arrayBuffer());
+      if (buf.length < MIN_BYTES) {
+        log(`skipping ${it.id} — blank/black thumbnail (${buf.length} bytes).`);
+        continue;
+      }
       const file = `${it.id}.jpg`;
       await writeFile(join(IMG_DIR, file), buf);
       manifest.push({
