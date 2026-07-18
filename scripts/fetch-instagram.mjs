@@ -15,12 +15,33 @@
  * grid in src/lib/instagram-feed.ts. This script NEVER fails the build — any
  * error is logged and the previous cache is left untouched.
  */
-import { writeFile, mkdir, readdir, unlink } from "node:fs/promises";
+import { writeFile, mkdir, readdir, unlink, readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
+
+/** Load .env.local (same file Next.js uses) so tokens live in one place.
+ *  Only sets vars that aren't already in the environment. Best-effort. */
+async function loadEnvLocal() {
+  for (const name of [".env.local", ".env"]) {
+    try {
+      const raw = await readFile(join(ROOT, name), "utf8");
+      for (const line of raw.split("\n")) {
+        const m = line.match(/^\s*([\w.-]+)\s*=\s*(.*)?\s*$/);
+        if (!m || line.trim().startsWith("#")) continue;
+        const key = m[1];
+        let val = (m[2] || "").trim();
+        if (/^(['"]).*\1$/.test(val)) val = val.slice(1, -1);
+        if (process.env[key] === undefined) process.env[key] = val;
+      }
+    } catch {
+      /* file absent — fine */
+    }
+  }
+}
+await loadEnvLocal();
 const IMG_DIR = join(ROOT, "public", "assets", "instagram");
 const CACHE_FILE = join(ROOT, "src", "lib", "instagram-cache.json");
 const PUBLIC_PREFIX = "/assets/instagram";
