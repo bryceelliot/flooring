@@ -1,5 +1,6 @@
 import { fetchGoogleReviews, type GoogleReview } from "@/lib/google-reviews";
 import GoogleReviewsClient from "@/components/GoogleReviewsClient";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/reviews-meta";
 
 /* Local fallback reviews — used when the Places API key isn't configured
  * or the Google endpoint errors. Keeps the section live. */
@@ -63,8 +64,8 @@ const FALLBACK: GoogleReview[] = [
 export default async function GoogleReviews() {
   const data = await fetchGoogleReviews();
   const reviews = data.reviews.length > 0 ? data.reviews : FALLBACK;
-  const rating = data.rating ?? 4.9;
-  const total = data.totalReviews;
+  const rating = data.rating ?? REVIEW_RATING;
+  const total = data.totalReviews ?? REVIEW_COUNT;
   const allReviewsUrl =
     data.googleMapsUri ||
     "https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews";
@@ -73,7 +74,7 @@ export default async function GoogleReviews() {
     <GoogleReviewsClient
       reviews={reviews}
       rating={rating}
-      total={total ?? null}
+      total={total}
       allReviewsUrl={allReviewsUrl}
     />
   );

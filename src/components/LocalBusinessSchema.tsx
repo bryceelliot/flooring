@@ -1,4 +1,5 @@
 import { fetchGoogleReviews } from "@/lib/google-reviews";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/reviews-meta";
 
 export default async function LocalBusinessSchema() {
   const live = await fetchGoogleReviews();
@@ -66,8 +67,8 @@ export default async function LocalBusinessSchema() {
     ],
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: (live.rating ?? 4.9).toString(),
-      reviewCount: (live.totalReviews ?? 150).toString(),
+      ratingValue: (live.rating ?? REVIEW_RATING).toString(),
+      reviewCount: (live.totalReviews ?? REVIEW_COUNT).toString(),
       bestRating: "5",
       worstRating: "1",
     },

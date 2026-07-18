@@ -8,8 +8,11 @@
  * The Places API returns up to 5 reviews per call (Google's cap). We ask for
  * "most_relevant" ordering so highest-signal reviews land on the homepage.
  *
- * This runs server-side only (secret key). Build output is revalidated every
- * 6 hours so fresh reviews show up without needing a redeploy.
+ * This runs server-side only (secret key). NOTE: the site is a static export
+ * (next.config output: "export"), so `revalidate` does NOT apply — this fetch
+ * runs at BUILD time and the results are baked into the static HTML. Fresh
+ * reviews/count therefore appear on the next build + deploy (automate with a
+ * scheduled rebuild to keep them current).
  */
 
 export interface GoogleReview {

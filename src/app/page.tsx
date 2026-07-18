@@ -7,6 +7,7 @@ import ProjectsCarousel from "@/components/ProjectsCarousel";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
+import HomeBlogStrip from "@/components/HomeBlogStrip";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GoogleReviews from "@/components/GoogleReviews";
 import {
@@ -318,6 +319,9 @@ export default function HomePage() {
 
       {/* ── Instagram feed ────────────────────────────────────── */}
       <InstagramFeed />
+
+      {/* ── From the blog (current, seasonal posts) ───────────── */}
+      <HomeBlogStrip />
 
       {/* ── Featured Projects ─────────────────────────────────── */}
       <section className="py-20 sm:py-24 bg-light">

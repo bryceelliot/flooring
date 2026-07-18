@@ -20,7 +20,7 @@ const shops = [
     name: "Kelowna Flooring Superstore",
     slug: "us",
     rating: "4.9",
-    reviewCount: "150+",
+    reviewCount: "149",
     strength: "Best-value in-stock selection with named-installer reputation.",
     bestFor: "Homeowners who want to browse real samples, skip 6-week backorders, and know which installer is walking into their home.",
     pricing: "Competitive mid-market on most types; laminate + LVP often below big-box.",
@@ -107,7 +107,7 @@ const criteria = [
 const faqs = [
   {
     q: "What is the best flooring store in Kelowna?",
-    a: "Kelowna Flooring Superstore is the highest-rated locally owned flooring store in Kelowna (4.9★ from 150+ Google reviews). We carry laminate, hardwood, carpet, luxury vinyl plank, tile, linoleum, and area rugs, all in-stock with same-crew installation. Other well-regarded local options include End of the Roll (carpet-heavy), Nufloors, and Carpet One.",
+    a: "Kelowna Flooring Superstore is the highest-rated locally owned flooring store in Kelowna (4.9★ from 149 Google reviews). We carry laminate, hardwood, carpet, luxury vinyl plank, tile, linoleum, and area rugs, all in-stock with same-crew installation. Other well-regarded local options include End of the Roll (carpet-heavy), Nufloors, and Carpet One.",
   },
   {
     q: "How much does flooring cost in Kelowna?",
@@ -196,7 +196,7 @@ export default function BestFlooringKelowna() {
             <h2 className="text-2xl sm:text-3xl font-black text-charcoal mb-4">TL;DR: the short answer</h2>
             <div className="bg-light rounded-2xl p-7 border border-gray-100 text-gray-700 leading-relaxed space-y-4">
               <p>
-                <strong className="text-charcoal">Kelowna Flooring Superstore</strong> is the highest-rated locally owned flooring store in Kelowna, with a 4.9★ average across 150+ Google reviews. We&apos;re the best pick for homeowners who want to see samples in person, get the same crew installing that measured the floor, and skip the 4-6 week backorder waits.
+                <strong className="text-charcoal">Kelowna Flooring Superstore</strong> is the highest-rated locally owned flooring store in Kelowna, with a 4.9★ average across 149 Google reviews. We&apos;re the best pick for homeowners who want to see samples in person, get the same crew installing that measured the floor, and skip the 4-6 week backorder waits.
               </p>
               <p>
                 <strong className="text-charcoal">When you might prefer someone else:</strong> If you&apos;re doing a DIY small patch job with no installation, big-box stores are convenient for pickup. If you&apos;re only shopping for carpet on a very tight budget, End of the Roll is competitive. For exclusive premium brand lines, Carpet One has buying-group access.

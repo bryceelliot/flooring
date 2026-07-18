@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/reviews-meta";
 
 type Slide = {
   src: string;
@@ -190,7 +191,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => <Star key={i} size={11} className="fill-amber-400 text-amber-400" />)}
           </div>
-          <span className="text-white/60 text-xs"><span className="text-white font-semibold">4.9</span> from 150+ Google reviews</span>
+          <span className="text-white/60 text-xs"><span className="text-white font-semibold">{REVIEW_RATING}</span> from {REVIEW_COUNT} Google reviews</span>
         </a>
 
       </div>
