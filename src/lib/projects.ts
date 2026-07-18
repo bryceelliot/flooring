@@ -1,5 +1,9 @@
 /* Named project portfolio. Each entry becomes a `/projects/{slug}` page AND
  * a section on /projects + a slide on the home page FeaturedProjects carousel.
+ *
+ * Order matters: the first entry leads the homepage carousel, so the strongest
+ * visual showcase (The Peaks) comes first. The commercial projects skip their
+ * entrance-sign photo (start at 02) so every carousel leads with real flooring.
  */
 
 export interface ProjectPhoto { src: string; alt: string }
@@ -44,6 +48,25 @@ function seq(project: string, base: string, start: number, end: number, altBase:
 
 export const projects: Project[] = [
   {
+    slug: "the-peaks",
+    name: "The Peaks",
+    neighborhood: "Kelowna, BC",
+    city: "Kelowna",
+    flooringTypes: ["Luxury Vinyl Plank", "Plush Carpet", "Porcelain Tile"],
+    squareFootage: "Full-home install",
+    duration: "5 days on site",
+    homeType: "Custom family home, designer-finished",
+    summary:
+      "Full-home flooring install featuring wide-plank luxury vinyl plank through the main living areas and premium soft carpet in the bedrooms.",
+    description:
+      "The Peaks project is one of our showcase Kelowna installs. Wide-plank luxury vinyl plank across the main floor, plush nylon carpet in the bedrooms, porcelain tile in the wet areas. Designer-finished throughout with custom transitions, stair nosings, and matched trim.",
+    photos: seq("the-peaks", "peaks", 1, 11, "The Peaks Kelowna"),
+    heroImage: "/assets/images/projects/the-peaks/peaks-01.webp",
+    metaDescription:
+      "The Peaks — full-home Kelowna flooring install with luxury vinyl plank and plush carpet. Designer-finished by Kelowna Flooring Superstore.",
+    completed: "2025-09-01",
+  },
+  {
     slug: "glenpark-village-meadows",
     name: "Glenpark Village Meadows",
     neighborhood: "313-315 Whitman Road, Kelowna",
@@ -56,7 +79,7 @@ export const projects: Project[] = [
       "Commercial refresh at Glenpark Village Meadows on Whitman Road. New luxury vinyl plank and patterned carpet tile through hallways and common areas, installed by the KFSS commercial crew.",
     description:
       "Glenpark Village Meadows is a multi-unit residential community on Whitman Road in Kelowna. Our commercial crew installed luxury vinyl plank and patterned carpet tile through the common hallways and landings: tenant-friendly install windows, minimal downtime, same-crew from measurement through completion. Completed April 2026.",
-    photos: seq("glenpark-village-meadows", "glenpark", 1, 14, "Glenpark Village Meadows Kelowna install"),
+    photos: seq("glenpark-village-meadows", "glenpark", 2, 14, "Glenpark Village Meadows Kelowna install"),
     heroImage: "/assets/images/projects/glenpark-village-meadows/glenpark-02.webp",
     metaDescription:
       "Glenpark Village Meadows flooring install in Kelowna — luxury vinyl plank and carpet tile through common areas on Whitman Road. Commercial install by Kelowna Flooring Superstore.",
@@ -83,30 +106,11 @@ export const projects: Project[] = [
       "Full building flooring refresh at Springfield Manor on Hoy Street. New luxury vinyl plank and commercial carpet replacing worn broadloom in hallways and units.",
     description:
       "Springfield Manor is a residential building at 2110 Hoy Street in Kelowna. We refreshed the full building: hallways swapped from worn broadloom to durable commercial carpet and wide-plank LVP, tenant units finished with wood-look luxury vinyl. Completed April 2026.",
-    photos: seq("springfield-manor", "springfield", 1, 12, "Springfield Manor Kelowna install"),
+    photos: seq("springfield-manor", "springfield", 2, 12, "Springfield Manor Kelowna install"),
     heroImage: "/assets/images/projects/springfield-manor/springfield-02.webp",
     metaDescription:
       "Springfield Manor flooring refresh — full building install on Hoy Street, Kelowna. Luxury vinyl plank and commercial carpet by Kelowna Flooring Superstore.",
     completed: "2026-04-23",
-  },
-  {
-    slug: "the-peaks",
-    name: "The Peaks",
-    neighborhood: "Kelowna, BC",
-    city: "Kelowna",
-    flooringTypes: ["Luxury Vinyl Plank", "Plush Carpet", "Porcelain Tile"],
-    squareFootage: "Full-home install",
-    duration: "5 days on site",
-    homeType: "Custom family home, designer-finished",
-    summary:
-      "Full-home flooring install featuring wide-plank luxury vinyl plank through the main living areas and premium soft carpet in the bedrooms.",
-    description:
-      "The Peaks project is one of our showcase Kelowna installs. Wide-plank luxury vinyl plank across the main floor, plush nylon carpet in the bedrooms, porcelain tile in the wet areas. Designer-finished throughout with custom transitions, stair nosings, and matched trim.",
-    photos: seq("the-peaks", "peaks", 1, 11, "The Peaks Kelowna"),
-    heroImage: "/assets/images/projects/the-peaks/peaks-01.webp",
-    metaDescription:
-      "The Peaks — full-home Kelowna flooring install with luxury vinyl plank and plush carpet. Designer-finished by Kelowna Flooring Superstore.",
-    completed: "2025-09-01",
   },
 ];
 

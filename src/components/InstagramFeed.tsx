@@ -24,7 +24,7 @@ function InstagramGlyph({ size = 18, className = "" }: { size?: number; classNam
 }
 
 export default function InstagramFeed() {
-  const { posts } = getInstagramPosts();
+  const { posts, live } = getInstagramPosts();
 
   return (
     <section className="py-20 sm:py-24 bg-white border-t border-gray-100">
@@ -73,7 +73,9 @@ export default function InstagramFeed() {
             </div>
             <p className="text-charcoal font-semibold mt-2">Kelowna Flooring Superstore</p>
             <p className="text-gray-600 text-sm sm:text-base mt-1 max-w-md mx-auto sm:mx-0 leading-relaxed">
-              Flooring tips, before &amp; afters, and real installs from around the Okanagan. Come see it all in our Kelowna showroom.
+              {live
+                ? "Our latest from Instagram — tips, before & afters, and real Okanagan installs."
+                : "A look inside our Kelowna showroom and recent Okanagan installs. Follow us on Instagram for our latest posts."}
             </p>
           </div>
         </div>

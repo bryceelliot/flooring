@@ -7,7 +7,6 @@ import ProjectsCarousel from "@/components/ProjectsCarousel";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
-import HomeBlogStrip from "@/components/HomeBlogStrip";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GoogleReviews from "@/components/GoogleReviews";
 import {
@@ -233,7 +232,7 @@ export default function HomePage() {
                   {/* Name */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white font-black text-base sm:text-lg leading-tight">{f.name}</h3>
-                    <div className="flex items-center gap-1 text-white/55 text-sm mt-1 group-hover:text-accent transition-colors">
+                    <div className="flex items-center gap-1 text-white/80 text-sm mt-1 group-hover:text-accent transition-colors">
                       <span>Explore</span>
                       <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -319,9 +318,6 @@ export default function HomePage() {
 
       {/* ── Instagram feed ────────────────────────────────────── */}
       <InstagramFeed />
-
-      {/* ── From the blog (current, seasonal posts) ───────────── */}
-      <HomeBlogStrip />
 
       {/* ── Featured Projects ─────────────────────────────────── */}
       <section className="py-20 sm:py-24 bg-light">

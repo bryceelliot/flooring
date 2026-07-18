@@ -156,7 +156,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/estimates"
-            className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/18 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all"
+            className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all backdrop-blur-sm"
           >
             Free Estimate
           </Link>

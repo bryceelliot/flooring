@@ -7,8 +7,9 @@ import { ChevronLeft, ChevronRight, ExternalLink, Star } from "lucide-react";
 
 /* ─── Real Google reviews ──────────────────────────────────────────────────
  * Sourced from the Kelowna Flooring Superstore Google Business listing.
- * `photo` is a representative image from our showroom related to the review.
- * Replace with the customer's actual Google review photo when available.
+ * `photo` is a real photo from one of our Kelowna installs (The Peaks +
+ * Glenpark), chosen to match the flooring type in the review. It is not
+ * necessarily the reviewer's own home; the header copy says so honestly.
  *
  * Google reviews URL points directly to the store's Google listing so
  * clicking any card takes the visitor to all reviews.
@@ -25,8 +26,8 @@ const reviews = [
     date: "January 2025",
     rating: 5,
     text: "We recently purchased carpet for three rooms in our house through Kelowna Flooring Superstore. From the minute we entered their showroom, the whole experience was seamless and pleasant. Both Selina and Shaun were extremely helpful and knowledgeable about their products. When it came to installation, Cory was punctual, cordial, helpful, and excellent at his job. We couldn't be more pleased!",
-    photo: "/assets/images/showroom-10.webp",
-    photoAlt: "Carpet installation in a Kelowna home",
+    photo: "/assets/images/projects/the-peaks/peaks-06.webp",
+    photoAlt: "Plush bedroom carpet in a recent Kelowna install",
     product: "Carpet · 3 Rooms",
     color: "#1B2A52",
   },
@@ -37,8 +38,8 @@ const reviews = [
     date: "February 2025",
     rating: 5,
     text: "We had a fantastic experience with Kelowna Flooring Superstore. Shaun and Selina were incredibly helpful when we were choosing our flooring. They were knowledgeable, patient, and really went out of their way to work with our timeline. The installation was done by Jessie and Clarke, and they truly went above and beyond. Their workmanship was excellent and the finished result looks amazing.",
-    photo: "/assets/images/hero-showroom.webp",
-    photoAlt: "Hardwood flooring in a Kelowna home",
+    photo: "/assets/images/projects/the-peaks/peaks-01.webp",
+    photoAlt: "Wide-plank flooring in a Kelowna kitchen and living room",
     product: "Engineered Hardwood",
     color: "#E8423C",
   },
@@ -49,8 +50,8 @@ const reviews = [
     date: "March 2025",
     rating: 5,
     text: "From start to finish, the entire carpet installation experience was seamless. The team was incredibly responsive at every step. A special shout-out to Cory, the installer — professional, efficient, and clearly skilled at what he does. The workmanship is excellent, and the whole process felt easy and well-managed. Highly recommend.",
-    photo: "/assets/images/projects/commercial-refresh/hallway-after.webp",
-    photoAlt: "Carpet install for a Kelowna project",
+    photo: "/assets/images/projects/glenpark-village-meadows/glenpark-02.webp",
+    photoAlt: "Carpet install in a Kelowna common area",
     product: "Carpet Install",
     color: "#243566",
   },
@@ -61,8 +62,8 @@ const reviews = [
     date: "December 2024",
     rating: 5,
     text: "Absolutely love our new hardwood floors! The team at Kelowna Flooring Superstore helped us pick the perfect colour and style for our open-concept living area. The installation was flawless and completed in one day. Our home looks completely transformed. Would recommend to anyone in the Okanagan.",
-    photo: "/assets/images/hero-oak.webp",
-    photoAlt: "Open-concept hardwood flooring",
+    photo: "/assets/images/projects/the-peaks/peaks-02.webp",
+    photoAlt: "Warm wood-look floors in a Kelowna living room",
     product: "Hardwood · Living Area",
     color: "#2a7a5a",
   },
@@ -73,8 +74,8 @@ const reviews = [
     date: "November 2024",
     rating: 5,
     text: "We replaced all the flooring in our home — hardwood in the main areas and carpet in the bedrooms. The whole process was stress-free. Selina helped us coordinate everything and the crew was respectful of our home. The price was very competitive and the quality is outstanding. Very happy customers!",
-    photo: "/assets/images/hero-kurang.webp",
-    photoAlt: "Whole-home flooring replacement",
+    photo: "/assets/images/projects/the-peaks/peaks-03.webp",
+    photoAlt: "Wide-plank flooring in a bright Kelowna dining room",
     product: "Hardwood + Carpet",
     color: "#7a3a2a",
   },
@@ -85,8 +86,8 @@ const reviews = [
     date: "October 2024",
     rating: 5,
     text: "As a senior on a budget I was nervous about the whole process. The staff were patient, never rushed me, and explained everything clearly. The vinyl plank they recommended is beautiful and so easy to clean. The installer was wonderful — very careful and tidy. I tell everyone about this store!",
-    photo: "/assets/images/showroom-11.webp",
-    photoAlt: "Luxury Vinyl Plank install",
+    photo: "/assets/images/projects/the-peaks/peaks-05.webp",
+    photoAlt: "Luxury vinyl plank in a modern Kelowna dining space",
     product: "Luxury Vinyl Plank",
     color: "#5a2a7a",
   },
@@ -128,7 +129,7 @@ export default function ProjectsCarousel() {
               The Work, in Their Words
             </h2>
             <p className="text-white/60 text-base sm:text-lg mt-3">
-              Each photo is one of our installs. Each quote is the homeowner&apos;s Google review.
+              Every quote is a real Google review. Every photo is a recent Kelowna install by our crews.
             </p>
           </div>
 
