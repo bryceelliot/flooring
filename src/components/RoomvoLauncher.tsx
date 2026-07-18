@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Layers } from "lucide-react";
 import { useHideOnScrollDown } from "@/components/useHideOnScrollDown";
+import { gaEvent } from "@/lib/ga";
 
 declare global {
   interface Window {
@@ -16,6 +17,7 @@ export default function RoomvoLauncher() {
 
   const launch = () => {
     if (typeof window === "undefined") return;
+    gaEvent("visualize_open", { location: window.location.pathname });
     if (window.roomvoLoaded) return;
     setLoading(true);
     const s = document.createElement("script");

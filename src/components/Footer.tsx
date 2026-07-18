@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Clock, Send } from "lucide-react";
-import { trackPhoneClick } from "@/lib/ga";
+import { trackFormSubmit } from "@/lib/ga";
 
 function FacebookIcon() {
   return (
@@ -74,7 +74,12 @@ function NewsletterStrip() {
         }),
       });
       const r = await res.json().catch(() => ({}));
-      setStatus(res.ok && r.success ? "sent" : "error");
+      if (res.ok && r.success) {
+        setStatus("sent");
+        trackFormSubmit("newsletter");
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -247,7 +252,6 @@ export default function Footer() {
               <Phone size={16} className="text-accent mt-0.5 shrink-0" />
               <a
                 href="tel:2508607847"
-                onClick={() => trackPhoneClick("footer")}
                 className="text-white/55 hover:text-white text-base transition-colors"
               >
                 (250) 860-7847

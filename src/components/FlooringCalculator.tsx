@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Plus, Trash2, ArrowRight, Phone, Mail, Check } from "lucide-react";
+import { trackFormSubmit } from "@/lib/ga";
 
 const FLOORING = [
   { slug: "laminate",       name: "Laminate",       matLow: 3,   matHigh: 7,  instLow: 2,   instHigh: 4, color: "#d97706" },
@@ -104,7 +105,12 @@ export default function FlooringCalculator() {
         }),
       });
       const r = await res.json().catch(() => ({}));
-      setLeadStatus(res.ok && r.success ? "sent" : "error");
+      if (res.ok && r.success) {
+        setLeadStatus("sent");
+        trackFormSubmit("calculator");
+      } else {
+        setLeadStatus("error");
+      }
     } catch {
       setLeadStatus("error");
     }
