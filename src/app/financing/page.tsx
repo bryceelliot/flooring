@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { CheckCircle2, ArrowRight, Phone, DollarSign, Shield, Clock, Zap } from "lucide-react";
 
@@ -103,17 +102,66 @@ export default function FinancingPage() {
               Don&apos;t let budget hold you back from beautiful floors. Our financing options let you invest in your home now and pay over time.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
-              <Link
-                href="/estimates"
+              <a
+                href="https://ifinancecanada.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-4 rounded-xl text-base transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5"
               >
-                Free Estimate <ArrowRight size={16} />
-              </Link>
+                Apply for Financing <ArrowRight size={16} />
+              </a>
               <a
                 href="tel:2508607847"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/18 border border-white/25 text-white font-semibold px-7 py-4 rounded-xl text-base transition-all"
               >
                 <Phone size={16} /> Ask About Financing
+              </a>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* ── Financing partner ─────────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-light rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://ifinancecanada.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit iFinance Canada"
+                  className="shrink-0 bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all"
+                >
+                  <Image
+                    src="/assets/images/brands/ifinance.svg"
+                    alt="iFinance Canada, our flooring financing partner"
+                    width={170}
+                    height={56}
+                    className="object-contain h-12 w-auto"
+                    unoptimized
+                  />
+                </a>
+                <div>
+                  <p className="text-[11px] font-black tracking-[0.2em] uppercase text-accent mb-1">
+                    Our Financing Partner
+                  </p>
+                  <h2 className="text-xl sm:text-2xl font-black text-charcoal leading-tight">
+                    Powered by iFinance
+                  </h2>
+                  <p className="text-gray-600 text-sm mt-2 max-w-md">
+                    We&apos;ve partnered with iFinance Canada to offer flexible payment plans for your flooring project. Fast approvals, transparent terms. Financing is arranged directly through iFinance, separate from your flooring quote.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://ifinancecanada.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3.5 rounded-xl text-sm transition-all whitespace-nowrap"
+              >
+                Apply for Financing <ArrowRight size={15} />
               </a>
             </div>
           </AnimateOnScroll>
@@ -199,9 +247,9 @@ export default function FinancingPage() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
-                <Link href="/estimates" className="btn-primary text-sm">
-                  Free Estimate <ArrowRight size={16} />
-                </Link>
+                <a href="https://ifinancecanada.com/" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
+                  Apply for Financing <ArrowRight size={16} />
+                </a>
                 <a
                   href="tel:2508607847"
                   className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-primary text-charcoal hover:text-primary font-semibold px-5 py-3 rounded-xl text-sm transition-all"
@@ -258,15 +306,17 @@ export default function FinancingPage() {
             Ready to Get Started?
           </h2>
           <p className="text-white/65 text-lg mt-4 leading-relaxed max-w-xl mx-auto">
-            Book your free estimate today. We&apos;ll measure your space, show you options, and walk you through financing. No pressure, no obligation.
+            Apply online with our partner iFinance Canada for fast approvals and flexible monthly payments, or call us to talk through your options. No pressure, no obligation.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            <Link
-              href="/estimates"
+            <a
+              href="https://ifinancecanada.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-accent hover:bg-accent-dark text-white font-bold px-9 py-4 rounded-xl text-base transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5"
             >
-              Book Free Estimate
-            </Link>
+              Apply for Financing
+            </a>
             <a
               href="tel:2508607847"
               className="flex items-center gap-2 bg-white/10 hover:bg-white/18 border border-white/25 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all"
