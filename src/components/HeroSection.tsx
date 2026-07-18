@@ -29,6 +29,9 @@ const INTERVAL = 5000;
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  /* First paint renders with no entrance animation so the hero (LCP) is fully
+     visible in the static HTML; later slide changes still fade. */
+  const [hasMounted, setHasMounted] = useState(false);
   const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
@@ -46,17 +49,20 @@ export default function HeroSection() {
     return () => clearInterval(t);
   }, [next, paused]);
 
+  useEffect(() => setHasMounted(true), []);
+
   useEffect(() => () => { if (resumeTimer.current) clearTimeout(resumeTimer.current); }, []);
 
   return (
     <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
-      {/* Background slideshow */}
-      <AnimatePresence mode="sync">
+      {/* Background slideshow. initial={false} so the first slide paints fully
+          visible in the static HTML (LCP), while later slide changes still fade. */}
+      <AnimatePresence mode="sync" initial={false}>
         <motion.div
           key={current}
-          initial={{ opacity: 0, scale: 1.03 }}
+          initial={hasMounted ? { opacity: 0, scale: 1.03 } : false}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -95,7 +101,7 @@ export default function HeroSection() {
 
         {/* ── LOGO — main focal point ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
+          initial={hasMounted ? { opacity: 0, scale: 0.94 } : false}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-6"
@@ -116,7 +122,7 @@ export default function HeroSection() {
         <AnimatePresence mode="wait">
           <motion.div
             key={`tag-${current}`}
-            initial={{ opacity: 0, y: 6 }}
+            initial={hasMounted ? { opacity: 0, y: 6 } : false}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.3 }}
@@ -136,7 +142,7 @@ export default function HeroSection() {
         <AnimatePresence mode="wait">
           <motion.p
             key={`line-${current}`}
-            initial={{ opacity: 0 }}
+            initial={hasMounted ? { opacity: 0 } : false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
@@ -156,7 +162,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/estimates"
-            className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all backdrop-blur-sm"
+            className="flex items-center justify-center gap-2 bg-[#0d1526]/75 hover:bg-[#0d1526]/90 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-all backdrop-blur-md"
           >
             Free Estimate
           </Link>
@@ -185,7 +191,6 @@ export default function HeroSection() {
           href="https://www.google.com/search?q=Kelowna+Flooring+Superstore+reviews#mpd=~6968423193531731233/customers/reviews"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Read our newest Google reviews"
           className="flex items-center gap-2 hover:opacity-90 transition-opacity"
         >
           <div className="flex items-center gap-1">

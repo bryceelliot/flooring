@@ -267,7 +267,7 @@ export default function HomePage() {
             <div className="max-w-4xl mx-auto">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
                 <iframe
-                  src="https://www.youtube.com/embed/WoQ_5q8xsEs?rel=0"
+                  src="https://www.youtube-nocookie.com/embed/WoQ_5q8xsEs?rel=0"
                   title="Kelowna Flooring Superstore — Showroom Walkthrough"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

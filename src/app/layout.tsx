@@ -113,7 +113,9 @@ export default function RootLayout({
     <html lang="en" className={plusJakartaSans.variable}>
       <head>
         <LocalBusinessSchema />
-        <link rel="preload" as="image" href="/assets/images/hero-showroom.webp" fetchPriority="high" />
+        {/* Preload the LCP hero image. Force lowercase `fetchpriority` via spread —
+            React 19 emits the camelCase prop literally here, which browsers ignore. */}
+        <link rel="preload" as="image" href="/assets/images/hero-showroom.webp" {...({ fetchpriority: "high" } as Record<string, string>)} />
       </head>
       <body className="antialiased bg-white">
         <Navbar />
