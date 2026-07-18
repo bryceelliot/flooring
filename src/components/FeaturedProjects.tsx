@@ -53,7 +53,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <div className="grid lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8">
       {/* Main photo viewer */}
       <div
         className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 border border-gray-100 touch-pan-y select-none"
@@ -106,8 +106,9 @@ export default function FeaturedProjects() {
         </div>
       </div>
 
-      {/* Side panel */}
-      <div className="flex flex-col gap-5">
+      {/* Side panel. min-w-0 so the thumbnail filmstrip's overflow-x-auto is
+          respected instead of forcing the whole grid past the viewport width. */}
+      <div className="flex flex-col gap-5 min-w-0">
         <div className="grid grid-cols-3 lg:grid-cols-1 gap-3">
           {projects.map((p, i) => (
             <button
