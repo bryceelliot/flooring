@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import HeroSection from "@/components/HeroSection";
-import ProjectsCarousel from "@/components/ProjectsCarousel";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
@@ -284,8 +283,26 @@ export default function HomePage() {
       {/* ── Google Reviews (live via Places API with static fallback) ── */}
       <GoogleReviews />
 
-      {/* ── Before / After project carousel ──────────────────── */}
-      <ProjectsCarousel />
+      {/* ── Instagram feed ────────────────────────────────────── */}
+      <InstagramFeed />
+
+      {/* ── Featured Projects ─────────────────────────────────── */}
+      <section className="py-20 sm:py-24 bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <AnimateOnScroll className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal leading-tight">
+              Recent Projects
+            </h2>
+            <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-xl mx-auto">
+              A closer look at recent Kelowna installs from our crews.
+            </p>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll>
+            <FeaturedProjects />
+          </AnimateOnScroll>
+        </div>
+      </section>
 
       {/* ── Location quick-info strip ─────────────────────────── */}
       <section className="bg-primary">
@@ -313,27 +330,6 @@ export default function HomePage() {
               Free Estimate
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ── Instagram feed ────────────────────────────────────── */}
-      <InstagramFeed />
-
-      {/* ── Featured Projects ─────────────────────────────────── */}
-      <section className="py-20 sm:py-24 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateOnScroll className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal leading-tight">
-              Recent Projects
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-xl mx-auto">
-              A closer look at recent Kelowna installs from our crews.
-            </p>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll>
-            <FeaturedProjects />
-          </AnimateOnScroll>
         </div>
       </section>
 
