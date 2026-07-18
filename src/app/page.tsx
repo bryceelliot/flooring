@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import BrandPartners from "@/components/BrandPartners";
 import InstagramFeed from "@/components/InstagramFeed";
+import YouTubeFacade from "@/components/YouTubeFacade";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import GoogleReviews from "@/components/GoogleReviews";
 import {
@@ -265,16 +266,11 @@ export default function HomePage() {
 
           <AnimateOnScroll>
             <div className="max-w-4xl mx-auto">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/WoQ_5q8xsEs?rel=0"
-                  title="Kelowna Flooring Superstore — Showroom Walkthrough"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
+              <YouTubeFacade
+                id="WoQ_5q8xsEs"
+                poster="/assets/images/hero-showroom.webp"
+                title="Kelowna Flooring Superstore Showroom Walkthrough"
+              />
             </div>
           </AnimateOnScroll>
         </div>
