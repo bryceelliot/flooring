@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Phone, MapPin, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 type Slide = {
   src: string;
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
   /* Auto-resume after any manual pause so the slideshow never stays stuck. */
   const pauseBriefly = useCallback(() => {
-    pauseBriefly();
+    setPaused(true);
     if (resumeTimer.current) clearTimeout(resumeTimer.current);
     resumeTimer.current = setTimeout(() => setPaused(false), 8000);
   }, []);
@@ -48,7 +48,7 @@ export default function HeroSection() {
   useEffect(() => () => { if (resumeTimer.current) clearTimeout(resumeTimer.current); }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-30" />
 
       {/* Background slideshow */}
@@ -125,7 +125,6 @@ export default function HeroSection() {
               href={slides[current].href}
               className="inline-flex items-center gap-1.5 bg-black/30 hover:bg-black/50 border border-white/15 hover:border-accent/50 text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full transition-colors"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
               {slides[current].type}
               <ArrowRight size={12} className="opacity-60" />
             </Link>
@@ -140,14 +139,14 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-white/55 text-sm sm:text-base mb-8 max-w-xs sm:max-w-sm leading-relaxed"
+            className="text-white/75 text-sm sm:text-base mb-8 max-w-xs sm:max-w-sm leading-relaxed"
           >
             {slides[current].tagline}
           </motion.p>
         </AnimatePresence>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-2.5 mb-7 w-full max-w-xs sm:max-w-none sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-2.5 mb-6 w-full max-w-xs sm:max-w-none sm:w-auto">
           <Link
             href={slides[current].href}
             className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3 rounded-xl text-sm transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/30"
@@ -160,11 +159,23 @@ export default function HeroSection() {
           >
             Free Estimate
           </Link>
+        </div>
+
+        {/* Store info — location + phone, visible the moment the page loads */}
+        <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-5 mb-6">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-white/80 hover:text-white text-sm transition-colors py-1"
+          >
+            <MapPin size={14} className="text-accent shrink-0" /> Unit 16, 830 McCurdy Place, Kelowna
+          </a>
           <a
             href="tel:2508607847"
-            className="flex items-center justify-center gap-1.5 text-white/55 hover:text-white text-sm transition-colors py-3 sm:px-2"
+            className="flex items-center gap-1.5 text-white/80 hover:text-white text-sm transition-colors py-1"
           >
-            <Phone size={13} className="text-accent" /> (250) 860-7847
+            <Phone size={13} className="text-accent shrink-0" /> (250) 860-7847
           </a>
         </div>
 
@@ -174,17 +185,12 @@ export default function HeroSection() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Read our newest Google reviews"
-          className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+          className="flex items-center gap-2 hover:opacity-90 transition-opacity"
         >
-          <div className="flex -space-x-1.5">
-            {["R","J","T","M"].map((l, i) => (
-              <div key={i} className="w-6 h-6 rounded-full bg-primary border-2 border-[#0d1526] flex items-center justify-center text-white text-[10px] font-black">{l}</div>
-            ))}
-          </div>
           <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => <Star key={i} size={10} className="fill-amber-400 text-amber-400" />)}
+            {[...Array(5)].map((_, i) => <Star key={i} size={11} className="fill-amber-400 text-amber-400" />)}
           </div>
-          <span className="text-white/45 text-xs group-hover:text-white/70"><span className="text-white/70 font-semibold">4.9</span> · Hundreds of Kelowna families</span>
+          <span className="text-white/60 text-xs"><span className="text-white font-semibold">4.9</span> from 150+ Google reviews</span>
         </a>
 
       </div>

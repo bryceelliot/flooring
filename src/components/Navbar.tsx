@@ -72,10 +72,16 @@ export default function Navbar() {
       {/* Top info bar */}
       <div className="bg-primary border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
-          <span className="hidden sm:flex items-center gap-2 text-white/60 text-base">
-            <MapPin size={14} className="shrink-0" />
-            Unit 16, 830 McCurdy Place, Kelowna, BC
-          </span>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Kelowna+Flooring+Superstore+Unit+16+830+McCurdy+Place+Kelowna+BC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 sm:gap-2 text-white/70 hover:text-white text-xs sm:text-base transition-colors min-w-0"
+          >
+            <MapPin size={14} className="shrink-0 text-accent" />
+            <span className="truncate sm:hidden">830 McCurdy Place</span>
+            <span className="hidden sm:inline">Unit 16, 830 McCurdy Place, Kelowna, BC</span>
+          </a>
           <div className="flex items-center gap-3">
             <a
               href="tel:2508607847"
@@ -86,7 +92,7 @@ export default function Navbar() {
             </a>
             <a
               href="tel:2508607847"
-              className="flex items-center gap-2 text-white font-bold text-lg hover:text-accent transition-colors"
+              className="flex items-center gap-1.5 sm:gap-2 text-white font-bold text-sm sm:text-lg hover:text-accent transition-colors shrink-0"
             >
               <Phone size={15} />
               (250) 860-7847
@@ -365,7 +371,7 @@ export default function Navbar() {
                   href="/estimates"
                   className="block w-full text-center bg-accent-dark hover:bg-[#a8281e] text-white font-bold px-5 py-4 rounded-xl text-lg transition-all min-h-[56px]"
                 >
-                  Get Free Estimate
+                  Free Estimate
                 </Link>
               </div>
             </div>

@@ -88,8 +88,7 @@ export default function GoogleReviewsClient({ reviews, rating, total, allReviews
     <section className="py-24 bg-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <AnimateOnScroll className="text-center mb-14">
-          <span className="section-label mb-4">Real Reviews</span>
-          <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">What Our Customers Say</h2>
+          <h2 className="text-2xl sm:text-4xl font-black text-charcoal">What Our Customers Say</h2>
           <div className="flex items-center justify-center gap-3 mt-4">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -103,8 +102,8 @@ export default function GoogleReviewsClient({ reviews, rating, total, allReviews
               </span>
             )}
           </div>
-          <p className="text-gray-500 text-sm mt-2">
-            Most recent reviews first — verified by Google from real Kelowna customers.
+          <p className="text-gray-600 text-sm mt-2">
+            Most recent first, pulled straight from our Google listing.
           </p>
         </AnimateOnScroll>
 

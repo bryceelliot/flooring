@@ -90,7 +90,7 @@ function NewsletterStrip() {
             <p className="text-white/50 text-base mt-0.5">No spam. Just deals and advice from our Kelowna team.</p>
           </div>
           {status === "sent" ? (
-            <p className="text-accent font-bold text-base">You&apos;re subscribed — thanks!</p>
+            <p className="text-accent font-bold text-base">You&apos;re subscribed. Thanks!</p>
           ) : (
             <form onSubmit={handleSubmit} className="flex gap-2 w-full sm:w-auto">
               <input
@@ -111,7 +111,7 @@ function NewsletterStrip() {
           )}
         </div>
         {status === "error" && (
-          <p className="text-red-400 text-sm mt-2 text-right">Something went wrong — please try again.</p>
+          <p className="text-red-400 text-sm mt-2 text-right">Something went wrong. Please try again.</p>
         )}
       </div>
     </div>
@@ -142,7 +142,7 @@ export default function Footer() {
           </Link>
           <p className="text-white/55 text-base leading-relaxed mb-6">
             Kelowna&apos;s premier flooring destination. A massive selection of
-            flooring with expert installation across the Okanagan. Order from samples — arrives in 3–5 days.
+            flooring with expert installation across the Okanagan. Order from samples and it arrives in 3-5 days.
           </p>
           <div className="flex items-center gap-3">
             <a href="https://www.facebook.com/kelownaflooringsuperstore" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white/8 hover:bg-primary flex items-center justify-center transition-colors text-white">

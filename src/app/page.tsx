@@ -71,14 +71,14 @@ const faqSchema = {
 
 /* ─── Data ──────────────────────────────────────────────────── */
 const flooring = [
-  { name: "Laminate",       href: "/flooring/laminate",       img: "/assets/images/showroom-08.webp", tag: "Popular",    sale: true  },
-  { name: "Hardwood",       href: "/flooring/hardwood",       img: "/assets/images/hardwood-display.webp", tag: "Premium",    sale: false },
-  { name: "Carpet",         href: "/flooring/carpet",         img: "/assets/images/showroom-10.webp", tag: "Cozy",       sale: true  },
-  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    img: "/assets/images/vinyl-plank-stock.webp", tag: "Waterproof", sale: false },
-  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/linoleum-display-2026.webp", tag: "Durable",    sale: false },
-  { name: "Tile",           href: "/flooring/tile",           img: "/assets/images/flooring/tile/tile-01.webp", tag: "Elegant",    sale: false },
-  { name: "Commercial",     href: "/flooring/commercial",     img: "/assets/images/projects/commercial-refresh/carpet-tile.webp", tag: "Business",   sale: false },
-  { name: "Area Rugs",      href: "/flooring/area-rugs",      img: "/assets/images/showroom-04.webp", tag: "Style",      sale: true  },
+  { name: "Laminate",       href: "/flooring/laminate",       img: "/assets/images/showroom-08.webp", sale: true  },
+  { name: "Hardwood",       href: "/flooring/hardwood",       img: "/assets/images/hardwood-display.webp", sale: false },
+  { name: "Carpet",         href: "/flooring/carpet",         img: "/assets/images/showroom-10.webp", sale: true  },
+  { name: "Vinyl Plank",    href: "/flooring/vinyl-plank",    img: "/assets/images/vinyl-plank-stock.webp", sale: false },
+  { name: "Linoleum Sheet", href: "/flooring/linoleum-sheet", img: "/assets/images/linoleum-display-2026.webp", sale: false },
+  { name: "Tile",           href: "/flooring/tile",           img: "/assets/images/flooring/tile/tile-01.webp", sale: false },
+  { name: "Commercial",     href: "/flooring/commercial",     img: "/assets/images/projects/commercial-refresh/carpet-tile.webp", sale: false },
+  { name: "Area Rugs",      href: "/flooring/area-rugs",      img: "/assets/images/showroom-04.webp", sale: true  },
 ];
 
 
@@ -120,14 +120,14 @@ export default function HomePage() {
                   4.9<span className="text-amber-400">★</span>
                 </div>
                 <div className="text-white font-bold text-base mt-2">Google Rating</div>
-                <div className="text-white/45 text-sm mt-1">Verified reviews</div>
+                <div className="text-white/60 text-sm mt-1">Verified reviews</div>
               </a>
             </AnimateOnScroll>
             {/* Stat 2 — Canadian Owned (no counter) */}
             <AnimateOnScroll delay={0.08} className="text-center lg:px-8">
               <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">🍁</div>
               <div className="text-white font-bold text-base mt-2">Canadian Owned</div>
-              <div className="text-white/45 text-sm mt-1">Proudly local, proudly Canadian</div>
+              <div className="text-white/60 text-sm mt-1">Proudly local, proudly Canadian</div>
             </AnimateOnScroll>
             {/* Stat 3 */}
             <AnimateOnScroll delay={0.16} className="text-center lg:px-8">
@@ -135,15 +135,15 @@ export default function HomePage() {
                 <AnimatedCounter to={30} suffix="+" />
               </div>
               <div className="text-white font-bold text-base mt-2">Years Experience</div>
-              <div className="text-white/45 text-sm mt-1">Serving the Okanagan</div>
+              <div className="text-white/60 text-sm mt-1">Serving the Okanagan</div>
             </AnimateOnScroll>
             {/* Stat 4 */}
             <AnimateOnScroll delay={0.24} className="text-center lg:px-8">
               <div className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-none">
-                <AnimatedCounter to={100} suffix="%" />
+                Free
               </div>
-              <div className="text-white font-bold text-base mt-2">Satisfaction</div>
-              <div className="text-white/45 text-sm mt-1">Every project, every time</div>
+              <div className="text-white font-bold text-base mt-2">In-Home Estimates</div>
+              <div className="text-white/60 text-sm mt-1">Measured and quoted, no obligation</div>
             </AnimateOnScroll>
           </div>
         </div>
@@ -164,26 +164,14 @@ export default function HomePage() {
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Left: badge + headline */}
-            <div className="flex items-center gap-6">
-              <div className="hidden sm:flex shrink-0 w-16 h-16 rounded-2xl bg-accent/20 border border-accent/40 items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                </svg>
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent text-xs font-black tracking-[0.15em] uppercase px-3 py-1 rounded-full mb-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Now Available
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight">
-                  Financing Available —{" "}
-                  <span className="text-accent">Get Your New Floor Today</span>
-                </h2>
-                <p className="text-white/60 text-sm mt-1.5 max-w-lg">
-                  Don&apos;t let budget hold you back. Ask about our flexible financing options and get the floors you love now, pay over time.
-                </p>
-              </div>
+            {/* Left: headline */}
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                Get Your Floor Now, Pay Over Time
+              </h2>
+              <p className="text-white/60 text-sm mt-1.5 max-w-lg">
+                Don&apos;t let budget hold you back. Flexible financing is available on any floor in the store.
+              </p>
             </div>
 
             {/* Right: CTAs */}
@@ -211,13 +199,11 @@ export default function HomePage() {
       <section className="py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-14">
-            <span className="section-label mb-4">Our Collection</span>
-            <h2 className="text-2xl sm:text-4xl font-black text-charcoal mt-4">
-              Every Type of Flooring,{" "}
-              <span className="gradient-text">In Stock</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-charcoal">
+              Every Type of Flooring, In Stock
             </h2>
-            <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
-              From cozy carpet to stunning hardwood — browse our complete selection in our Kelowna showroom.
+            <p className="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+              From cozy carpet to hardwood and tile, browse the full selection at our Kelowna showroom.
             </p>
           </AnimateOnScroll>
 
@@ -235,17 +221,14 @@ export default function HomePage() {
                   />
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0d1526]/80 via-[#0d1526]/20 to-transparent group-hover:from-primary/80 transition-colors duration-300" />
-                  {/* Tag chip + On Sale badge */}
-                  <div className="absolute top-3 left-3 flex flex-col gap-1.5">
-                    <span className="inline-block bg-white/15 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase px-2.5 py-1 rounded-full border border-white/20">
-                      {f.tag}
-                    </span>
-                    {f.sale && (
+                  {/* On Sale badge */}
+                  {f.sale && (
+                    <div className="absolute top-3 left-3">
                       <span className="inline-block bg-accent text-white text-xs font-black tracking-wider uppercase px-2.5 py-1 rounded-full shadow-lg shadow-accent/40">
                         On Sale
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                   {/* Name */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white font-black text-base sm:text-lg leading-tight">{f.name}</h3>
@@ -273,14 +256,11 @@ export default function HomePage() {
       <section className="py-24 bg-[#0d1526]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-              Inside Our Showroom
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white mt-2">
-              Take a Look Around
+            <h2 className="text-2xl sm:text-4xl font-black text-white">
+              Take a Look Inside the Showroom
             </h2>
-            <p className="text-white/50 text-lg mt-3 max-w-xl mx-auto">
-              A glimpse of our Kelowna showroom. Drop in to see hundreds of samples in person.
+            <p className="text-white/60 text-lg mt-3 max-w-xl mx-auto">
+              A quick walkthrough of our McCurdy Place showroom. Drop in to see hundreds of samples in person.
             </p>
           </AnimateOnScroll>
 
@@ -323,8 +303,8 @@ export default function HomePage() {
               </a>
             </div>
             <div className="hidden sm:block h-4 w-px bg-white/20" />
-            <div className="text-white/55 text-sm text-center sm:text-left">
-              Mon–Fri 9–5 &nbsp;·&nbsp; Wed 9–2 &nbsp;·&nbsp; Sat 10–2 &nbsp;·&nbsp; Sun Closed
+            <div className="text-white/70 text-sm text-center sm:text-left">
+              Mon-Fri 9-5 &nbsp;·&nbsp; Wed 9-2 &nbsp;·&nbsp; Sat 10-2 &nbsp;·&nbsp; Sun Closed
             </div>
             <Link
               href="/estimates"
@@ -343,11 +323,10 @@ export default function HomePage() {
       <section className="py-20 sm:py-24 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll className="text-center mb-10">
-            <span className="section-label mb-4">Featured Projects</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal mt-4 leading-tight">
-              Real Homes,<br className="sm:hidden" /> <span className="gradient-text">Real Floors</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal leading-tight">
+              Recent Projects
             </h2>
-            <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-xl mx-auto">
+            <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-xl mx-auto">
               A closer look at recent Kelowna installs from our crews.
             </p>
           </AnimateOnScroll>
@@ -381,19 +360,18 @@ export default function HomePage() {
 
         <AnimateOnScroll className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-            Ready to Transform{" "}
-            <span className="text-accent">Your Space?</span>
+            Come See the Floors in Person
           </h2>
-          <p className="text-white/65 text-lg mt-5 leading-relaxed max-w-xl mx-auto">
+          <p className="text-white/70 text-lg mt-5 leading-relaxed max-w-xl mx-auto">
             Visit our Kelowna showroom or book a free in-home estimate. Our flooring experts
-            are ready to help you find the perfect floor.
+            are ready to help you find the right floor.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-10">
             <Link
               href="/estimates"
               className="bg-accent hover:bg-accent-dark text-white font-bold px-9 py-4 rounded-xl text-base transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-1"
             >
-              Get Free Estimate
+              Free Estimate
             </Link>
             <a
               href="tel:2508607847"

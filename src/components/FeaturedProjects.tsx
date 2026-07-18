@@ -119,11 +119,6 @@ export default function FeaturedProjects() {
                   : "bg-white text-charcoal border-gray-200 hover:border-primary/50"
               }`}
             >
-              <div className={`text-[11px] font-bold tracking-widest uppercase mb-1 ${
-                i === activeProject ? "text-white/75" : "text-accent"
-              }`}>
-                Featured Project
-              </div>
               <div className="font-black text-base lg:text-lg leading-tight">{p.name}</div>
               <div className={`text-xs mt-0.5 ${i === activeProject ? "text-white/70" : "text-gray-500"}`}>
                 {p.neighborhood}

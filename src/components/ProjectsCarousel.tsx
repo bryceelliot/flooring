@@ -124,16 +124,11 @@ export default function ProjectsCarousel() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div className="max-w-xl">
-            <span className="inline-flex items-center gap-2 bg-accent/15 border border-accent/30 text-accent text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-              <GoogleIcon size={14} />
-              Real Google Reviews
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
-              Real Kelowna<br />
-              <span className="text-accent">Projects & Customers</span>
+              The Work, in Their Words
             </h2>
-            <p className="text-white/55 text-base sm:text-lg mt-3">
-              Verified 4.9-star rating from real Okanagan homeowners.
+            <p className="text-white/60 text-base sm:text-lg mt-3">
+              Each photo is one of our installs. Each quote is the homeowner&apos;s Google review.
             </p>
           </div>
 

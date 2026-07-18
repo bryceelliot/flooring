@@ -102,15 +102,12 @@ export default function BrandPartners() {
   return (
     <section className="py-16 bg-white border-y border-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-10 text-center">
-        <p className="text-accent text-xs font-black tracking-[0.25em] uppercase mb-3">
-          Authorized Dealer
-        </p>
         <h2 className="text-2xl sm:text-3xl font-black text-charcoal">
           The Brands the Pros Trust
         </h2>
-        <p className="text-gray-500 text-sm sm:text-base mt-3 max-w-xl mx-auto">
-          Every floor we sell is backed by a North-American manufacturer warranty.
-          Click any logo to see the manufacturer&apos;s full lineup.
+        <p className="text-gray-600 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+          We&apos;re an authorized dealer for every brand we carry, backed by North-American
+          manufacturer warranties. Click any logo to see the full lineup.
         </p>
       </div>
       <div className="relative">

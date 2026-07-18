@@ -73,9 +73,9 @@ export default function InstagramFeed() {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal leading-tight">
             See Our Latest<br className="sm:hidden" />{" "}
-            <span className="gradient-text">Projects & Inspiration</span>
+            Projects &amp; Inspiration
           </h2>
-          <p className="text-gray-500 text-base sm:text-lg mt-4 max-w-xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg mt-4 max-w-xl mx-auto">
             Follow <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">@{INSTAGRAM_HANDLE}</a> for flooring tips, before &amp; afters, and showroom updates.
           </p>
         </div>
