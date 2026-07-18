@@ -53,12 +53,56 @@ function log(msg) {
   console.log(`[instagram] ${msg}`);
 }
 
-/** Turn a caption into a short, clean alt string. */
+/** Turn a caption into a short, clean alt string (no hashtags, no emoji). */
 function altFromCaption(caption) {
   if (!caption) return "Kelowna Flooring Superstore on Instagram";
-  const firstLine = caption.split("\n")[0].replace(/#[^\s#]+/g, "").trim();
-  const clean = firstLine.replace(/\s+/g, " ").slice(0, 140).trim();
+  const firstLine = caption.split("\n")[0].replace(/#[^\s#]+/g, "");
+  const noEmoji = firstLine.replace(
+    /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2190}-\u{21FF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}\u{200D}]/gu,
+    ""
+  );
+  const clean = noEmoji.replace(/\s+/g, " ").slice(0, 140).trim();
   return clean || "Kelowna Flooring Superstore on Instagram";
+}
+
+/** Save a refreshed token back into .env.local so it persists across builds. */
+async function persistToken(newToken) {
+  const envPath = join(ROOT, ".env.local");
+  try {
+    let raw = "";
+    try { raw = await readFile(envPath, "utf8"); } catch { /* create fresh */ }
+    const line = `INSTAGRAM_ACCESS_TOKEN=${newToken}`;
+    raw = /^INSTAGRAM_ACCESS_TOKEN=.*$/m.test(raw)
+      ? raw.replace(/^INSTAGRAM_ACCESS_TOKEN=.*$/m, line)
+      : (raw ? raw.replace(/\n?$/, "\n") : "") + line + "\n";
+    await writeFile(envPath, raw);
+    log("saved refreshed token to .env.local");
+  } catch (e) {
+    log(`could not persist refreshed token: ${e?.message || e}`);
+  }
+}
+
+/** Extend the 60-day long-lived token on every build so it never lapses (as
+ *  long as the site rebuilds within 60 days). Instagram only allows refresh
+ *  once the token is >24h old; before that we just use it as-is. */
+async function refreshTokenIfPossible(token) {
+  try {
+    const url = `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${token}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      log(`token refresh skipped (${res.status}) — token likely <24h old; using as-is.`);
+      return token;
+    }
+    const json = await res.json();
+    if (json.access_token) {
+      log(`token refreshed, now valid ~${Math.round((json.expires_in || 0) / 86400)} days.`);
+      await persistToken(json.access_token);
+      return json.access_token;
+    }
+  } catch (e) {
+    log(`token refresh error (${e?.message || e}) — using existing token.`);
+  }
+  return token;
 }
 
 async function main() {
@@ -67,8 +111,9 @@ async function main() {
     return;
   }
 
+  const token = await refreshTokenIfPossible(TOKEN);
   const fields = "id,caption,media_type,media_url,thumbnail_url,permalink,timestamp";
-  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${MAX * 2}&access_token=${TOKEN}`;
+  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${MAX * 2}&access_token=${token}`;
 
   let items;
   try {
