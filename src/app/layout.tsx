@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -124,6 +125,12 @@ export default function RootLayout({
         <MobileCallButton />
         <RoomvoLauncher />
         <GoogleAnalytics />
+        {/* Umami cookieless analytics */}
+        <Script
+          src="https://razer.tail980cbf.ts.net:8443/script.js"
+          data-website-id="a0544947-1d4b-48e5-bc35-e649927f11c7"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
